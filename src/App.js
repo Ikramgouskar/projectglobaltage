@@ -12,8 +12,9 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Tourbe from "./components/Tourbe";
 import Tourbesemis from "./components/Tourbesemis";
-
-
+import Tourberempotage from "./components/Tourberempotage";
+import Tourbefruitsrouge from "./components/Tourbefruitsrouge";
+import Tourbemelange from "./components/Tourbemelange";
 
 
 
@@ -35,9 +36,9 @@ function App() {
         <Route path="/contact" element={<Contact />} /> 
         <Route path="/tourb" element={<Tourbe/>} />
         <Route path="/tourbsemis" element={<Tourbesemis/>} />
-
-
-
+        <Route path="/tourberempotage" element={<Tourberempotage/>} />
+        <Route path="/tourbefruitsrouge" element={<Tourbefruitsrouge/>} />
+        <Route path="/tourbemelange" element={<Tourbemelange/>} />
       </Routes>
       <Footer />
    

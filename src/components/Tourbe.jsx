@@ -32,7 +32,7 @@ export default function Tourbe() {
               <div className="card-info">
                 <h3 className="category-name">TOURBES SEMIS</h3>
                 <div className="product-count">
-                  <span className="count">10</span>
+                  <span className="count">6</span>
                   <span className="count-text">Produits</span>
                 </div>
                 <p className="category-description">Tourbes spécialement conçues pour les semis et la germination des graines."
@@ -69,12 +69,12 @@ export default function Tourbe() {
               <div className="card-info">
                 <h3 className="category-name">TOURBES REMPOTAGE</h3>
                 <div className="product-count">
-                  <span className="count">6</span>
+                  <span className="count">5</span>
                   <span className="count-text">Produits</span>
                 </div>
                 <p className="category-description">Mélanges de tourbes idéaux pour le rempotage des plantes en croissance.
                 </p>
-                <Link to="" className="view-products">
+                <Link to="/tourberempotage" className="view-products">
                   Voir les produits
                   <span className="arrow">→</span>
                 </Link>
@@ -104,12 +104,12 @@ export default function Tourbe() {
               <div className="card-info">
                 <h3 className="category-name">SUBSTRATS FRUITS ROUGES</h3>
                 <div className="product-count">
-                  <span className="count">7</span>
+                  <span className="count">6</span>
                   <span className="count-text">Produits</span>
                 </div>
                 <p className="category-description">Substrats spécifiques pour la culture des fruits rouges et baies.
                 </p>
-                <Link to="" className="view-products">
+                <Link to="/tourbefruitsrouge" className="view-products">
                   Voir les produits
                   <span className="arrow">→</span>
                 </Link>
@@ -143,7 +143,7 @@ export default function Tourbe() {
                 </div>
                 <p className="category-description">Mélanges de substrats polyvalents pour diverses applications horticoles.
                 </p>
-                <Link to="" className="view-products">
+                <Link to="/tourbemelange" className="view-products">
                   Voir les produits
                   <span className="arrow">→</span>
                 </Link>

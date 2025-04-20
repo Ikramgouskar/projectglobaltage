@@ -89,7 +89,7 @@ export default function Home() {
   return (
 
 <>
-<video src={video} autoPlay  onEnded={(e) => e.target.play()} 
+<video src={video} autoPlay  muted onEnded={(e) => e.target.play()} 
  
   />
 

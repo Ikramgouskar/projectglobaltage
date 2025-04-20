@@ -1,5 +1,4 @@
-import { useState } from "react"
-import { Search, Filter, ShoppingCart, Info } from 'lucide-react'
+import { Search, Filter, Info } from 'lucide-react'
 import "../style/tourbesemis.css"
 
 export default function Tourbesemis() {
@@ -8,7 +7,7 @@ export default function Tourbesemis() {
     {
       id: 1,
       name: "TOURBE POTGROND P 067 70L",
-      image: "/imadedetourbe/potgrond.png",
+      image: "/imadedetourbe/potgron.png",
       packaging: "70L",
       color: "red",
       features: ["Idéal pour semis", "Structure fine", "Rétention d'eau optimale"]
@@ -16,7 +15,7 @@ export default function Tourbesemis() {
     {
       id: 2,
       name: "TOURBE TS1 GREENFIBRE 2MN 70L",
-      image: "/imadedetourbe/ts1.png",
+      image: "/imadedetourbe/greenfibre.png",
       packaging: "70L",
       color: "blue",
       features: ["Enrichi en fibres vertes", "Aération améliorée", "Pour semis professionnels"]
@@ -24,7 +23,7 @@ export default function Tourbesemis() {
     {
       id: 3,
       name: "TOURBE TS3 3B5 70L",
-      image: "/imadedetourbe/ts3.png",
+      image: "/imadedetourbe/t3 3b5.png",
       packaging: "70L",
       color: "blue",
       features: ["Formule équilibrée", "Drainage optimal", "Pour jeunes plants"]
@@ -32,7 +31,7 @@ export default function Tourbesemis() {
     {
       id: 4,
       name: "TOURBE TRAY SUBSTRAT REC V087 70L",
-      image: "/imadedetourbe/tray-v087.png",
+      image: "/imadedetourbe/trayV087.png",
       packaging: "70L",
       color: "red",
       features: ["Spécial plateaux", "Germination uniforme", "Structure homogène"]
@@ -40,7 +39,7 @@ export default function Tourbesemis() {
     {
       id: 5,
       name: "TOURBE TRAY SUBSTRAT 1LD GREENFIBRE 70L",
-      image: "/imadedetourbe/tray-1ld.png",
+      image: "/imadedetourbe/tray1LDGREENfibre.png",
       packaging: "70L",
       color: "red",
       features: ["Fibres vertes intégrées", "Pour plateaux alvéolés", "Repiquage facilité"]
@@ -48,12 +47,14 @@ export default function Tourbesemis() {
     {
       id: 6,
       name: "TOURBE PROLINE BIO TRAY-SUBSTRAT 70L",
-      image: "/imadedetourbe/proline-bio.png",
+      image: "/imadedetourbe/proline bio trayubtrat.png",
       packaging: "70L",
       color: "green",
       isBio: true,
       features: ["Agriculture biologique", "Sans additifs chimiques", "Certification écologique"]
     }
+   
+
   ]
 
   return (
@@ -90,14 +91,7 @@ export default function Tourbesemis() {
               <img src={product.image || "/placeholder.svg"} alt={product.name} className="product-image" />
               {product.isBio && <span className="bio-badge">BIO</span>}
               
-              <div className="product-features ">
-                <h4>Caractéristiques:</h4>
-                <ul>
-                  {product.features.map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
-                </ul>
-              </div>
+             
             </div>
             
             <div className="product-info">
@@ -109,7 +103,7 @@ export default function Tourbesemis() {
               
               <div className="product-actions">
                 <button className="add-to-quote">
-                  Ajouter au devis
+                  Ajouter 
                 </button>
                 <button className="info-button">
                   <Info size={18} />
@@ -122,7 +116,7 @@ export default function Tourbesemis() {
       
       <div className="product-help">
         <div className="help-content">
-          <h2>Besoin d'aide pour choisir?</h2>
+          <h3>Besoin d'aide pour choisir?</h3>
           <p>Nos experts sont disponibles pour vous guider dans le choix de la tourbe adaptée à vos besoins spécifiques.</p>
           <button className="contact-button">Contacter un expert</button>
         </div>
