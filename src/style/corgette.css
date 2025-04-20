@@ -1,0 +1,429 @@
+
+:root {
+    --corgette-red: #a6bc77;
+    --corgette-dark: #e2f4b9;
+    --corgette-light:  #ecf8dc;
+    --corgette-accent: #82b461;
+    --corgette-accent-dark: #80ac63;
+    --white: #f4f8f0;
+    --gray-light: #f3f8f3;
+    --gray: #ecf0f1;
+    --text-dark: #2c3e50;
+    --shadow: 0 10px 30px rgba(89, 92, 90, 0.1);
+    --border-radius: 12px;
+  }
+  
+ 
+  .corgette-table-container {
+    max-width: 1200px;
+    margin: 7rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--white), var(--gray-light));
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    animation: containerPulse 10s infinite alternate ease-in-out;
+  }
+  
+ 
+  .corgette-table-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 10% 10%, rgba(104, 163, 127, 0.1) 0%, transparent 30%),
+      radial-gradient(circle at 90% 90%, rgba(46, 204, 113, 0.1) 0%, transparent 30%);
+    z-index: -1;
+    opacity: 0.7;
+    animation: backgroundShift 15s infinite alternate ease-in-out;
+  }
+  
+  .corgette-table-container::after {
+    content: "🦠";
+    position: absolute;
+    top: 2px;
+    right: 60px;
+    font-size: 4.5rem;
+    animation: bounce 3s infinite ease-in-out;
+    z-index: 1;
+    opacity: 0.8;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  h2{
+    padding-top: 20px;
+    padding-left: 850px;
+    font-size: 2rem;
+  }
+  
+  .corgette-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  
+  .corgette-table th {
+    background: linear-gradient(135deg, var(--corgette-red), var(--corgette-dark));
+    color: var(--white);
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .corgette-table th::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to right,
+      rgba(145, 205, 92, 0) 0%,
+      rgba(135, 230, 117, 0.3) 50%,
+      rgba(159, 222, 165, 0) 100%
+    );
+    transform: rotate(30deg);
+    animation: shine 3s infinite linear;
+    pointer-events: none;
+  }
+  tr{
+    background-color: yellowgreen;
+  }
+  
+  .corgette-table th:first-child {
+    border-top-left-radius: var(--border-radius);
+  }
+  
+  .corgette-table th:last-child {
+    border-top-right-radius: var(--border-radius);
+  }
+  
+  .corgette-table td {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid var(--gray);
+    color: var(--text-dark);
+    font-size: 1rem;
+    background-color: var(--white);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .corgette-table tr:hover td {
+    background-color: var(--corgette-light);
+    transform: translateX(5px);
+  }
+  
+  /* Animated underline on row hover */
+  .corgette-table td::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, var(--corgette-red), var(--corgette-accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .corgette-table tr:hover td::before {
+    transform: scaleX(1);
+  }
+  
+  /* Last row bottom cells rounded corners */
+  .corgette-table tr:last-child td:first-child {
+    border-bottom-left-radius: var(--border-radius);
+  }
+  
+  .corgette-table tr:last-child td:last-child {
+    border-bottom-right-radius: var(--border-radius);
+  }
+  
+  /* Remove bottom border from last row */
+  .corgette-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* Product image styling with hover animation */
+  .corgette-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 20%;
+    border: 3px solid var(--corgette-light);
+   
+    background: var(--white);
+    transition: all 0.4s ease;
+    animation: imagePulse 3s infinite alternate;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .corgette-table tr:hover .corgette-image {
+    transform: scale(1.1) rotate(5deg);
+    border-color: var(--corgette-red);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+  }
+  
+  /* Button styling with hover effects */
+  .corgette-button {
+    background: linear-gradient(135deg, var(--corgette-accent), var(--corgette-accent-dark));
+    color: var(--white);
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.2);
+  }
+  
+  /* Button hover effect */
+  .corgette-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px rgba(46, 204, 113, 0.3);
+  }
+  
+  /* Button ripple effect */
+  .corgette-button::after {
+    content: "🦠";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  
+  .corgette-button:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  
+  /* Loading state styling */
+  .corgette-loading {
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    background-color: var(--gray-light);
+    border-radius: var(--border-radius);
+    animation: pulse 1.5s infinite ease-in-out;
+    position: relative;
+  }
+  
+  .corgette-loading::before {
+    content: "🦠";
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    animation: spin 2s infinite linear;
+  }
+  
+  /* Error state styling */
+  .corgette-error {
+    padding: 1.5rem;
+    background-color: var(--corgette-light);
+    border-radius: var(--border-radius);
+    color: var(--corgette-dark);
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--corgette-red);
+    animation: errorShake 0.5s ease-in-out;
+  }
+  
+  /* Empty state styling */
+  .corgette-empty {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-dark);
+    font-style: italic;
+  }
+  
+  /* Animations */
+  @keyframes tableReveal {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes rowFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes shine {
+    0% {
+      left: -100%;
+      opacity: 0;
+    }
+    20% {
+      left: 100%;
+      opacity: 0.5;
+    }
+    100% {
+      left: 100%;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px) rotate(10deg);
+    }
+  }
+  
+  @keyframes imagePulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 rgba(231, 76, 60, 0.1);
+    }
+    100% {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(231, 76, 60, 0.3);
+    }
+  }
+  
+  @keyframes containerPulse {
+    0% {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+      box-shadow: 0 15px 40px rgba(231, 76, 60, 0.15);
+    }
+  }
+  
+  @keyframes backgroundShift {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+  
+  @keyframes errorShake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    20%,
+    60% {
+      transform: translateX(-5px);
+    }
+    40%,
+    80% {
+      transform: translateX(5px);
+    }
+  }
+  
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .corgette-table-container {
+      padding: 1.5rem;
+    }
+  
+    .corgette-table th,
+    .corgette-table td {
+      padding: 1rem;
+    }
+  
+    .corgette-image {
+      width: 70px;
+      height: 70px;
+    }
+  
+    .corgette-button {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.8rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .corgette-table-container {
+      padding: 1rem;
+    }
+  
+    .corgette-table {
+      display: block;
+      overflow-x: auto;
+    }
+  
+    .corgette-table th,
+    .corgette-table td {
+      padding: 0.8rem;
+    }
+  
+    .corgette-image {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .corgette-button {
+      padding: 0.5rem 1rem;
+      font-size: 0.7rem;
+    }
+  }
+  
