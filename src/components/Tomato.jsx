@@ -1,145 +1,154 @@
+"use client"
 
-
-import "../style/tomate.css"
-import { useState, useEffect, useRef } from "react"
-
-export default function Tomato() {
+import { useEffect, useState } from "react"
+import productsData from "../data/semences.json"
+export default function Home() {
   const [tomates, setTomates] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const tableRef = useRef(null)
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api/v1"
-
-  // Animation effect - runs after component mounts and data is loaded
-  useEffect(() => {
-    // Only run animations when we have data and the table exists
-    if (!loading && !error && tomates.length > 0 && tableRef.current) {
-      // Add animation to the table
-      tableRef.current.style.animation = "tableReveal 0.8s ease-out forwards"
-
-      // Get all table rows
-      const tableRows = tableRef.current.querySelectorAll("tbody tr")
-
-      // Add animation to each row with a delay
-      tableRows.forEach((row, index) => {
-        // Set a custom property for animation delay
-        row.style.setProperty("--row-index", index + 1)
-
-        // Add animation with a staggered delay
-        setTimeout(
-          () => {
-            row.style.animation = "rowFadeIn 0.5s forwards"
-          },
-          100 * (index + 1),
-        )
-      })
-    }
-  }, [loading, error, tomates])
 
   useEffect(() => {
-    // Set loading state
-    setLoading(true)
-    setError(null)
-
-    // For demo purposes, we'll use the local JSON data
-    // In a real app, you would fetch from the API
-    const demoData = {
-      tomates: [
-        {
-          id: 1,
-          image: "/imagedetomate/tomate1.png",
-          nom: "SEMENCES TOMATE ARENA F1",
-          description: "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre",
-        },
-        {
-          id: 2,
-          image: "/imagedetomate/tomate2.png",
-          nom: "TOMATE RONDE CLASSIQUE",
-          description: "Sachet de 500 graines",
-        },
-        {
-          id: 3,
-          image: "/imagedetomate/tomate3.png",
-          nom: "TOMATE CERISE ROUGE",
-          description: "Sachet de 250 graines, Idéal pour les salades",
-        },
-        {
-          id: 4,
-          image: "/imagedetomate/tomate4.png",
-          nom: "TOMATE COEUR DE BOEUF",
-          description: "Emballage : 500 Graines, Variété ancienne charnue",
-        },
-        {
-          id: 5,
-          image: "/imagedetomate/tomate5.png",
-          nom: "TOMATE SAN MARZANO",
-          description: "Sachet de 300 graines, Parfaite pour les sauces",
-        },
-      ],
+    try {
+      const tomatoCategory = productsData.products.find((product) => product.category === "TOMATES")
+      setTomates(tomatoCategory?.products || [])
+      setLoading(false)
+    } catch (error) {
+      console.error("Error loading tomatoes:", error)
+      setError("Impossible de charger les données. Veuillez réessayer plus tard.")
+      setLoading(false)
     }
-
-    // Simulate API fetch with a timeout
-    setTimeout(() => {
-      try {
-        setTomates(demoData.tomates)
-        setLoading(false)
-      } catch (error) {
-        console.error("Error loading tomatoes:", error)
-        setError("Impossible de charger les données. Veuillez réessayer plus tard.")
-        setLoading(false)
-      }
-    }, 500)
-
-  }, [API_URL])
+  }, [])
 
   return (
-    <div className="tomato-table-container">
-      <h2>Tomate</h2>
+    <div style={{
+      padding: '2rem',
+      maxWidth: '1200px',
+      margin: '0 auto'
+    }}>
+      <h2 style={{
+        fontSize: '1.875rem',
+        fontWeight: 'bold',
+        marginBottom: '1.5rem',
+        textAlign: 'center'
+      }}>Tomate</h2>
+      
       {loading ? (
-        <div className="tomato-loading">Chargement des produits...</div>
+        <div style={{
+          padding: '2rem',
+          textAlign: 'center'
+        }}>Chargement des produits...</div>
       ) : error ? (
-        <div className="tomato-error">{error}</div>
+        <div style={{
+          color: '#ef4444',
+          padding: '2rem',
+          textAlign: 'center'
+        }}>{error}</div>
       ) : (
-        <table className="tomato-table" ref={tableRef}>
-          <thead>
-            <tr>
-              <th>Produit</th>
-              <th>Nom</th>
-              <th>Description</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tomates.length > 0 ? (
-              tomates.map((tomate) => (
-                <tr key={tomate.id}>
-                  <td>
-                    <img
-                      src={tomate.image || "/placeholder.svg"}
-                      alt={tomate.nom}
-                      className="tomato-image"
-                      onError={(e) => {
-                        e.target.onerror = null
-                        e.target.src = "/imagedetomate/tomate1.png" // Fallback image with correct path
-                      }}
-                    />
-                  </td>
-                  <td>{tomate.nom}</td>
-                  <td>{tomate.description}</td>
-                  <td>
-                    <button className="tomato-button">Ajouter</button>
+        <div style={{
+          overflowX: 'auto',
+          borderRadius: '0.5rem',
+          boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)'
+        }}>
+          <table style={{
+            width: '100%',
+            borderCollapse: 'collapse',
+            backgroundColor: 'white'
+          }}>
+            <thead>
+              <tr style={{
+                backgroundColor: '#f3f4f6',
+                textAlign: 'left'
+              }}>
+                <th style={{
+                  padding: '1rem',
+                  borderBottom: '1px solid #e5e7eb'
+                }}>Produit</th>
+                <th style={{
+                  padding: '1rem',
+                  borderBottom: '1px solid #e5e7eb'
+                }}>Nom</th>
+                <th style={{
+                  padding: '1rem',
+                  borderBottom: '1px solid #e5e7eb'
+                }}>Description</th>
+                <th style={{
+                  padding: '1rem',
+                  borderBottom: '1px solid #e5e7eb'
+                }}>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tomates.length > 0 ? (
+                tomates.map((tomate) => (
+                  <tr key={tomate.id} style={{
+                    borderBottom: '1px solid #e5e7eb',
+                    '&:hover': {
+                      backgroundColor: '#f9fafb'
+                    }
+                  }}>
+                    <td style={{
+                      padding: '1rem'
+                    }}>
+                      <div style={{
+                        width: '100px',
+                        height: '100px'
+                      }}>
+                        <img
+                          src={tomate.image || "/placeholder.svg"}
+                          alt={tomate.nom}
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            borderRadius: '0.25rem'
+                          }}
+                          onError={(e) => {
+                            e.currentTarget.onerror = null;
+                            e.currentTarget.src = "/placeholder.svg";
+                          }}
+                        />
+                      </div>
+                    </td>
+                    <td style={{
+                      padding: '1rem',
+                      fontWeight: '500'
+                    }}>{tomate.nom}</td>
+                    <td style={{
+                      padding: '1rem',
+                      color: '#4b5563'
+                    }}>{tomate.description}</td>
+                    <td style={{
+                      padding: '1rem'
+                    }}>
+                      <button style={{
+                        backgroundColor: '#3b82f6',
+                        color: 'white',
+                        padding: '0.5rem 1rem',
+                        borderRadius: '0.375rem',
+                        border: 'none',
+                        cursor: 'pointer',
+                        '&:hover': {
+                          backgroundColor: '#2563eb'
+                        }
+                      }}>
+                        Ajouter
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan={4} style={{
+                    padding: '2rem',
+                    textAlign: 'center'
+                  }}>
+                    Aucun produit disponible
                   </td>
                 </tr>
-              ))
-            ) : (
-              <tr>
-                <td colSpan="4" className="tomato-empty">
-                  Aucun produit disponible
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
+              )}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   )

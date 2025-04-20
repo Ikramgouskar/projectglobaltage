@@ -1,0 +1,119 @@
+{
+    "products": [
+      {
+        "category": "TOMATES",
+        "product_count": 5,
+        "link": "/tomate",
+        "products": [
+          {
+            "id": 1,
+            "image": "/imagedetomate/tomate1.png",
+            "nom": "SEMENCES TOMATE ARENA F1",
+            "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre"
+          },
+          {
+            "id": 2,
+            "image": "/imagedetomate/tomate2.png",
+            "nom": "SEMENCES TOMATE BOULE F1",
+            "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre"
+          },
+          {
+            "id": 3,
+            "image": "/imagedetomate/tomate3.png",
+            "nom": "SEMENCES TOMATE CERISE F1",
+            "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre"
+          },
+          {
+            "id": 4,
+            "image": "/imagedetomate/tomate4.png",
+            "nom": "SEMENCES TOMATE COEUR DE BOEUF F1",
+            "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre"
+          },
+          {
+            "id": 5,
+            "image": "/imagedetomate/tomate5.png",
+            "nom": "SEMENCES TOMATE COEUR DE BOEUF F1",
+            "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre"
+          }
+        ]
+      },
+      {
+        "category": "COURGETTES",
+        "product_count": 6,
+        "products": [
+          {
+            "name": "Courgette Ronde de Nice",
+            "image": "courgette_ronde_nice.jpg",
+            "link": "/products/courgette-ronde-de-nice"
+          },
+          {
+            "name": "Courgette Verte Maraîchère",
+            "image": "courgette_verte_maraichere.jpg",
+            "link": "/products/courgette-verte-maraichere"
+          },
+          {
+            "name": "Courgette Gold Rush",
+            "image": "courgette_gold_rush.jpg",
+            "link": "/products/courgette-gold-rush"
+          },
+          {
+            "name": "Courgette Blanche de Virginie",
+            "image": "courgette_blanche_virginie.jpg",
+            "link": "/products/courgette-blanche-de-virginie"
+          },
+          {
+            "name": "Courgette Grisette de Provence",
+            "image": "courgette_grisette_provence.jpg",
+            "link": "/products/courgette-grisette-de-provence"
+          },
+          {
+            "name": "Courgette Black Beauty",
+            "image": "courgette_black_beauty.jpg",
+            "link": "/products/courgette-black-beauty"
+          }
+        ]
+      },
+      {
+        "category": "MELONS",
+        "product_count": 7,
+        "products": [
+          {
+            "name": "Melon Charentais",
+            "image": "melon_charentais.jpg",
+            "link": "/products/melon-charentais"
+          },
+          {
+            "name": "Melon Galia",
+            "image": "melon_galia.jpg",
+            "link": "/products/melon-galia"
+          },
+          {
+            "name": "Melon Honeydew",
+            "image": "melon_honeydew.jpg",
+            "link": "/products/melon-honeydew"
+          },
+          {
+            "name": "Melon Cantaloup",
+            "image": "melon_cantaloup.jpg",
+            "link": "/products/melon-cantaloup"
+          },
+          {
+            "name": "Melon Piel de Sapo",
+            "image": "melon_piel_de_sapo.jpg",
+            "link": "/products/melon-piel-de-sapo"
+          },
+          {
+            "name": "Melon Jaune Canari",
+            "image": "melon_jaune_canari.jpg",
+            "link": "/products/melon-jaune-canari"
+          },
+          {
+            "name": "Melon d'eau Sugar Baby",
+            "image": "melon_eau_sugar_baby.jpg",
+            "link": "/products/melon-eau-sugar-baby"
+          }
+        ]
+      }
+    ]
+  }
+  
