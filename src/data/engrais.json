@@ -1,206 +1,213 @@
 {
-    "products": [
-      {
-        "category": "SOLUBLES",
-        "product_count": 10,
-        "link": "/engraisoluble",
-        "products": [
-          {
-            
-                "id": 1,
-                "image": "/imagedengrain/imgsoluble/nitratedepota.png",
-                "nom": "NITRATE DE POTASSE 13-0-46",
-                "description": "Emballage : 25KG"
-              },
-              {
-                "id": 2,
-                "image": "/imagedengrain/imgsoluble/sulfatepota.png",
-                "nom": "SULFATE DE POTASSE SOLUBLE",
-                "description": "Emballage : 25KG"
-              },
-              {
-                "id": 3,
-                "image": "/imagedengrain/imgsoluble/calciamnitrate.png",
-                "nom": "NITRATE DE CALCIUM HORTIGRADE",
-                "description": "Emballage : 25KG"
-              },
-              {
-                "id": 4,
-                "image": "/imagedengrain/imgsoluble/nitratedecalcumfertigrade.png",
-                "nom": "NITRATE DE CALCIUM FERTIGRADE",
-                "description": "Emballage : 25KG"
-              },
-              {
-                "id": 5,
-                "image": "/imagedengrain/imgsoluble/map oluble.png",
-                "nom": "MAP SOLUBLE 12-61",
-                "description": "Emballage : 25KG"
-              },
-              {
-                "id": 6,
-                "image": "/imagedengrain/imgsoluble/chloruredepotasse.png",
-                "nom": "CHLORURE DE POTASSE SOLUBLE",
-                "description": "Emballage : 50KG"
-              },
-              {
-                "id": 7,
-                "image": "/imagedengrain/imgsoluble/sulfatemagneie.png",
-                "nom": "SULFATE MAGNESIE 16% EPSO TOP",
-                "description": "Emballage : 25KG",
-                "bio": true
-              },
-              {
-                "id": 8,
-                "image": "/imagedengrain/imgsoluble/mkp.png",
-                "nom": "MKP 00-52-34",
-                "description": "Emballage : 25KG"
-              },
-              {
-                "id": 9,
-                "image": "/imagedengrain/imgsoluble/kalio.png",
-                "nom": "KALISOP FINE 50 – 50 KG",
-                "description": "Emballage : 25KG",
-                "bio": true
-              },
-              {
-                "id": 10,
-                "image": "/imagedengrain/imgsoluble/soluamspremium.png",
-                "nom": "SOLUAMS 21%",
-                "description": "Emballage : 25KG"
-              }
-   
-        ]
-        
-      },
-      {
-        "category": "NPK SOLUBLES",
-        "product_count": 6,
-        "link": "/npksoluble",
-        "products": [
-      {
-            "id": 1,
-            "nom": "NITRATE DE MAGNESIE",
-            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
-            "description": "25KG"
-          }
+  "products": [
+    {
+      "category": "SOLUBLES",
+      "product_count": 10,
+      "link": "/engraisoluble",
+      "products": [
+        {
+          
+              "id": 1,
+              "image": "/imagedengrain/imgsoluble/nitratedepota.png",
+              "nom": "NITRATE DE POTASSE 13-0-46",
+              "description": "Emballage : 25KG"
+            },
+            {
+              "id": 2,
+              "image": "/imagedengrain/imgsoluble/sulfatepota.png",
+              "nom": "SULFATE DE POTASSE SOLUBLE",
+              "description": "Emballage : 25KG"
+            },
+            {
+              "id": 3,
+              "image": "/imagedengrain/imgsoluble/calciamnitrate.png",
+              "nom": "NITRATE DE CALCIUM HORTIGRADE",
+              "description": "Emballage : 25KG"
+            },
+            {
+              "id": 4,
+              "image": "/imagedengrain/imgsoluble/nitratedecalcumfertigrade.png",
+              "nom": "NITRATE DE CALCIUM FERTIGRADE",
+              "description": "Emballage : 25KG"
+            },
+            {
+              "id": 5,
+              "image": "/imagedengrain/imgsoluble/map oluble.png",
+              "nom": "MAP SOLUBLE 12-61",
+              "description": "Emballage : 25KG"
+            },
+            {
+              "id": 6,
+              "image": "/imagedengrain/imgsoluble/chloruredepotasse.png",
+              "nom": "CHLORURE DE POTASSE SOLUBLE",
+              "description": "Emballage : 50KG"
+            },
+            {
+              "id": 7,
+              "image": "/imagedengrain/imgsoluble/sulfatemagneie.png",
+              "nom": "SULFATE MAGNESIE 16% EPSO TOP",
+              "description": "Emballage : 25KG",
+              "bio": true
+            },
+            {
+              "id": 8,
+              "image": "/imagedengrain/imgsoluble/mkp.png",
+              "nom": "MKP 00-52-34",
+              "description": "Emballage : 25KG"
+            },
+            {
+              "id": 9,
+              "image": "/imagedengrain/imgsoluble/kalio.png",
+              "nom": "KALISOP FINE 50 – 50 KG",
+              "description": "Emballage : 25KG",
+              "bio": true
+            },
+            {
+              "id": 10,
+              "image": "/imagedengrain/imgsoluble/soluamspremium.png",
+              "nom": "SOLUAMS 21%",
+              "description": "Emballage : 25KG"
+            }
+ 
+      ]
+      
+    },
+    {
+      "category": "NPKSOLUBLES",
+      "product_count": 6,
+      "link": "/npksoluble",
+      "products": [
+        {
+          "id": 1,
+          "nom": "NITRATE DE MAGNESIE",
+          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+          "description": "25KG"
+        },
+        {
+          "id": 2,
+          "nom": "NITRATE DE MAGNESIE",
+          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+          "description": "25KG"
+        },
+        {
+          "id": 3,
+          "nom": "NITRATE DE MAGNESIE",
+          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+          "description": "25KG"
+        },
+        {
+          "id": 4,
+          "nom": "NITRATE DE MAGNESIE",
+          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+          "description": "25KG"
+        },
+        {
+          "id": 5,
+          "nom": "NITRATE DE MAGNESIE",
+          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+          "description": "25KG"
+        },
+        {
+          "id": 6,
+          "nom": "NITRATE DE MAGNESIE",
+          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+          "description": "25KG"
+        }
+      ]
+      
+    },
+    {
+      "category": "NPK GRANULES",
+      "product_count": 4,
+      "link": "/npkgranule",
+      "products": [
+        {
+
+
+
+
+        }
+      
+      
+      
+      ]
+      
+    },
+    {
+      "category": "AZOTE FOLIAIRE",
+      "product_count":2,
+      "link": "/azotefoliaire",
+      "products": [
+        {
+
+
+
+
+        }
+      
+      
+      
+      ]
+      
+    }
+    ,
+    {
+      "category": "ENGRAIS OSMOCOTE",
+      "product_count": 5,
+      "link": "/engraisomocote",
+      "products": [
+        {
+
+
+
+
+        }
+      
+      
+      
+      ]
+      
+    }
+    ,
+    {
+      "category": "ENGRAIS ORGANIQUES",
+      "product_count": 3,
+      "link": "/engraisorganique",
+      "products": [
+        {
+
+
+
+
+        }
+      
+      
+      
+      ]
+      
+    }
+    ,
+    {
+      "category": "ENGRAIS OSMOCOTE",
+      "product_count": 5,
+      "link": "/engraisomocote",
+      "products": [
+        {
+
+
+
+
+        }
+      
+      
+      
+      ]
+      
+    }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-        ]
-        
-      },
-      {
-        "category": "NPK GRANULES",
-        "product_count": 4,
-        "link": "/npkgranule",
-        "products": [
-          {
-
-
-
-
-          }
-        
-        
-        
-        ]
-        
-      },
-      {
-        "category": "AZOTE FOLIAIRE",
-        "product_count":2,
-        "link": "/azotefoliaire",
-        "products": [
-          {
-
-
-
-
-          }
-        
-        
-        
-        ]
-        
-      }
-      ,
-      {
-        "category": "ENGRAIS OSMOCOTE",
-        "product_count": 5,
-        "link": "/engraisomocote",
-        "products": [
-          {
-
-
-
-
-          }
-        
-        
-        
-        ]
-        
-      }
-      ,
-      {
-        "category": "ENGRAIS ORGANIQUES",
-        "product_count": 3,
-        "link": "/engraisorganique",
-        "products": [
-          {
-
-
-
-
-          }
-        
-        
-        
-        ]
-        
-      }
-      ,
-      {
-        "category": "ENGRAIS OSMOCOTE",
-        "product_count": 5,
-        "link": "/engraisomocote",
-        "products": [
-          {
-
-
-
-
-          }
-        
-        
-        
-        ]
-        
-      }
-
-
-
-
-
-    ]       
+  ]       
 }
