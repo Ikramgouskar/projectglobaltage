@@ -10,7 +10,7 @@ export default function Engraisoluble() {
 
   useEffect(() => {
     try {
-      const engraisCategory = productsData.products.find((product) => product.category === "ESOLUBLES")
+      const engraisCategory = productsData.products.find((product) => product.category === "SOLUBLES")
       setEngraisobule(engraisCategory?.products || [])
       setLoading(false)
     } catch (error) {
