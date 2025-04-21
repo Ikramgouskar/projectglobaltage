@@ -117,82 +117,33 @@
       
     },
     {
-      "category": "NPK GRANULES",
+      "category": "NPKGRANULES",
       "product_count": 4,
-      "link": "/npkgranule",
+      "link": "/granules",
       "products": [
         {
-
-
-
-
-        }
-      
-      
-      
-      ]
-      
-    },
-    {
-      "category": "AZOTE FOLIAIRE",
-      "product_count":2,
-      "link": "/azotefoliaire",
-      "products": [
+          "id": 1,
+          "nom": "NPK 15-15-15",
+          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+          "description": "25KG"
+        },
         {
-
-
-
-
-        }
-      
-      
-      
-      ]
-      
-    }
-    ,
-    {
-      "category": "ENGRAIS OSMOCOTE",
-      "product_count": 5,
-      "link": "/engraisomocote",
-      "products": [
+          "id": 2,
+          "nom": "NPK 15-15-15",
+          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+          "description": "25KG"
+        },
         {
-
-
-
-
-        }
-      
-      
-      
-      ]
-      
-    }
-    ,
-    {
-      "category": "ENGRAIS ORGANIQUES",
-      "product_count": 3,
-      "link": "/engraisorganique",
-      "products": [
+          "id": 3,
+          "nom": "NPK 15-15-15",
+          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+          "description": "25KG"
+        },
         {
-
-
-
-
-        }
-      
-      
-      
-      ]
-      
-    }
-    ,
-    {
-      "category": "ENGRAIS OSMOCOTE",
-      "product_count": 5,
-      "link": "/engraisomocote",
-      "products": [
-        {
+          "id": 4,
+          "nom": "NPK 15-15-15",
+          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+          "description": "25KG"
 
 
 
