@@ -40,78 +40,149 @@
       {
         "category": "COURGETTES",
         "product_count": 6,
+        "link": "/corgette",
         "products": [
           {
-            "name": "Courgette Ronde de Nice",
-            "image": "courgette_ronde_nice.jpg",
-            "link": "/products/courgette-ronde-de-nice"
+            "id": 1,
+            "image": "/imagedecourgettes/corgete1.png",
+            "nom": "SEMENCES COURGETTES DIKRA F1",
+            "description": "Emballage : 1000 Graines Courgette blanche"
           },
           {
-            "name": "Courgette Verte Maraîchère",
-            "image": "courgette_verte_maraichere.jpg",
-            "link": "/products/courgette-verte-maraichere"
+            "id": 2,
+            "image": "/imagedecourgettes/corgete2.png",
+            "nom": "SEMENCES COURGETTES DIKRA F1",
+            "description": "Emballage : 1000 Graines Courgette blanche"
           },
           {
-            "name": "Courgette Gold Rush",
-            "image": "courgette_gold_rush.jpg",
-            "link": "/products/courgette-gold-rush"
+            "id": 3,
+            "image": "/imagedecourgettes/corgete3.png",
+            "nom": "SEMENCES COURGETTES DIKRA F1",
+            "description": "Emballage : 1000 Graines Courgette blanche"
           },
           {
-            "name": "Courgette Blanche de Virginie",
-            "image": "courgette_blanche_virginie.jpg",
-            "link": "/products/courgette-blanche-de-virginie"
+            "id": 4,
+            "image": "/imagedecourgettes/corgete4.png",
+            "nom": "SEMENCES COURGETTES DIKRA F1",
+            "description": "Emballage : 1000 Graines Courgette blanche"
           },
           {
-            "name": "Courgette Grisette de Provence",
-            "image": "courgette_grisette_provence.jpg",
-            "link": "/products/courgette-grisette-de-provence"
+            "id": 5,
+            "image": "/imagedecourgettes/corgete5.png",
+            "nom": "SEMENCES COURGETTES DIKRA F1",
+            "description": "Emballage : 1000 Graines Courgette blanche"
           },
           {
-            "name": "Courgette Black Beauty",
-            "image": "courgette_black_beauty.jpg",
-            "link": "/products/courgette-black-beauty"
+            "id": 6,
+            "image": "/imagedecourgettes/corgete6.png",
+            "nom": "SEMENCES COURGETTES DIKRA F1",
+            "description": "Emballage : 1000 Graines Courgette blanche"
           }
+         
+        
         ]
       },
       {
         "category": "MELONS",
         "product_count": 7,
+        "link":"/melon",
         "products": [
           {
-            "name": "Melon Charentais",
-            "image": "melon_charentais.jpg",
-            "link": "/products/melon-charentais"
-          },
-          {
-            "name": "Melon Galia",
-            "image": "melon_galia.jpg",
-            "link": "/products/melon-galia"
-          },
-          {
-            "name": "Melon Honeydew",
-            "image": "melon_honeydew.jpg",
-            "link": "/products/melon-honeydew"
-          },
-          {
-            "name": "Melon Cantaloup",
-            "image": "melon_cantaloup.jpg",
-            "link": "/products/melon-cantaloup"
-          },
-          {
-            "name": "Melon Piel de Sapo",
-            "image": "melon_piel_de_sapo.jpg",
-            "link": "/products/melon-piel-de-sapo"
-          },
-          {
-            "name": "Melon Jaune Canari",
-            "image": "melon_jaune_canari.jpg",
-            "link": "/products/melon-jaune-canari"
-          },
-          {
-            "name": "Melon d'eau Sugar Baby",
-            "image": "melon_eau_sugar_baby.jpg",
-            "link": "/products/melon-eau-sugar-baby"
+            "id": 1,
+            "image": "/imgedemelon/melon1.png",
+            "nom": "SEMENCES MELON GARONA",
+            "description": "Emballage : 1000 Gaines Melon charantais"
           }
+          ,
+          {
+            "id": 2,
+            "image": "/imgedemelon/melon2.png",
+            "nom": "SEMENCES MELON GARONA",
+            "description": "Emballage : 1000 Gaines Melon charantais"
+          },
+          {
+            "id": 3,
+            "image": "/imgedemelon/melon3.png",
+            "nom": "SEMENCES MELON GARONA",
+            "description": "Emballage : 1000 Gaines Melon charantais"
+          },
+          {
+            "id": 4,
+            "image": "/imgedemelon/melon4.png",
+            "nom": "SEMENCES MELON GARONA",
+            "description": "Emballage : 1000 Gaines Melon charantais"
+          },
+          {
+            "id": 5,
+            "image": "/imgedemelon/melon5.png",
+            "nom": "SEMENCES MELON GARONA",
+            "description": "Emballage : 1000 Gaines Melon charantais"
+          },
+          {
+            "id": 6,
+            "image": "/imgedemelon/melon6.png",
+            "nom": "SEMENCES MELON GARONA",
+            "description": "Emballage : 1000 Gaines Melon charantais"
+          },
+          {
+            "id": 7,
+            "image": "/imgedemelon/melon7.png",
+            "nom": "SEMENCES MELON GARONA",
+            "description": "Emballage : 1000 Gaines Melon charantais"
+          }
+        ]
+      },
+      {
+        "category": "PASTEQUES",
+        "product_count": 2,
+        "link": "/pasteque",
+        "products": [
+          
+            {
+              "id": 1,
+              "image": "/imgedepasteque/pasteque1.png",
+              "nom": "SEMENCES PASTEQUE DALLAS 1000 GRAINES",
+              "description": "Emballage : 1000 GR Pastèque Crimson"
+            },
+            {
+              "id": 2,
+              "image": "/imgedepasteque/pasteque2.png",
+              "nom": "Emballage : 1000 GR Pastèque Crimson",
+              "description": "Emballage : 1000 graines Pastèque Crimson"
+            }
+          
+        ]
+      },
+      {
+        "category": "POIVERENT",
+        "product_count": 4,
+        "link": "/poiverent",
+        "products": [
+          {
+            "id": 1,
+            "image": "/imagedepoiverents/poiverent1.png",
+            "nom": "SEMENCES POIVRON COLINA 1000 GR",
+            "description": "Emballage : 1000 GR Poivron doux Italien"
+          },
+          {
+            "id": 2,
+            "image": "/imagedepoiverents/poiverent2.png",
+            "nom": "SEMENCES POIVRON COLINA 1000 GR",
+            "description": "Emballage : 1000 GR Poivron doux Italien"
+          },
+          {
+            "id": 3,
+            "image": "/imagedepoiverents/poiverent3.png",
+            "nom": "SEMENCES POIVRON COLINA 1000 GR",
+            "description": "Emballage : 1000 GR Poivron doux Italien"
+          },
+          {
+            "id": 4,
+            "image": "/imagedepoiverents/poiverent4.png",
+            "nom": "SEMENCES POIVRON COLINA 1000 GR",
+            "description": "Emballage : 1000 GR Poivron doux Italien"
+          }
+          
         ]
       }
     ]

@@ -1,20 +1,6 @@
-/* Tomato Table - Creative Styling with Animations */
-:root {
-  --tomato-red: #e74c3c;
-  --tomato-dark: #c0392b;
-  --tomato-light: #fadbd8;
-  --tomato-accent: #2ecc71;
-  --tomato-accent-dark: #27ae60;
-  --white: #ffffff;
-  --gray-light: #f9f9f9;
-  --gray: #ecf0f1;
-  --text-dark: #2c3e50;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  --border-radius: 12px;
-}
+/* Main container styling */
+.tomato-container {
 
-/* Main container with animated background */
-.tomato-table-container {
   max-width: 1200px;
   margin: 7rem auto;
   padding: 2rem;
@@ -23,26 +9,11 @@
   box-shadow: var(--shadow);
   position: relative;
   overflow: hidden;
-  animation: containerPulse 10s infinite alternate ease-in-out;
+  animation: containerPulse 10s infinite alternate ease-in-out;
 }
 
-/* Animated background pattern */
-.tomato-table-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(circle at 10% 10%, rgba(231, 76, 60, 0.1) 0%, transparent 30%),
-    radial-gradient(circle at 90% 90%, rgba(46, 204, 113, 0.1) 0%, transparent 30%);
-  z-index: -1;
-  opacity: 0.7;
-  animation: backgroundShift 15s infinite alternate ease-in-out;
-}
 
-/* Tomato icon decoration */
-.tomato-table-container::after {
+.tomate-container::after {
   content: "🍅";
   position: absolute;
   top: 2px;
@@ -51,26 +22,66 @@
   animation: bounce 3s infinite ease-in-out;
   z-index: 1;
   opacity: 0.9;
-  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Table styling with entrance animation */
+
+
+/* Header styling */
+.tomato-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.tomato-title { 
+ 
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.tomato-icon {
+  width: 60px;
+  height: 60px;
+}
+
+/* Loading and error states */
+.tomato-loading,
+.tomato-error {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.tomato-error {
+  color: #e53e3e;
+}
+
+/* Table styling */
+.tomato-table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
 .tomato-table {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin-top: 4rem;
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--border-radius);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  transform: translateY(20px);
-  opacity: 0;
+  border-collapse: collapse;
+  background-color: white;
 }
 
-/* Table header styling */
+/* Table header */
+.tomato-table thead tr {
+  background-color: #d25b4a;
+  color: white;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 .tomato-table th {
-  background: linear-gradient(135deg, var(--tomato-red), var(--tomato-dark));
   color: var(--white);
   padding: 1.2rem 1.5rem;
   text-align: left;
@@ -83,344 +94,92 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Animated shine effect for headers */
-.tomato-table th::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.3) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: rotate(30deg);
-  animation: shine 3s infinite linear;
-  pointer-events: none;
+/* Table body */
+.tomato-table tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+  background-color: white;
 }
 
-/* First and last header cells rounded corners */
-.tomato-table th:first-child {
-  border-top-left-radius: var(--border-radius);
+.tomato-table tbody tr:hover {
+  background-color: #f9f9f9;
 }
 
-.tomato-table th:last-child {
-  border-top-right-radius: var(--border-radius);
-}
-
-/* Table cells styling */
-.tomato-table td {
-  padding: 1.2rem 1.5rem;
-  border-bottom: 1px solid var(--gray);
-  color: var(--text-dark);
-  font-size: 1rem;
-  background-color: var(--white);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Table row hover effect */
-.tomato-table tr:hover td {
-  background-color: var(--tomato-light);
-  transform: translateX(5px);
-}
-
-/* Animated underline on row hover */
-.tomato-table td::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, var(--tomato-red), var(--tomato-accent));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-.tomato-table tr:hover td::before {
-  transform: scaleX(1);
-}
-
-/* Last row bottom cells rounded corners */
-.tomato-table tr:last-child td:first-child {
-  border-bottom-left-radius: var(--border-radius);
-}
-
-.tomato-table tr:last-child td:last-child {
-  border-bottom-right-radius: var(--border-radius);
-}
-
-/* Remove bottom border from last row */
-.tomato-table tr:last-child td {
+.tomato-table tbody tr:last-child {
   border-bottom: none;
 }
 
-/* Product image styling with hover animation */
+.tomato-table td {
+  padding: 1.25rem 1rem;
+  vertical-align: middle;
+}
+
+/* Product image */
+.tomato-image-container {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
 .tomato-image {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 20%;
-  border: 3px solid var(--tomato-light);
-  background: var(--white);
-  transition: all 0.4s ease;
-  animation: imagePulse 3s infinite alternate;
-  display: block;
-  margin: 0 auto;
+  border-radius: 8px;
 }
 
-.tomato-table tr:hover .tomato-image {
-  transform: scale(1.1) rotate(5deg);
-  border-color: var(--tomato-red);
-  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+/* Product name */
+.tomato-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
 }
 
-/* Button styling with hover effects */
+/* Product description */
+.tomato-description {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Action button */
 .tomato-button {
-  background: linear-gradient(135deg, var(--tomato-accent), var(--tomato-accent-dark));
-  color: var(--white);
-  border: none;
-  padding: 0.7rem 1.5rem;
+  background-color: #5cb85c;
+  color: white;
+  padding: 0.75rem 1.5rem;
   border-radius: 50px;
+  border: none;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 10px rgba(46, 204, 113, 0.2);
 }
 
-/* Button hover effect */
 .tomato-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 7px 15px rgba(46, 204, 113, 0.3);
+  background-color: #4cae4c;
 }
 
-/* Button ripple effect */
-.tomato-button::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 150px;
-  height: 150px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  opacity: 0;
-  transition: all 0.5s ease;
-}
-
-.tomato-button:hover::after {
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-}
-
-/* Loading state styling */
-.tomato-loading {
-  padding: 2rem;
-  text-align: center;
-  font-size: 1.1rem;
-  color: var(--text-dark);
-  background-color: var(--gray-light);
-  border-radius: var(--border-radius);
-  animation: pulse 1.5s infinite ease-in-out;
-  position: relative;
-}
-
-.tomato-loading::before {
-  content: "🍅";
-  display: block;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  animation: spin 2s infinite linear;
-}
-
-/* Error state styling */
-.tomato-error {
-  padding: 1.5rem;
-  background-color: var(--tomato-light);
-  border-radius: var(--border-radius);
-  color: var(--tomato-dark);
-  text-align: center;
-  font-weight: 500;
-  margin-bottom: 1rem;
-  border-left: 4px solid var(--tomato-red);
-  animation: errorShake 0.5s ease-in-out;
-}
-
-/* Empty state styling */
+/* Empty state */
 .tomato-empty {
-  text-align: center;
   padding: 2rem;
-  color: var(--text-dark);
+  text-align: center;
+  color: #666;
   font-style: italic;
 }
 
-/* Animations */
-@keyframes tableReveal {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes rowFadeIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes shine {
-  0% {
-    left: -100%;
-    opacity: 0;
-  }
-  20% {
-    left: 100%;
-    opacity: 0.5;
-  }
-  100% {
-    left: 100%;
-    opacity: 0;
-  }
-}
-
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px) rotate(10deg);
-  }
-}
-
-@keyframes imagePulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 rgba(231, 76, 60, 0.1);
-  }
-  100% {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(231, 76, 60, 0.3);
-  }
-}
-
-@keyframes containerPulse {
-  0% {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  }
-  100% {
-    box-shadow: 0 15px 40px rgba(231, 76, 60, 0.15);
-  }
-}
-
-@keyframes backgroundShift {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 100% 100%;
-  }
-}
-
-@keyframes errorShake {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  20%,
-  60% {
-    transform: translateX(-5px);
-  }
-  40%,
-  80% {
-    transform: translateX(5px);
-  }
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Responsive styles */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .tomato-table-container {
-    padding: 1.5rem;
+  .tomato-image-container {
+    width: 80px;
+    height: 80px;
   }
 
   .tomato-table th,
   .tomato-table td {
-    padding: 1rem;
-  }
-
-  .tomato-image {
-    width: 70px;
-    height: 70px;
-  }
-
-  .tomato-button {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .tomato-table-container {
-    padding: 1rem;
-  }
-
-  .tomato-table {
-    display: block;
-    overflow-x: auto;
-  }
-
-  .tomato-table th,
-  .tomato-table td {
-    padding: 0.8rem;
-  }
-
-  .tomato-image {
-    width: 60px;
-    height: 60px;
+    padding: 0.75rem;
   }
 
   .tomato-button {
     padding: 0.5rem 1rem;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
 }

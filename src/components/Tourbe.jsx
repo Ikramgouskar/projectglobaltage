@@ -178,7 +178,7 @@ export default function Tourbe() {
                 </div>
                 <p className="category-description">Substrats à base de fibre de coco, écologiques et renouvelables.
                 </p>
-                <Link to="" className="view-products">
+                <Link to="/tourbecoco" className="view-products">
                   Voir les produits
                   <span className="arrow">→</span>
                 </Link>

@@ -1,7 +1,6 @@
-"use client"
 
-import { Search, Filter, Info } from "lucide-react"
-import "../style/tourberempotage.css"
+import { Search, Filter } from "lucide-react"
+import "../../style/tourberempotage.css"
 
 export default function TourbeRempotage() {
 
@@ -9,7 +8,7 @@ export default function TourbeRempotage() {
     {
       id: 1,
       name: "TOURBE TS3 1NJ MOYEN 30%GREENFIBRE 210L",
-      image: "/imadedetourbe/ts3-1nj.png",
+      image: "/imadedetourbe/image rempotage/1nj moyen.png",
       packaging: "210L / 6M3",
       color: "blue",
       features: ["Structure moyenne", "30% de fibres vertes", "Drainage optimal"],
@@ -17,7 +16,7 @@ export default function TourbeRempotage() {
     {
       id: 2,
       name: "TOURBE TS3 425 MOYEN 210L",
-      image: "/imadedetourbe/ts3-425.png",
+      image: "/imadedetourbe/image rempotage/425 moyan.png",
       packaging: "210L",
       color: "blue",
       features: ["Structure moyenne", "Polyvalent", "Bonne rétention d'eau"],
@@ -25,7 +24,7 @@ export default function TourbeRempotage() {
     {
       id: 3,
       name: "TOURBE TS1 135 MOYEN 210L",
-      image: "/imadedetourbe/ts1-135.png",
+      image: "/imadedetourbe/image rempotage/135 moyen.png",
       packaging: "210L / 6M3",
       color: "green",
       features: ["Structure fine à moyenne", "Haute qualité", "Pour plantes exigeantes"],
@@ -33,7 +32,7 @@ export default function TourbeRempotage() {
     {
       id: 4,
       name: "TOURBE 3W4 FIBREUX 30%GREENFIBRE",
-      image: "/imadedetourbe/3w4-fibreux.png",
+      image: "/imadedetourbe/image rempotage/3W4 fibreux.png",
       packaging: "210L / 6M3",
       color: "green",
       features: ["Structure fibreuse", "30% de fibres vertes", "Aération maximale"],
@@ -41,7 +40,7 @@ export default function TourbeRempotage() {
     {
       id: 5,
       name: "TOURBE TS4 604 GROSSIER 210L",
-      image: "/imadedetourbe/ts4-604.png",
+      image: "/imadedetourbe/image rempotage/ts4 604 grossier.png",
       packaging: "210L",
       color: "green",
       features: ["Structure grossière", "Très drainant", "Pour plantes spécifiques"],
@@ -94,7 +93,6 @@ export default function TourbeRempotage() {
               <div className="product-actions">
                 <button className="add-to-quote">Ajouter au devis</button>
                 <button className="info-button">
-                  <Info size={18} />
                 </button>
               </div>
             </div>

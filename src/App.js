@@ -1,22 +1,23 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
-import Vegetale from "./components/Vegetale";
+import Vegetale from "./components/semences/Vegetale";
 import Footer from "./components/Footer";
-import Tomato from "./components/Tomato";
-import Courgette from "./components/Courjette";
-import Pasteque from "./components/Pasteques";
-import Poiverent from "./components/Poiverent";
-import Melon from "./components/Melon";
+import Tomato from "./components/semences/Tomato";
+import Courgette from "./components/semences/Courjette";
+import Pasteque from "./components/semences/Pasteques";
+import Poiverent from "./components/semences/Poiverent";
+import Melon from "./components/semences/Melon";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Tourbe from "./components/Tourbe";
-import Tourbesemis from "./components/Tourbesemis";
-import Tourberempotage from "./components/Tourberempotage";
-import Tourbefruitsrouge from "./components/Tourbefruitsrouge";
-import Tourbemelange from "./components/Tourbemelange";
-
-
+import Tourbesemis from "./components/Tourbe/Tourbesemis";
+import Tourberempotage from "./components/Tourbe/Tourberempotage";
+import Tourbefruitsrouge from "./components/Tourbe/Tourbefruitsrouge";
+import Tourbemelange from "./components/Tourbe/Tourbemelange";
+import Tourbecoco from "./components/Tourbe/Tourbecoco";
+import Engrais from "./components/engrai/Engrais";     
+import Engraisoluble from "./components/engrai/Engraisoluble";
 
 function App() {
   return (
@@ -39,6 +40,10 @@ function App() {
         <Route path="/tourberempotage" element={<Tourberempotage/>} />
         <Route path="/tourbefruitsrouge" element={<Tourbefruitsrouge/>} />
         <Route path="/tourbemelange" element={<Tourbemelange/>} />
+        <Route path="/tourbecoco" element={<Tourbecoco/>} />
+        
+        <Route path="/engrai" element={<Engrais/>} />
+        <Route path="/engraisoluble" element={<Engraisoluble/>} />
       </Routes>
       <Footer />
    

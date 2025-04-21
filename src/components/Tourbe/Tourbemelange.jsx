@@ -1,8 +1,7 @@
-"use client"
 
 import { useState, useEffect } from "react"
 import { Search, Filter, Info } from "lucide-react"
-import "../style/tourbemelange.css"
+import "../../style/tourbemelange.css"
 
 export default function Tourbemelange() {
   const [activeFilter, setActiveFilter] = useState("all")
@@ -13,7 +12,7 @@ export default function Tourbemelange() {
     {
       id: 1,
       name: "TOURBE STECKMEDIUM 686 210L",
-      image: "/imadedetourbe/steckmedium-686.png",
+      image: "/imadedetourbe/imagemelange/steckmedium-686.png",
       packaging: "210L",
       color: "green",
       features: ["Idéal pour bouturage", "Structure fine", "Drainage optimal"],
@@ -22,7 +21,7 @@ export default function Tourbemelange() {
     {
       id: 2,
       name: "TOURBE TS1 623 PERLITE 210L",
-      image: "/imadedetourbe/ts1-623.png",
+      image: "/imadedetourbe/imagemelange/ts1-623.png",
       packaging: "210L / 6M3",
       color: "green",
       features: ["Enrichi en perlite", "Aération améliorée", "Pour mélanges professionnels"],

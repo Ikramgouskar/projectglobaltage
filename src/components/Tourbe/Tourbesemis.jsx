@@ -1,5 +1,5 @@
-import { Search, Filter, Info } from 'lucide-react'
-import "../style/tourbesemis.css"
+import { Search, Filter } from 'lucide-react'
+import "../../style/tourbesemis.css"
 
 export default function Tourbesemis() {
   
@@ -106,7 +106,7 @@ export default function Tourbesemis() {
                   Ajouter 
                 </button>
                 <button className="info-button">
-                  <Info size={18} />
+                 
                 </button>
               </div>
             </div>

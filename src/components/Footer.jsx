@@ -1,6 +1,6 @@
 
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin, Send, ArrowUp } from 'lucide-react'
 import "../style/footer.css"
 

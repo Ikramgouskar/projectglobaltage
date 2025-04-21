@@ -1,8 +1,7 @@
-"use client"
 
 import { useState } from "react"
 import { Search, Filter} from "lucide-react"
-import "../style/tourbefruitrouge.css"
+import "../../style/tourbefruitrouge.css"
 
 export default function TourbeFruitRouge() {
   const [hoveredProduct, setHoveredProduct] = useState(null)
@@ -12,7 +11,7 @@ export default function TourbeFruitRouge() {
     {
       id: 1,
       name: "TOURBE 977 MYRTILLE 30% PERLITE 210L",
-      image: "/imadedetourbe/977-myrtille.png",
+      image: "/imadedetourbe/image fruit rouge/977myrtille .png",
       packaging: "210L / 6M3",
       color: "red",
       features: ["Idéal pour myrtilles", "30% perlite", "Drainage optimal"],
@@ -21,7 +20,7 @@ export default function TourbeFruitRouge() {
     {
       id: 2,
       name: "TOURBE 979 MYRTILLE 20% PERLITE 210L",
-      image: "/imadedetourbe/979-myrtille.png",
+      image: "/imadedetourbe/image fruit rouge/977myrtille .png",
       packaging: "210L / 6M3",
       color: "red",
       features: ["Spécial myrtilles", "20% perlite", "Équilibre air-eau optimal"],
@@ -30,7 +29,7 @@ export default function TourbeFruitRouge() {
     {
       id: 3,
       name: "TOURBE TS4 U55 MYRTILLES GF/PERLITE 210L",
-      image: "/imadedetourbe/ts4-u55.png",
+      image: "/imadedetourbe/image fruit rouge/977myrtille .png",
       packaging: "210L / 6.5M3",
       color: "red",
       features: ["Base GRENNFIBRE", "Pour myrtilles", "Structure aérée"],
@@ -39,7 +38,7 @@ export default function TourbeFruitRouge() {
     {
       id: 4,
       name: "TOURBE BLONDE 932 210L",
-      image: "/imadedetourbe/blonde-932.png",
+      image: "/imadedetourbe/image fruit rouge/blonde932.png",
       packaging: "210L / 6M3",
       color: "yellow",
       features: ["Structure fine", "pH acide", "Pour petits fruits"],
@@ -48,7 +47,7 @@ export default function TourbeFruitRouge() {
     {
       id: 5,
       name: "TOURBE BLONDE ACIDE 2UB (30%GREENFIBRE)",
-      image: "/imadedetourbe/blonde-acide.png",
+      image: "/imadedetourbe/image fruit rouge/blondeAcide2ub.png",
       packaging: "210L / 6M3",
       color: "green",
       features: ["30% GREENFIBRE", "pH très acide", "Idéal pour fruits rouges"],
@@ -57,7 +56,7 @@ export default function TourbeFruitRouge() {
     {
       id: 6,
       name: "TOURBE TS1 S99 784+30%COCO 210L",
-      image: "/imadedetourbe/ts1-s99.png",
+      image: "/imadedetourbe/image fruit rouge/blondeAcide2ub.png",
       packaging: "210L",
       color: "green",
       features: ["30% fibres de coco", "Rétention d'eau améliorée", "Pour fruits rouges exigeants"],

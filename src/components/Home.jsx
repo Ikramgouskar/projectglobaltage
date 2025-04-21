@@ -183,7 +183,11 @@ export default function Home() {
                   }}
                 />
               </div>
+
+
+              <Link to="/engrai" class="logo-link">
               <h3 class="category-title">Engrais</h3>
+              </Link>
             </div>
 
             <div class="category-item">
