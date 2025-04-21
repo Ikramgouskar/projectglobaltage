@@ -18,6 +18,7 @@ import Tourbemelange from "./components/Tourbe/Tourbemelange";
 import Tourbecoco from "./components/Tourbe/Tourbecoco";
 import Engrais from "./components/engrai/Engrais";     
 import Engraisoluble from "./components/engrai/Engraisoluble";
+import NPKSOLUBLES from "./components/engrai/Npksolubles";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         
         <Route path="/engrai" element={<Engrais/>} />
         <Route path="/engraisoluble" element={<Engraisoluble/>} />
+        <Route path="/npksoluble" element={<NPKSOLUBLES/>} />
       </Routes>
       <Footer />
    

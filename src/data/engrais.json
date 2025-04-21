@@ -73,39 +73,46 @@
         
       },
       {
-        "category": "NPK SOLUBLES",
+        "category": "NPKSOLUBLES",
         "product_count": 6,
         "link": "/npksoluble",
         "products": [
-      {
+          {
             "id": 1,
             "nom": "NITRATE DE MAGNESIE",
             "image": "/imagedengrais/imgsoluble/soluamspremium.png",
             "description": "25KG"
+          },
+          {
+            "id": 2,
+            "nom": "NITRATE DE MAGNESIE",
+            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "description": "25KG"
+          },
+          {
+            "id": 3,
+            "nom": "NITRATE DE MAGNESIE",
+            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "description": "25KG"
+          },
+          {
+            "id": 4,
+            "nom": "NITRATE DE MAGNESIE",
+            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "description": "25KG"
+          },
+          {
+            "id": 5,
+            "nom": "NITRATE DE MAGNESIE",
+            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "description": "25KG"
+          },
+          {
+            "id": 6,
+            "nom": "NITRATE DE MAGNESIE",
+            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "description": "25KG"
           }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
         ]
         
       },
