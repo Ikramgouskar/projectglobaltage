@@ -1,18 +1,19 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { PlusCircle, Info, BarChart3 } from "lucide-react"
+import productsData from "../../data/semences.json"
+
 import "../style/npk.css"
 
 export default function Npkoluble() {
   
-    const [npk, set] = useState([])
+    const [npk, setNpk] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     useEffect(() => {
       try {
-        const pastequeCategory = productsData.products.find((product) => product.category === "PASTEQUES")
-        setPasteques(pastequeCategory?.products || [])
+        const npkCategory = productsData.products.find((product) => product.category === "NPK SOLUBLES")
+        setNpk(npkCategory?.products || [])
         setLoading(false)
       } catch (error) {
         console.error("Error loading pasteques:", error)
