@@ -19,6 +19,15 @@ import Tourbecoco from "./components/Tourbe/Tourbecoco";
 import Engrais from "./components/engrai/Engrais";     
 import Engraisoluble from "./components/engrai/Engraisoluble";
 import Npksolubles from "./components/engrai/Npksolubles";
+import Granules from "./components/engrai/Granules";
+import Filets from "./components/filetsagricoles/filets";
+import Filetantithrips from "./components/filetsagricoles/filetantithrips";
+import Filettisseombrage from "./components/filetsagricoles/filettisseombrage";
+import Filettessgrele from "./components/filetsagricoles/filettssegrele";
+import Biostimulants from "./components/boitstimulant/boitstimulant";
+import Boitsti from "./components/boitstimulant/boitsti";
+import OligoElementns from "./components/boitstimulant/oligoelements";
+import Acidesamine from "./components/boitstimulant/acidesamine";
 
 function App() {
   return (
@@ -43,10 +52,23 @@ function App() {
         <Route path="/tourbemelange" element={<Tourbemelange/>} />
         <Route path="/tourbecoco" element={<Tourbecoco/>} />
         
+        
         <Route path="/engrai" element={<Engrais/>} />
         <Route path="/engraisoluble" element={<Engraisoluble/>} />
         <Route path="/npksoluble" element={<Npksolubles/>} />
+        <Route path="/granules" element={<Granules/>} />
 
+
+        <Route path="/filets" element={<Filets/>} />
+        <Route path="/filetanatith" element={<Filetantithrips/>} />
+        <Route path="/filettisseombrage" element={<Filettisseombrage/>} />
+        <Route path="/flitetisse" element={<Filettessgrele/>} />
+
+
+        <Route path="/boitstimulant" element={<Biostimulants/>} />
+        <Route path="/biotsti" element={<Boitsti/>} />
+        <Route path="/oligoelemts" element={<OligoElementns/>} />
+        <Route path="/acidesamines" element={<Acidesamine/>} />
 
       </Routes>
       <Footer />

@@ -1,0 +1,78 @@
+{
+    "products": [
+      {
+        "category": "BIOSTIMULANT",
+        "product_count": 2,
+        "link": "/biotsti",
+        "products": [
+          {
+                "id": 1,
+                "image": "/imagedengrain/imgsoluble/nitratedepota.png",
+                "nom": "NOV",
+                "description": "Emballage : 1L - 5L - 20L   Bio-promoteur de la croissance des plantes"
+              },
+              {
+                "id": 2,
+                "image": "/imagedengrain/imgsoluble/sulfatepota.png",
+                "nom": "FOLICIST",
+                "description": "Emballage : 1L - 5L - 20L Biostimulant de la floraison et de la nouaison"
+              },
+              {
+                "id": 3,
+                "image": "/imagedengrain/imgsoluble/sulfatepota.png",
+                "nom": "GLOBALGA",
+                "description": "Emballage : 1L - 5L - 20LBio-stimulant"
+              }
+   
+        ]
+        
+      },
+      {
+        "category": "OLIGO-ELEMENTS",
+        "product_count": 6,
+        "link": "/oligoelemts",
+        "products": [
+          {
+            "id": 1,
+            "nom": "MIXOKEM",
+            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "description": "Emballage : 1KG - 10KG - 25KG"
+          }
+          ,
+          {
+            "id": 2,
+            "nom": "AGRUMAX",
+            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "description": "Emballage : 10KG"
+          },
+          {
+            "id": 3,
+            "nom": "EURO FER EDDHA 6% – 4.8% o-o",
+            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "description": "Emballage : 1KG - 5KG - 20KG"
+          }
+        ]
+        
+      },
+      {
+        "category": "ACIDES AMINES",
+        "product_count": 4,
+        "link": "/acidesamines",
+        "products": [
+          {
+            "id": 1,
+            "nom": "ISABION",
+            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "description": "Emballage : 1L - 5L - 20L"
+          },
+          {
+            "id": 2,
+            "nom": "VITAPHOS R",
+            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "description": "Emballage : 1L - 5L - 20L"
+          }
+
+        ]
+      }
+    ]       
+  }

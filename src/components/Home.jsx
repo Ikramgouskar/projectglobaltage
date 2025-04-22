@@ -202,7 +202,8 @@ export default function Home() {
                   }}
                 />
               </div>
-              <h3 class="category-title">Filets agricoles</h3>
+              <Link to="/filets"class="logo-link">Filets agricoles</Link>
+           
             </div>
 
             <div class="category-item">
@@ -217,7 +218,7 @@ export default function Home() {
                   }}
                 />
               </div>
-              <h3 class="category-title">Biostimulants & Oligo-éléments</h3>
+              <Link to="/boitstimulant"class="logo-link">Biostimulants & Oligo-éléments </Link>
             </div>
 
             <div class="category-item">
