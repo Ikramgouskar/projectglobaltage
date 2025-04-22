@@ -1,0 +1,78 @@
+{
+    "products": [
+      {
+        "category": "FILETANTITHRIPS",
+        "product_count": 2,
+        "link": "/filetanatith",
+        "products": [
+          {
+                "id": 1,
+                "image": "/imagedengrain/imgsoluble/nitratedepota.png",
+                "nom": "FILET ANTIINSECTES CRYSTAL 22X10",
+                "description": "Emballage : 25KG"
+              },
+              {
+                "id": 2,
+                "image": "/imagedengrain/imgsoluble/sulfatepota.png",
+                "nom": "FILET ANTIINSECTES GRIS 22X10",
+                "description": "Emballage : 25KG"
+              }
+   
+        ]
+        
+      },
+      {
+        "category": "FILET TISSE ANTI GRÊLE",
+        "product_count": 6,
+        "link": "/flitetisse",
+        "products": [
+          {
+            "id": 1,
+            "nom": "FILET ANTI GRELE",
+            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "description": "2.5X3 GRIS"
+          }
+          ,
+          {
+            "id": 2,
+            "nom": "FILET ANTI GRELE",
+            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "description": "2.5X3 CRYSTAL"
+          },
+          {
+            "id": 3,
+            "nom": "FILET ANTI GRELE",
+            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "description": "2.5X3 NOIR"
+          }
+        ]
+        
+      },
+      {
+        "category": "FILET TISSE OMBRAGE",
+        "product_count": 4,
+        "link": "/filettisseombrage",
+        "products": [
+          {
+            "id": 1,
+            "nom": "FILET OMBRAGE 50%",
+            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "description": "ARGENTE"
+          },
+          {
+            "id": 2,
+            "nom": "FILET OMBRAGE 50%",
+            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "description": "OMBRAGE 90%"
+          },
+          {
+            "id": 3,
+            "nom": "FILET OMBRAGE 50%",
+            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "description": "NOIR"
+          }
+
+        ]
+      }
+    ]       
+  }
