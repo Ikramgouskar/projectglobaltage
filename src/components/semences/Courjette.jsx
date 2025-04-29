@@ -1,6 +1,6 @@
 
 import { useState, useEffect} from "react"
-import productsData from "../../data/semences.json"
+
 import "../../style/corgette.css"
 import axios from "axios"
 export default function Courjette() {
@@ -32,15 +32,18 @@ export default function Courjette() {
 
 
   useEffect(() => {
-    try {
-      const corgetteCategory = productsData.products.find((product) => product.category === "COURGETTES")
-      setCorgettes(corgetteCategory?.products || [])
-      setLoading(false)
-    } catch (error) {
-      console.error("Error loading corgettes:", error)
-      setError("Impossible de charger les données. Veuillez réessayer plus tard.")
-      setLoading(false)
+    const fetchCorgettes = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/products?category=COURGETTES")
+        setCorgettes(response.data)
+        setLoading(false)
+      } catch (error) {
+        setError(error.message)
+        setLoading(false)
+      }
     }
+
+    fetchCorgettes()
   }, [])
 
 
@@ -70,11 +73,19 @@ export default function Courjette() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post("http://localhost:8080/products/9fb9", newCorgette)
-      setCorgettes([...corgettes, newCorgette])
+      const response = await axios.post("http://localhost:8080/products", {
+        ...newCorgette,
+        category: "COURGETTES",
+      })
+      setCorgettes((prev) => [...prev, response.data])
+      setnewCorgette({
+        image: "",
+        nom: "",
+        description: "",
+      })
       closeAddModal()
     } catch (error) {
-      console.error("Error adding Corgette:", error)
+      console.error("Error adding corgette:", error)
     }
   }
 

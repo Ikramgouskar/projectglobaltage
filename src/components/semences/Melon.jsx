@@ -25,15 +25,18 @@ export default function Melon() {
 
 
   useEffect(() => {
-    try {
-      const melonCategory = productsData.products.find((product) => product.category === "MELONS")
-      setMelons(melonCategory?.products || [])
-      setLoading(false)
-    } catch (error) {
-      console.error("Error loading melons:", error)
-      setError("Impossible de charger les données. Veuillez réessayer plus tard.")
-      setLoading(false)
+    const fetchMelons = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/products?category=MELONS")
+        setMelons(response.data)
+        setLoading(false)
+      } catch (error) {
+        setError(error.message)
+        setLoading(false)
+      }
     }
+
+    fetchMelons()
   }, [])
 
 

@@ -18,15 +18,18 @@ export default function Pasteques() {
 
 
   useEffect(() => {
-    try {
-      const pastequeCategory = productsData.products.find((product) => product.category === "PASTEQUES")
-      setPasteques(pastequeCategory?.products || [])
-      setLoading(false)
-    } catch (error) {
-      console.error("Error loading pasteques:", error)
-      setError("Impossible de charger les données. Veuillez réessayer plus tard.")
-      setLoading(false)
+    const fetchPasteques = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/products?category=PASTEQUES")
+        setPasteques(response.data)
+        setLoading(false)
+      } catch (error) {
+        setError(error.message)
+        setLoading(false)
+      }
     }
+
+    fetchPasteques()
   }, [])
 
 

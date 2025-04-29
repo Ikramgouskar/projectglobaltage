@@ -12,15 +12,18 @@ export default function Tomato() {
 
 
   useEffect(() => {
-    try {
-      const tomatoCategory = productsData.products.find((product) => product.category === "TOMATES")
-      setTomates(tomatoCategory?.products || [])
-      setLoading(false)
-    } catch (error) {
-      console.error("Error loading tomatoes:", error)
-      setError("Impossible de charger les données. Veuillez réessayer plus tard.")
-      setLoading(false)
+    const fetchTomates = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/products?category=TOMATES")
+        setTomates(response.data)
+        setLoading(false)
+      } catch (error) {
+        setError(error.message)
+        setLoading(false)
+      }
     }
+
+    fetchTomates()
   }, []);
 
 

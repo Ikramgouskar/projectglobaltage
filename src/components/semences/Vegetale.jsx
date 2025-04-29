@@ -20,7 +20,7 @@ export default function Vegetale() {
   }, [stateuser]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/products")
+    fetch("http://localhost:8080/categories")
       .then((response) => {
         
         return response.json();
@@ -43,7 +43,7 @@ export default function Vegetale() {
   const deleteVEGETABLE = (id) => {
     if (window.confirm("Voulez-vous vraiment supprimer cette VEGETABLE ?")) {
       axios
-        .delete(`http://localhost:8080/products/${id}`)
+        .delete(`http://localhost:8080/categories/${id}`)
         .then(() => {
           setCategories((prev) => prev.filter((category) => category.id !== id))
         })
@@ -75,17 +75,17 @@ export default function Vegetale() {
 
         <div className="product-grid">
           {categories.map((category) => (
-            <div className="product-card" key={category.category}>
+            <div className="product-card" key={category.id}>
               <div className="product-icon-container">
                 <div className="icon-background"></div>
               </div>
               <div className="product-info">
                 <Link to={`${category.link}`}>
-                  <h1 className="product-name">{category.category}</h1>
+                  <h1 className="product-name">{category.name}</h1>
                 </Link>
-                <div className="product-count">
+                {/* <div className="product-count">
                   <span className="count">{category.product_count}</span> Products
-                </div>
+                </div> */}
               </div>
               {stateuser ? (
               <button
