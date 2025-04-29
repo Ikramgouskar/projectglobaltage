@@ -29,46 +29,84 @@ import Boitsti from "./components/boitstimulant/boitsti";
 import OligoElementns from "./components/boitstimulant/oligoelements";
 import Acidesamine from "./components/boitstimulant/acidesamine";
 
+
+
+
+import { useState, useEffect } from "react";
+import { Navigate } from "react-router-dom";
+import Login from "./components/login";
+
 function App() {
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+
+
+  useEffect(() => {
+    const token = localStorage.getItem("token")
+    if (token) {
+      setIsAuthenticated(true)
+    }
+  }, [])
+
+  const ProtectedRoute = ({ children }) => {
+    if (!isAuthenticated) {
+      return <Navigate to="/" replace />
+    }
+    return children
+  }
+
+
+
+
+
   return (
    
 <BrowserRouter>
-      <Header />
+      <Header
+      isAuthenticated={isAuthenticated}
+      setIsAuthenticated={setIsAuthenticated}
       
-      <Routes>
-        <Route path="/"element={<Home />}/>
-        <Route path="/produit" element={<Vegetale />} />
-        <Route path="/tomate" element={<Tomato />} />
-        <Route path="/corgette" element={<Courgette />} />
-        <Route path="/poiverent" element={<Poiverent />} />
-        <Route path="/pasteque" element={<Pasteque />} />
-        <Route path="/melon" element={<Melon />} /> 
+      
+ />
+      
+      <Routes >
+        <Route path="/"element={ <Home /> }/>
+        <Route path="/produit" element={   <ProtectedRoute><Vegetale /></ProtectedRoute>} />
+        <Route path="/tomate" element={ <ProtectedRoute><Tomato /></ProtectedRoute>} />
+        <Route path="/corgette" element={<ProtectedRoute><Courgette /></ProtectedRoute>} />
+        <Route path="/poiverent" element={<ProtectedRoute><Poiverent /></ProtectedRoute>} />
+        <Route path="/pasteque" element={<ProtectedRoute><Pasteque /></ProtectedRoute>} />
+        <Route path="/melon" element={<ProtectedRoute><Melon /></ProtectedRoute>} /> 
         <Route path="/about" element={<About />} /> 
         <Route path="/contact" element={<Contact />} /> 
-        <Route path="/tourb" element={<Tourbe/>} />
-        <Route path="/tourbsemis" element={<Tourbesemis/>} />
-        <Route path="/tourberempotage" element={<Tourberempotage/>} />
-        <Route path="/tourbefruitsrouge" element={<Tourbefruitsrouge/>} />
-        <Route path="/tourbemelange" element={<Tourbemelange/>} />
-        <Route path="/tourbecoco" element={<Tourbecoco/>} />
+        <Route path="/tourb" element={<ProtectedRoute><Tourbe/></ProtectedRoute>} />
+        <Route path="/tourbsemis" element={ <ProtectedRoute><Tourbesemis/></ProtectedRoute>} />
+        <Route path="/tourberempotage" element={<ProtectedRoute><Tourberempotage/></ProtectedRoute>} />
+        <Route path="/tourbefruitsrouge" element={<ProtectedRoute><Tourbefruitsrouge/></ProtectedRoute>} />
+        <Route path="/tourbemelange" element={<ProtectedRoute><Tourbemelange/></ProtectedRoute>} />
+        <Route path="/tourbecoco" element={<ProtectedRoute><Tourbecoco/></ProtectedRoute>} />
+        <Route
+            path="/login"
+            element={<Login setIsAuthenticated={setIsAuthenticated} />}
+          />
+
         
-        
-        <Route path="/engrai" element={<Engrais/>} />
-        <Route path="/engraisoluble" element={<Engraisoluble/>} />
-        <Route path="/npksoluble" element={<Npksolubles/>} />
-        <Route path="/granules" element={<Granules/>} />
+        <Route path="/engrai" element={ <ProtectedRoute><Engrais/></ProtectedRoute>} />
+        <Route path="/engraisoluble" element={<ProtectedRoute><Engraisoluble/></ProtectedRoute>} />
+        <Route path="/npksoluble" element={<ProtectedRoute><Npksolubles/></ProtectedRoute>} />
+        <Route path="/granules" element={<ProtectedRoute><Granules/></ProtectedRoute>} />
 
 
-        <Route path="/filets" element={<Filets/>} />
-        <Route path="/filetanatith" element={<Filetantithrips/>} />
-        <Route path="/filettisseombrage" element={<Filettisseombrage/>} />
-        <Route path="/flitetisse" element={<Filettessgrele/>} />
+        <Route path="/filets" element={<ProtectedRoute><Filets/></ProtectedRoute>} />
+        <Route path="/filetanatith" element={<ProtectedRoute><Filetantithrips/></ProtectedRoute>} />
+        <Route path="/filettisseombrage" element={<ProtectedRoute><Filettisseombrage/></ProtectedRoute>} />
+        <Route path="/flitetisse" element={<ProtectedRoute><Filettessgrele/></ProtectedRoute>} />
 
 
-        <Route path="/boitstimulant" element={<Biostimulants/>} />
-        <Route path="/biotsti" element={<Boitsti/>} />
-        <Route path="/oligoelemts" element={<OligoElementns/>} />
-        <Route path="/acidesamines" element={<Acidesamine/>} />
+        <Route path="/boitstimulant" element={<ProtectedRoute><Biostimulants/></ProtectedRoute>} />
+        <Route path="/biotsti" element={<ProtectedRoute><Boitsti/></ProtectedRoute>} />
+        <Route path="/oligoelemts" element={<ProtectedRoute><OligoElementns/></ProtectedRoute>} />
+        <Route path="/acidesamines" element={<ProtectedRoute><Acidesamine/></ProtectedRoute>} />
 
       </Routes>
       <Footer />

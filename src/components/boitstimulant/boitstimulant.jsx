@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 import "../../style/engrai.css"
 import { Link } from "react-router-dom";
-
+import axios from "axios"
 import { ArrowRight } from "lucide-react"
 
 
@@ -10,6 +10,17 @@ export default function Biostimulants() {
   const [categories, setCategories] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [stateuser, setStateuser] = useState(null);
+
+
+  useEffect(() => {
+    const userlogin = localStorage.getItem("userlogin");
+    if (userlogin) {
+      setStateuser(userlogin);
+    }
+  }, [stateuser]);
+
+
 
     useEffect(() => {
         fetch("http://localhost:8002/products")
@@ -31,6 +42,17 @@ export default function Biostimulants() {
       if (error) return <div className="error">Error: {error.message}</div>;
     
 
+  
+      const deleteENGRAI = (id) => {
+        if (window.confirm("Voulez-vous vraiment supprimer cette VEGETABLE ?")) {
+          axios
+            .delete(`http://localhost:8002/products/${id}`)
+            .then(() => {
+              setCategories((prev) => prev.filter((category) => category.id !== id))
+            })
+            .catch((err) => console.log(err))
+        }
+      }
   
 
 
@@ -65,7 +87,7 @@ export default function Biostimulants() {
 
   return (
     <div className="engrais-container">
-      <h1 className="engrais-title">BOITSTIMULANT</h1>
+      <h1 className="engrais-title">OLIGO-ELEMENTS & BIOSTIMULANTS</h1>
 
       {loading ? (
         <div className="engrais-loading">Chargement des catégories...</div>
@@ -89,6 +111,32 @@ export default function Biostimulants() {
                 </button>
                 </Link>
               </div>
+
+
+              {stateuser ? (
+              
+              <button
+                  style={{
+                    
+                  width:"300px",
+                    height: "30px",
+                  margin: "2rem",
+                   
+                    borderRadius: "0.5rem",
+                    backgroundColor: "rgb(220, 38, 38)",
+                    color: "#FFFFFF",
+                    border: "none",
+                   
+                    cursor: "pointer",
+                    transition: "background-color 0.2s",
+                  }}
+                  onMouseEnter={(ev) => (ev.currentTarget.style.backgroundColor = "#B91C1C")}
+                  onMouseLeave={(ev) => (ev.currentTarget.style.backgroundColor = "#DC2626")}
+                  onClick={() => deleteENGRAI(category.id)}
+                >
+                  Delete
+                </button>
+                  ):""}
             </div>
           ))}
         </div>

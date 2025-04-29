@@ -2,73 +2,131 @@
     "products": [
       {
         "category": "BIOSTIMULANT",
-        "product_count": 2,
+        "product_count": 7,
         "link": "/biotsti",
         "products": [
           {
                 "id": 1,
-                "image": "/imagedengrain/imgsoluble/nitratedepota.png",
+                "image": "/biostimulants/Biostimulant/nov@.png",
                 "nom": "NOV",
                 "description": "Emballage : 1L - 5L - 20L   Bio-promoteur de la croissance des plantes"
               },
               {
                 "id": 2,
-                "image": "/imagedengrain/imgsoluble/sulfatepota.png",
+                "image": "/biostimulants/Biostimulant/folicist.png",
                 "nom": "FOLICIST",
                 "description": "Emballage : 1L - 5L - 20L Biostimulant de la floraison et de la nouaison"
               },
               {
                 "id": 3,
-                "image": "/imagedengrain/imgsoluble/sulfatepota.png",
+                "image": "/biostimulants/Biostimulant/globalga.png",
                 "nom": "GLOBALGA",
-                "description": "Emballage : 1L - 5L - 20LBio-stimulant"
+                "description": "Emballage : 1L - 5L - 20L Bio-stimulant"
+              },
+              {
+                "id": 4,
+                "image": "/biostimulants/Biostimulant/sunred.png",
+                "nom": "SUNRED",
+                "description": "Emballage : 1L - 5L - 20L Bio-promoteur de la coloration de fruit "
+              },
+              {
+                "id": 5,
+                "image": "/biostimulants/Biostimulant/foliastim pure algue.png",
+                "nom": "FOLIASTIM PURE ALGUE",
+                "description": "Emballage : 1L - 5L - 20LExtrait d'algue 100% ascophyllum nodosum"
+              },
+              {
+                "id": 6,
+                "image": "/biostimulants/Biostimulant/foliastim calcium.png",
+                "nom": "FOLIASTIM CALCIUM",
+                "description": "Emballage : 1L - 5L - 20L"
+              },
+              {
+                "id": 7,
+                "image": "/biostimulants/Biostimulant/foliatim  B MO .png",
+                "nom": "FOLIASTIM B MO",
+                "description": "Emballage : 1L - 5L - 20L"
               }
+   
+   
+   
+   
    
         ]
         
       },
       {
         "category": "OLIGO-ELEMENTS",
-        "product_count": 6,
+        "product_count": 8,
         "link": "/oligoelemts",
         "products": [
           {
             "id": 1,
             "nom": "MIXOKEM",
-            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "image": "/biostimulants/oligo-element/MIXOKEN.png",
             "description": "Emballage : 1KG - 10KG - 25KG"
           }
           ,
           {
             "id": 2,
             "nom": "AGRUMAX",
-            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "image": "/biostimulants/oligo-element/AGRUMAX.png",
             "description": "Emballage : 10KG"
           },
           {
             "id": 3,
             "nom": "EURO FER EDDHA 6% – 4.8% o-o",
-            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "image": "/biostimulants/oligo-element/3.png",
             "description": "Emballage : 1KG - 5KG - 20KG"
+          },
+          {
+            "id": 4,
+            "nom": "TRIFER Fe EDDHA 6% – 4.8% o-o",
+            "image": "/biostimulants/oligo-element/4.png",
+            "description": "Emballage : 1KG - 5KG - 20KG"
+          },
+          {
+            "id": 5,
+            "nom": "OLIGO BORE 150 LIQUIDE",
+            "image": "/biostimulants/oligo-element/OLIGO BORE 150 .png",
+            "description": "Emballage : 1L - 5L - 10L"
+          },
+          {
+            "id": 6,
+            "nom": "MICROBOR 17%",
+            "image": "/biostimulants/oligo-element/6.png",
+            "description": "Emballage : 10KG"
+          },
+          {
+            "id": 7,
+            "nom": "NUTRIGEMMA BZN",
+            "image": "/biostimulants/oligo-element/7.png",
+            "description": "Emballage : 1L - 5L - 20L"
+          },
+          {
+            "id": 8,
+            "nom": "VITACROP MANZIN",
+            "image": "/biostimulants/oligo-element/VITACROP MANZIN.png",
+            "description": "Emballage : 1L - 5L - 20L"
           }
         ]
         
       },
       {
         "category": "ACIDES AMINES",
-        "product_count": 4,
+        "product_count": 2,
         "link": "/acidesamines",
         "products": [
           {
             "id": 1,
             "nom": "ISABION",
-            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "image": "/biostimulants/ACIDE AMINE/ISABION.png",
             "description": "Emballage : 1L - 5L - 20L"
           },
           {
             "id": 2,
             "nom": "VITAPHOS R",
-            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "image": "/biostimulants/ACIDE AMINE/VITAPOHOS.png",
             "description": "Emballage : 1L - 5L - 20L"
           }
 

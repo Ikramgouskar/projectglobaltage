@@ -1,12 +1,29 @@
 
 import { useEffect, useState } from "react"
 import productsData from "../../data/filtsagr.json"
+import axios from "axios"
 import "../../style/engraissoluble.css"
 
 export default function Filetantithrips() {
   const [filetther, setFiletther] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [stateuser, setStateuser] = useState(null);
+
+
+
+  useEffect(() => {
+    const userlogin = localStorage.getItem("userlogin");
+    if (userlogin) {
+      setStateuser(userlogin);
+    }
+  }, [stateuser]);
+
+
+
+
+
+
 
   useEffect(() => {
     try {
@@ -20,10 +37,30 @@ export default function Filetantithrips() {
     }
   }, [])
 
+
+
+
+
+
+
+  
+
+  const deletegranules = (id) => {
+    if (window.confirm("Voulez-vous vraiment supprimer cette VEGETABLE ?")) {
+      axios
+        .delete(`http://localhost:8001/products/${id}`)
+        .then(() => {
+          setFiletther((prev) => prev.filter((tomate) => tomate.id !== id))
+        })
+        .catch((err) => console.log(err))
+    }
+  }
+
+
   return (
     <div className="engrais-container">
       <div className="engrais-header">
-        <h2 className="engrais-title">Engrais soluble</h2>
+        <h2 className="engrais-title">FILET ANTI-THRIPS</h2>
         <div className="engrais-icon">
          
         </div>
@@ -41,7 +78,10 @@ export default function Filetantithrips() {
                 <th>PRODUIT</th>
                 <th>NOM</th>
                 <th>DESCRIPTION</th>
-                <th>ACTION</th>
+              
+                <th>panier</th>
+                 {stateuser ? ( <th>Action</th>
+):""}
               </tr>
             </thead>
             <tbody>
@@ -66,6 +106,32 @@ export default function Filetantithrips() {
                     <td>
                       <button className="engrais-button">Ajouter</button>
                     </td>
+                    {stateuser ? (
+                    <td><button
+                  style={{
+                    
+                    width:"100px",
+                      height: "30px",
+                    margin: "2rem",
+                     
+                      borderRadius: "0.5rem",
+                      backgroundColor: "rgb(145, 41, 41)",
+                      color: "#FFFFFF",
+                      border: "none",
+                     
+                      cursor: "pointer",
+                      transition: "background-color 0.2s",
+                    }}
+                  onMouseEnter={(ev) => (ev.currentTarget.style.backgroundColor = "#B91C1C")}
+                  onMouseLeave={(ev) => (ev.currentTarget.style.backgroundColor = "#DC2626")}
+                  onClick={() => deletegranules(tomate.id)}
+                >
+                  Delete
+                </button></td>
+):""}
+
+
+
                   </tr>
                 ))
               ) : (

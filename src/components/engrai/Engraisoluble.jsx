@@ -2,11 +2,26 @@
 import { useEffect, useState } from "react"
 import productsData from "../../data/engrais.json"
 import "../../style/engraissoluble.css"
+import axios from "axios"
 
 export default function Engraisoluble() {
   const [engraisoluble, setEngraisobule] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [stateuser, setStateuser] = useState(null);
+
+
+
+  useEffect(() => {
+    const userlogin = localStorage.getItem("userlogin");
+    if (userlogin) {
+      setStateuser(userlogin);
+    }
+  }, [stateuser]);
+
+
+
+
 
   useEffect(() => {
     try {
@@ -19,6 +34,26 @@ export default function Engraisoluble() {
       setLoading(false)
     }
   }, [])
+
+
+
+
+
+
+  const deleteENGRAI = (id) => {
+    if (window.confirm("Voulez-vous vraiment supprimer cette VEGETABLE ?")) {
+      axios
+        .delete(`http://localhost:8000/products/${id}`)
+        .then(() => {
+          setEngraisobule((prev) => prev.filter((tomate) => tomate.id !== id))
+        })
+        .catch((err) => console.log(err))
+    }
+  }
+
+
+
+
 
   return (
     <div className="engrais-container">
@@ -41,8 +76,12 @@ export default function Engraisoluble() {
                 <th>PRODUIT</th>
                 <th>NOM</th>
                 <th>DESCRIPTION</th>
-                <th>ACTION</th>
-              </tr>
+                <th>panier</th>
+                {stateuser ? (
+
+                <th>Action</th> 
+              ):""}
+             </tr>
             </thead>
             <tbody>
               {engraisoluble.length > 0 ? (
@@ -66,6 +105,36 @@ export default function Engraisoluble() {
                     <td>
                       <button className="engrais-button">Ajouter</button>
                     </td>
+
+
+                    {stateuser ? (
+
+                    <td><button
+                  style={{
+                    
+                    width:"100px",
+                      height: "30px",
+                    margin: "2rem",
+                     
+                      borderRadius: "0.5rem",
+                      backgroundColor: "rgb(145, 41, 41)",
+                      color: "#FFFFFF",
+                      border: "none",
+                     
+                      cursor: "pointer",
+                      transition: "background-color 0.2s",
+                    }}
+                  onMouseEnter={(ev) => (ev.currentTarget.style.backgroundColor = "#B91C1C")}
+                  onMouseLeave={(ev) => (ev.currentTarget.style.backgroundColor = "#DC2626")}
+                  onClick={() => deleteENGRAI(tomate.id)}
+                >
+                  Delete
+                </button></td>
+
+):""}
+
+
+
                   </tr>
                 ))
               ) : (

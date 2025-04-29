@@ -7,15 +7,15 @@
         "products": [
           {
                 "id": 1,
-                "image": "/imagedengrain/imgsoluble/nitratedepota.png",
+                "image": "/imagedefilet/img anti/filet antiinecte.png",
                 "nom": "FILET ANTIINSECTES CRYSTAL 22X10",
-                "description": "Emballage : 25KG"
+                "description": "Emballage : "
               },
               {
                 "id": 2,
-                "image": "/imagedengrain/imgsoluble/sulfatepota.png",
+                "image": "/imagedefilet/img anti/filet antiinsecte.png",
                 "nom": "FILET ANTIINSECTES GRIS 22X10",
-                "description": "Emballage : 25KG"
+                "description": "Emballage : "
               }
    
         ]
@@ -29,20 +29,20 @@
           {
             "id": 1,
             "nom": "FILET ANTI GRELE",
-            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "image": "/imagedefilet/filet tie anti/anti grele.png",
             "description": "2.5X3 GRIS"
           }
           ,
           {
             "id": 2,
             "nom": "FILET ANTI GRELE",
-            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "image": "/imagedefilet/filet tie anti/anti grele.png",
             "description": "2.5X3 CRYSTAL"
           },
           {
             "id": 3,
             "nom": "FILET ANTI GRELE",
-            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "image": "/imagedefilet/filet tie anti/anti grele.png",
             "description": "2.5X3 NOIR"
           }
         ]
@@ -50,25 +50,25 @@
       },
       {
         "category": "FILET TISSE OMBRAGE",
-        "product_count": 4,
+        "product_count": 3,
         "link": "/filettisseombrage",
         "products": [
           {
             "id": 1,
-            "nom": "FILET OMBRAGE 50%",
-            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "nom": "FILET OMBRAGE 50% ARGENTE",
+            "image": "/imagedefilet/img tie ombrage/image.png",
             "description": "ARGENTE"
           },
           {
             "id": 2,
-            "nom": "FILET OMBRAGE 50%",
-            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
-            "description": "OMBRAGE 90%"
+            "nom": "FILET OMBRAGE 50% NOIR",
+            "image": "/imagedefilet/img tie ombrage/image.png",
+            "description": "NOIR 90%"
           },
           {
             "id": 3,
-            "nom": "FILET OMBRAGE 50%",
-            "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+            "nom": "FILET OMBRAGE 90%",
+            "image": "/imagedefilet/img tie ombrage/image.png",
             "description": "NOIR"
           }
 

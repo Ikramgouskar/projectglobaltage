@@ -73,76 +73,76 @@
       
     },
     {
-      "category": "NPKSOLUBLES",
+      "category": "NPK SOLUBLES",
       "product_count": 6,
       "link": "/npksoluble",
       "products": [
         {
           "id": 1,
           "nom": "NITRATE DE MAGNESIE",
-          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+          "image": "/imagedengrain/npkoluble/nitratedemagnet.png",
           "description": "25KG"
         },
         {
           "id": 2,
-          "nom": "NITRATE DE MAGNESIE",
-          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+          "nom": "NPK 11-09-35",
+          "image": "/imagedengrain/npkoluble/npk 11 09 35.png",
           "description": "25KG"
         },
         {
           "id": 3,
-          "nom": "NITRATE DE MAGNESIE",
-          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+          "nom": "NPK 13-40-13",
+          "image": "/imagedengrain/npkoluble/NPK 13 40 13.png",
           "description": "25KG"
         },
         {
           "id": 4,
-          "nom": "NITRATE DE MAGNESIE",
-          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+          "nom": "NPK 14-11-25",
+          "image": "/imagedengrain/npkoluble/NPK 14 11 5.png",
           "description": "25KG"
         },
         {
           "id": 5,
-          "nom": "NITRATE DE MAGNESIE",
-          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
-          "description": "25KG"
+          "nom": "NPK 20-20-20",
+          "image": "/imagedengrain/npkoluble/NPK 20 20 20.png",
+          "description": "1KG - 25KG"
         },
         {
           "id": 6,
-          "nom": "NITRATE DE MAGNESIE",
-          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
-          "description": "25KG"
+          "nom": "UREE PHOSPHATE 17-44",
+          "image": "/imagedengrain/npkoluble/UREE PHOPHATE 17 44.png",
+          "description": " 25KG"
         }
       ]
       
     },
     {
-      "category": "NPKGRANULES",
+      "category": "NPK GRANULES",
       "product_count": 4,
       "link": "/granules",
       "products": [
         {
           "id": 1,
           "nom": "NPK 15-15-15",
-          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+          "image": "/imagedengrain/npkGranule/nergetic npk 10 10 22.png",
           "description": "25KG"
         },
         {
           "id": 2,
           "nom": "NPK 15-15-15",
-          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+          "image": "/imagedengrain/npkGranule/OLIVO NPK 17 08 10.png",
           "description": "25KG"
         },
         {
           "id": 3,
           "nom": "NPK 15-15-15",
-          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
-          "description": "25KG"
+          "image": "/imagedengrain/npkGranule/PATENTKALI.png",
+          "description": "50KG"
         },
         {
           "id": 4,
           "nom": "NPK 15-15-15",
-          "image": "/imagedengrais/imgsoluble/soluamspremium.png",
+          "image": "/imagedengrain/npkGranule/ULFACTIV 7 14 14.png",
           "description": "25KG"
         }
       ]

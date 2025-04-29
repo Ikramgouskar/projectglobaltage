@@ -1,15 +1,22 @@
 
 import { useState, useEffect} from "react"
 import productsData from "../../data/semences.json"
-
+import axios from "axios"
 import "../../style/poiverent.css"
 export default function Courgette() {
   const [poiverents, setPoiverents] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [stateuser, setStateuser] = useState(null);
 
 
 
+  useEffect(() => {
+    const userlogin = localStorage.getItem("userlogin");
+    if (userlogin) {
+      setStateuser(userlogin);
+    }
+  }, [stateuser]);
 
   useEffect(() => {
     try {
@@ -22,6 +29,24 @@ export default function Courgette() {
       setLoading(false)
     }
   }, [])
+
+
+
+
+
+  const deletePOI = (id) => {
+    if (window.confirm("Voulez-vous vraiment supprimer cette VEGETABLE ?")) {
+      axios
+        .delete(`http://localhost:8080/products/${id}`)
+        .then(() => {
+          setPoiverents((prev) => prev.filter((pastequ) => pastequ.id !== id))
+        })
+        .catch((err) => console.log(err))
+    }
+  }
+ 
+
+
 
 
  
@@ -47,7 +72,10 @@ export default function Courgette() {
               <th>PRODUIT</th>
               <th>NOM</th>
               <th>DESCRIPTION</th>
-              <th>ACTION</th>
+              <th>panier</th>
+              {stateuser ? (
+              <th>Action</th>
+            ):""}
             </tr>
           </thead>
           <tbody>
@@ -72,6 +100,34 @@ export default function Courgette() {
                   <td>
                     <button className="poiverent-button">Ajouter</button>
                   </td>
+                  {stateuser ? (
+
+                  <td><button
+                  style={{
+                    
+                    width:"100px",
+                      height: "30px",
+                    margin: "2rem",
+                     
+                      borderRadius: "0.5rem",
+                      backgroundColor: "rgb(145, 41, 41)",
+                      color: "#FFFFFF",
+                      border: "none",
+                     
+                      cursor: "pointer",
+                      transition: "background-color 0.2s",
+                    }}
+                  onMouseEnter={(ev) => (ev.currentTarget.style.backgroundColor = "#B91C1C")}
+                  onMouseLeave={(ev) => (ev.currentTarget.style.backgroundColor = "#DC2626")}
+                  onClick={() => deletePOI(pastequ.id)}
+                >
+                  Delete
+                </button></td>
+
+):""}
+
+
+
                 </tr>
               ))
             ) : (

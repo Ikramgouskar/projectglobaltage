@@ -1,12 +1,20 @@
 import productsData from "../../data/semences.json"
 import "../../style/pasteques.css"
 import { useState, useEffect } from "react"
+import axios from "axios"
 export default function Pasteques() {
   const [pasteques, setPasteques] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
- 
+  const [stateuser, setStateuser] = useState(null);
+
    
+  useEffect(() => {
+    const userlogin = localStorage.getItem("userlogin");
+    if (userlogin) {
+      setStateuser(userlogin);
+    }
+  }, [stateuser]);
 
 
   useEffect(() => {
@@ -20,6 +28,24 @@ export default function Pasteques() {
       setLoading(false)
     }
   }, [])
+
+
+
+
+
+
+  
+  const deletePA = (id) => {
+    if (window.confirm("Voulez-vous vraiment supprimer cette VEGETABLE ?")) {
+      axios
+        .delete(`http://localhost:8080/products/${id}`)
+        .then(() => {
+          setPasteques((prev) => prev.filter((tomate) => tomate.id !== id))
+        })
+        .catch((err) => console.log(err))
+    }
+  }
+ 
 
 
 
@@ -44,7 +70,10 @@ export default function Pasteques() {
                 <th>PRODUIT</th>
                 <th>NOM</th>
                 <th>DESCRIPTION</th>
-                <th>ACTION</th>
+                <th>panier</th>
+                {stateuser ? (
+                <th>Action</th>
+              ):""}
               </tr>
             </thead>
             <tbody>
@@ -69,6 +98,35 @@ export default function Pasteques() {
                     <td>
                       <button className="pasteque-button">Ajouter</button>
                     </td>
+
+                    {stateuser ? (
+                    <td><button
+                  style={{
+                    
+                    width:"100px",
+                      height: "30px",
+                    margin: "2rem",
+                     
+                      borderRadius: "0.5rem",
+                      backgroundColor: "rgb(145, 41, 41)",
+                      color: "#FFFFFF",
+                      border: "none",
+                     
+                      cursor: "pointer",
+                      transition: "background-color 0.2s",
+                    }}
+                  onMouseEnter={(ev) => (ev.currentTarget.style.backgroundColor = "#B91C1C")}
+                  onMouseLeave={(ev) => (ev.currentTarget.style.backgroundColor = "#DC2626")}
+                  onClick={() => deletePA(pastequ.id)}
+                >
+                  Delete
+                </button></td>
+
+):""}
+
+
+
+
                   </tr>
                 ))
               ) : (

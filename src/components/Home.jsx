@@ -89,9 +89,9 @@ export default function Home() {
   return (
 
 <>
-<video src={video} autoPlay  muted onEnded={(e) => e.target.play()} 
+<video src={video}  loop autoPlay   muted onEnded={(e) => e.target.play()} 
+ /> 
  
-  />
 
     <main class="min-h-screen">
      
@@ -221,35 +221,8 @@ export default function Home() {
               <Link to="/boitstimulant"class="logo-link">Biostimulants & Oligo-éléments </Link>
             </div>
 
-            <div class="category-item">
-              <div class="category-icon">
-                <img
-                  src="/icons/irrigation.svg"
-                  alt="Matériel d'irrigation"
-                  onError={(e) => {
-                    e.target.onerror = null
-                    e.target.src =
-                      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2356a15e' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round'%3E%3Cpath d='M7 22h10'%3E%3C/path%3E%3Cpath d='M12 13v9'%3E%3C/path%3E%3Cpath d='M5 17h14'%3E%3C/path%3E%3Cpath d='M3 13h18'%3E%3C/path%3E%3Cpath d='M12 2a2 2 0 0 0-2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1-.9-2-2-2z'%3E%3C/path%3E%3Cpath d='M12 6v3'%3E%3C/path%3E%3Cpath d='m9 9 .79-1.33'%3E%3C/path%3E%3Cpath d='m15 9-.79-1.33'%3E%3C/path%3E%3C/svg%3E"
-                  }}
-                />
-              </div>
-              <h3 class="category-title">Matériel d'irrigation</h3>
-            </div>
-
-            <div class="category-item">
-              <div class="category-icon">
-                <img
-                  src="/icons/protection.svg"
-                  alt="Protection des cultures"
-                  onError={(e) => {
-                    e.target.onerror = null
-                    e.target.src =
-                      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2356a15e' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'%3E%3C/path%3E%3C/svg%3E"
-                  }}
-                />
-              </div>
-              <h3 class="category-title">Protection des cultures</h3>
-            </div>
+         
+            
 
            
           </div>

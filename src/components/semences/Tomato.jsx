@@ -2,11 +2,14 @@
 import { useEffect, useState } from "react"
 import productsData from "../../data/semences.json"
 import "../../style/tomate.css"
+import axios from "axios"
 
 export default function Tomato() {
   const [tomates, setTomates] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [stateuser,setStateuser] = useState(null)
+
 
   useEffect(() => {
     try {
@@ -18,8 +21,38 @@ export default function Tomato() {
       setError("Impossible de charger les données. Veuillez réessayer plus tard.")
       setLoading(false)
     }
-  }, [])
+  }, []);
 
+
+
+
+
+
+
+
+  const deleteTOMATE = (id) => {
+    if (window.confirm("Voulez-vous vraiment supprimer cette VEGETABLE ?")) {
+      axios
+        .delete(`http://localhost:8080/products/${id}`)
+        .then(() => {
+          setTomates((prev) => prev.filter((tomate) => tomate.id !== id))
+        })
+        .catch((err) => console.log(err))
+    }
+  }
+
+
+
+
+
+
+  useEffect(() => {
+    const userlogin = localStorage.getItem("userlogin");
+    if (userlogin) {
+      setStateuser(userlogin);
+    }
+  }, [stateuser]);
+ 
   return (
     <div className="tomato-container">
       <div className="tomato-header">
@@ -41,7 +74,10 @@ export default function Tomato() {
                 <th>PRODUIT</th>
                 <th>NOM</th>
                 <th>DESCRIPTION</th>
-                <th>ACTION</th>
+                <th>panier</th>
+                {stateuser ? (
+                <th>Action</th>
+              ):""}
               </tr>
             </thead>
             <tbody>
@@ -66,6 +102,30 @@ export default function Tomato() {
                     <td>
                       <button className="tomato-button">Ajouter</button>
                     </td>
+
+                    {stateuser ? (
+                    <td><button
+                  style={{
+                    
+                    width:"100px",
+                      height: "30px",
+                    margin: "2rem",
+                     
+                      borderRadius: "0.5rem",
+                      backgroundColor: "rgb(145, 41, 41)",
+                      color: "#FFFFFF",
+                      border: "none",
+                     
+                      cursor: "pointer",
+                      transition: "background-color 0.2s",
+                    }}
+                  onMouseEnter={(ev) => (ev.currentTarget.style.backgroundColor = "#B91C1C")}
+                  onMouseLeave={(ev) => (ev.currentTarget.style.backgroundColor = "#DC2626")}
+                  onClick={() => deleteTOMATE(tomate.id)}
+                >
+                  Delete
+                </button></td>
+                ):""}
                   </tr>
                 ))
               ) : (
@@ -80,5 +140,5 @@ export default function Tomato() {
         </div>
       )}
     </div>
-  )
+  );
 }
