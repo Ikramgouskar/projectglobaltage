@@ -1,199 +1,603 @@
 
-import { useState } from "react"
-import { Search, Filter} from "lucide-react"
-import "../../style/tourbefruitrouge.css"
+import { useEffect, useState } from "react"
+import productsData from "../../data/filtsagr.json"
+import axios from "axios"
+import "../../style/engraissoluble.css"
+import { useCart } from "../CartSystem"
+import { ShoppingCart, Check } from "lucide-react"
 
-export default function TourbeFruitRouge() {
-  const [hoveredProduct, setHoveredProduct] = useState(null)
-  const [activeFilter, setActiveFilter] = useState("all")
+export default function Tourbefruitsrouge({product}) {
+    const { addToCart } = useCart()
+    const [addedToCart, setAddedToCart] = useState({})
+  
+  const [filetombr, setFfiletombr] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const [stateuser, setStateuser] = useState(null);
+  const [showAddModal, setShowAddModal] = useState(false)
 
-  const products = [
-    {
-      id: 1,
-      name: "TOURBE 977 MYRTILLE 30% PERLITE 210L",
-      image: "/imadedetourbe/image fruit rouge/977myrtille .png",
-      packaging: "210L / 6M3",
-      color: "red",
-      features: ["Idéal pour myrtilles", "30% perlite", "Drainage optimal"],
-      categories: ["myrtilles"],
-    },
-    {
-      id: 2,
-      name: "TOURBE 979 MYRTILLE 20% PERLITE 210L",
-      image: "/imadedetourbe/image fruit rouge/977myrtille .png",
-      packaging: "210L / 6M3",
-      color: "red",
-      features: ["Spécial myrtilles", "20% perlite", "Équilibre air-eau optimal"],
-      categories: ["myrtilles"],
-    },
-    {
-      id: 3,
-      name: "TOURBE TS4 U55 MYRTILLES GF/PERLITE 210L",
-      image: "/imadedetourbe/image fruit rouge/977myrtille .png",
-      packaging: "210L / 6.5M3",
-      color: "red",
-      features: ["Base GRENNFIBRE", "Pour myrtilles", "Structure aérée"],
-      categories: ["myrtilles", "greenfibre"],
-    },
-    {
-      id: 4,
-      name: "TOURBE BLONDE 932 210L",
-      image: "/imadedetourbe/image fruit rouge/blonde932.png",
-      packaging: "210L / 6M3",
-      color: "yellow",
-      features: ["Structure fine", "pH acide", "Pour petits fruits"],
-      categories: ["tourbe-blonde"],
-    },
-    {
-      id: 5,
-      name: "TOURBE BLONDE ACIDE 2UB (30%GREENFIBRE)",
-      image: "/imadedetourbe/image fruit rouge/blondeAcide2ub.png",
-      packaging: "210L / 6M3",
-      color: "green",
-      features: ["30% GREENFIBRE", "pH très acide", "Idéal pour fruits rouges"],
-      categories: ["tourbe-blonde", "greenfibre"],
-    },
-    {
-      id: 6,
-      name: "TOURBE TS1 S99 784+30%COCO 210L",
-      image: "/imadedetourbe/image fruit rouge/blondeAcide2ub.png",
-      packaging: "210L",
-      color: "green",
-      features: ["30% fibres de coco", "Rétention d'eau améliorée", "Pour fruits rouges exigeants"],
-      categories: [],
-    },
-  ]
+  const [newSobule, setnewSobule] = useState({
+    image: "",
+    nom: "",
+ 
+    description: "",
+  })
 
-  // Filter products based on active filter
-  const filteredProducts =
-    activeFilter === "all" ? products : products.filter((product) => product.categories.includes(activeFilter))
+
+
+
+
+  useEffect(() => {
+    const userlogin = localStorage.getItem("userlogin");
+    if (userlogin) {
+      setStateuser(userlogin);
+    }
+  }, [stateuser]);
+
+
+
+
+  useEffect(() => {
+    const fetchCorgettes = async () => {
+      try {
+        const response = await axios.get("http://localhost:8003/products?category=SUBSTRATS FRUITS ROUGES")
+        setFfiletombr(response.data)
+        setLoading(false)
+      } catch (error) {
+        setError(error.message)
+        setLoading(false)
+      }
+    }
+
+    fetchCorgettes()
+  }, [])
+
+
+
+
+  
+  const deletegranules = (id) => {
+    if (window.confirm("Voulez-vous vraiment supprimer la tourbe ?")) {
+      axios
+        .delete(`http://localhost:8003/products/${id}`)
+        .then(() => {
+          setFfiletombr((prev) => prev.filter((tomate) => tomate.id !== id))
+        })
+        .catch((err) => console.log(err))
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const response = await axios.post("http://localhost:8003/products", {
+        ...newSobule,
+        category: "SUBSTRATS FRUITS ROUGES",
+      })
+      setFfiletombr((prev) => [...prev, response.data])
+      setnewSobule({
+        image: "",
+        nom: "",
+        description: "",
+      })
+      closeAddModal()
+    } catch (error) {
+      console.error("Error adding corgette:", error)
+    }
+  }
+
+
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setnewSobule({ ...newSobule, [name]: value })
+  }
+
+  const openAddModal = () => {
+    setShowAddModal(true)
+  }
+
+  const closeAddModal = () => {
+    setShowAddModal(false)
+  }
+
+
+
+
+  const [images, setImages] = useState([])
+  useEffect(() => {
+    // Hardcoded image names
+    const hardcodedImages = [
+      "corgete1.png",
+      "corgete2.png",
+      "corgete3.png",
+      "corgete4.png",
+      "corgete5.png",
+      "corgete6.png",
+    ]
+    setImages(hardcodedImages)
+  }, [])
+
+
+
+
+
+  const handleAddToCart = (product) => {
+    addToCart(product)
+
+    // Show added confirmation
+    setAddedToCart((prev) => ({
+      ...prev,
+      [product.id]: true,
+    }))
+
+    // Reset after 2 seconds
+    setTimeout(() => {
+      setAddedToCart((prev) => ({
+        ...prev,
+        [product.id]: false,
+      }))
+    }, 2000)
+  }
+
+
+
+
+
+    // Add these styles for the "Ajouter" button
+    const buttonStyles = {
+      normal: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "8px",
+        padding: "8px 16px",
+        backgroundColor: "#4caf50",
+        color: "white",
+        border: "none",
+        borderRadius: "4px",
+        fontSize: "14px",
+        fontWeight: "500",
+        cursor: "pointer",
+        transition: "all 0.2s ease",
+      },
+      hover: {
+        backgroundColor: "#3d9140",
+      },
+      added: {
+        backgroundColor: "#2e7d32",
+        cursor: "default",
+      },
+    }
+  
+  
+
+
 
   return (
-    <div className="tourbe-fruitrouge-container">
-      <div className="header-section">
-        <div className="header-content">
-          <h1>Tourbes Fruits Rouges</h1>
-          <p>Découvrez notre gamme de tourbes spécialement conçues pour la culture des fruits rouges et myrtilles</p>
-
-          <div className="search-filter">
-            <div className="search-box">
-              <Search className="search-icon" />
-              <input type="text" placeholder="Rechercher un produit..." />
-            </div>
-            <button className="filter-button">
-              <Filter className="filter-icon" />
-              <span>Filtrer</span>
-            </button>
-          </div>
+    <>
+    <div className="engrais-container">
+      <div className="engrais-header">
+        <h2 className="engrais-title">SUBSTRATS FRUITS ROUGES</h2>
+        {stateuser ? (
+      <button
+        style={{
+          width: "350px",
+          height: "45px",
+          backgroundColor: "rgb(156, 180, 156)",
+          color: "black",
+          border: "none",
+          padding: "5px",
+          cursor: "pointer",
+         marginTop: "80px",
+         fontSize: "15px",
+          marginLeft: "700px",
+          
+          borderRadius: "5px",
+        }}
+        onClick={openAddModal}
+      >
+        Ajouter SUBSTRATS FRUITS ROUGES
+      </button>
+      ):""}
+        <div className="engrais-icon">
+         
         </div>
       </div>
 
-      <div className="category-tabs">
-        <button className={`tab ${activeFilter === "all" ? "active" : ""}`} onClick={() => setActiveFilter("all")}>
-          Tous les produits
-        </button>
-        <button
-          className={`tab ${activeFilter === "myrtilles" ? "active" : ""}`}
-          onClick={() => setActiveFilter("myrtilles")}
-        >
-          Myrtilles
-        </button>
-        <button
-          className={`tab ${activeFilter === "tourbe-blonde" ? "active" : ""}`}
-          onClick={() => setActiveFilter("tourbe-blonde")}
-        >
-          Tourbe Blonde
-        </button>
-        <button
-          className={`tab ${activeFilter === "greenfibre" ? "active" : ""}`}
-          onClick={() => setActiveFilter("greenfibre")}
-        >
-          Avec GREENFIBRE
-        </button>
-      </div>
+      {loading ? (
+        <div className="engrais-loading">Chargement des produits...</div>
+      ) : error ? (
+        <div className="engrais-error">{error}</div>
+      ) : (
+        <div className="engrais-table-container">
+          <table className="engrais-table">
+            <thead>
+              <tr>
+                <th>PRODUIT</th>
+                <th>NOM</th>
+                <th>DESCRIPTION</th>
+                
+                {stateuser ? (
+                   <th>Action</th>
+                  ): <th>panier</th>}
+              </tr>
+            </thead>
+            <tbody>
+              {filetombr.length > 0 ? (
+                filetombr.map((tomate) => (
+                  <tr key={tomate.id}>
+                    <td>
+                      <div className="engrais-image-container">
+                        <img
+                          src={tomate.image || "/placeholder.svg"}
+                          alt={tomate.nom}
+                          className="engrais-image"
+                          onError={(e) => {
+                            e.currentTarget.onerror = null
+                            e.currentTarget.src = "/placeholder.svg"
+                          }}
+                        />
+                      </div>
+                    </td>
+                    <td className="engrais-name">{tomate.nom}</td>
+                    <td className="engrais-description">{tomate.description}</td>
+                    
+                    {stateuser ? (
+                    <td><button
+                  style={{
+                    
+                    width:"100px",
+                      height: "30px",
+                    margin: "2rem",
+                     
+                      borderRadius: "0.5rem",
+                      backgroundColor: "rgb(145, 41, 41)",
+                      color: "#FFFFFF",
+                      border: "none",
+                     
+                      cursor: "pointer",
+                      transition: "background-color 0.2s",
+                    }}
+                  onMouseEnter={(ev) => (ev.currentTarget.style.backgroundColor = "#B91C1C")}
+                  onMouseLeave={(ev) => (ev.currentTarget.style.backgroundColor = "#DC2626")}
+                  onClick={() => deletegranules(tomate.id)}
+                >
+                  Delete
+                </button></td>
 
-      <div className="product-count">
-        <span>{filteredProducts.length} produits</span>
-      </div>
+):(<td>
+  <button
+        style={
+          addedToCart[tomate.id]
+            ? { ...buttonStyles.normal, ...buttonStyles.added }
+            : buttonStyles.normal
+        }
+        onClick={() => handleAddToCart(tomate)}
+        disabled={addedToCart[tomate.id]}
+        onMouseOver={(e) => {
+          if (!addedToCart[tomate.id]) {
+            e.currentTarget.style.backgroundColor = buttonStyles.hover.backgroundColor
+          }
+        }}
+        onMouseOut={(e) => {
+          if (!addedToCart[tomate.id]) {
+            e.currentTarget.style.backgroundColor = buttonStyles.normal.backgroundColor
+          }
+        }}
+      >
+        {addedToCart[tomate.id] ? (
+          <>
+            <Check size={16} /> Ajouté
+          </>
+        ) : (
+          <>
+            <ShoppingCart size={16} /> Ajouter
+          </>
+        )}
+      </button>                    </td>
+)}
 
-      <div className="products-grid">
-        {filteredProducts.map((product) => (
-          <div
-            key={product.id}
-            className={`product-card ${product.color}`}
-            onMouseEnter={() => setHoveredProduct(product.id)}
-            onMouseLeave={() => setHoveredProduct(null)}
-          >
-            <div className="product-image-container">
-              <img src={product.image || "/placeholder.svg"} alt={product.name} className="product-image" />
-
-             
-            </div>
-
-            <div className="product-info">
-              <h3 className="product-name">{product.name}</h3>
-
-              <div className="product-description">{product.description}</div>
-
-              <div className="product-packaging">
-                <span className="label">Emballage :</span>
-                <span className="value">{product.packaging}</span>
-              </div>
-
-              <div className="product-actions">
-                <button className="add-to-quote">Ajouter au devis</button>
-               
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {filteredProducts.length === 0 && (
-        <div className="no-products">
-          <p>Aucun produit ne correspond à votre sélection.</p>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan={4} className="engrais-empty">
+                    Aucun produit disponible
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
         </div>
       )}
-
-      <div className="fruit-benefits">
-        <div className="benefits-header">
-          <h2>Pourquoi choisir nos tourbes pour fruits rouges ?</h2>
-        </div>
-
-        <div className="benefits-grid">
-          <div className="benefit-card">
-            <div className="benefit-icon ph-icon"></div>
-            <h3>pH Optimal</h3>
-            <p>Nos mélanges sont spécialement formulés avec un pH adapté aux besoins des fruits rouges et myrtilles.</p>
-          </div>
-
-          <div className="benefit-card">
-            <div className="benefit-icon drainage-icon"></div>
-            <h3>Drainage Parfait</h3>
-            <p>L'ajout de perlite assure un drainage optimal tout en conservant l'humidité nécessaire aux racines.</p>
-          </div>
-
-          <div className="benefit-card">
-            <div className="benefit-icon nutrition-icon"></div>
-            <h3>Nutrition Équilibrée</h3>
-            <p>
-              Nos substrats fournissent tous les nutriments essentiels pour une croissance saine et une production
-              abondante.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="product-help">
-        <div className="help-content">
-          <h2>Besoin d'aide pour choisir?</h2>
-          <p>
-            Nos experts sont disponibles pour vous guider dans le choix de la tourbe adaptée à vos cultures de fruits
-            rouges.
-          </p>
-          <button className="contact-button">Contacter un expert</button>
-        </div>
-      </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{showAddModal && (
+  <div
+  className="modal-backdrop"
+  style={{
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: "rgba(0,0,0,0.6)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 1050,
+  }}
+ >
+  <div
+    className="modal-container"
+    style={{
+      backgroundColor: "white",
+      borderRadius: "12px",
+      width: "500px",
+      maxWidth: "95%",
+      boxShadow: "0 10px 25px rgba(0,0,0,0.2)",
+      animation: "fadeIn 0.3s ease-out",
+      overflow: "hidden",
+    }}
+  >
+    <div
+      className="modal-header"
+      style={{
+        padding: "20px 25px",
+        borderBottom: "1px solid #f0f0f0",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+      }}
+    >
+      <h5
+        style={{
+          margin: 0,
+          fontSize: "20px",
+          fontWeight: "600",
+          color: "#333",
+        }}
+      >
+        Ajouter filet Anti-thrips
+      </h5>
+      <button
+        onClick={closeAddModal}
+        style={{
+          background: "transparent",
+          border: "none",
+          fontSize: "22px",
+          cursor: "pointer",
+          color: "#999",
+          transition: "color 0.2s",
+        }}
+        onMouseOver={(e) => (e.currentTarget.style.color = "#333")}
+        onMouseOut={(e) => (e.currentTarget.style.color = "#999")}
+      >
+        ×
+      </button>
+    </div>
+ 
+    <div className="modal-body" style={{ padding: "25px" }}>
+      <form onSubmit={handleSubmit}>
+        <div style={{ marginBottom: "20px" }}>
+          <label
+            style={{
+              display: "block",
+              marginBottom: "8px",
+              fontWeight: "500",
+              color: "#444",
+            }}
+          >
+            Image
+          </label>
+          <select
+            style={{
+              width: "100%",
+              padding: "12px 15px",
+              borderRadius: "8px",
+              border: "1px solid #ddd",
+              backgroundColor: "#f9f9f9",
+              fontSize: "15px",
+              transition: "border-color 0.2s, box-shadow 0.2s",
+              outline: "none",
+            }}
+            name="image"
+            value={newSobule.image}
+            onChange={handleInputChange}
+            required
+            onFocus={(e) => {
+              e.target.style.borderColor = "#a3c9ff"
+              e.target.style.boxShadow = "0 0 0 3px rgba(66, 153, 225, 0.15)"
+            }}
+            onBlur={(e) => {
+              e.target.style.borderColor = "#ddd"
+              e.target.style.boxShadow = "none"
+            }}
+          >
+            <option value="">Sélectionner une image</option>
+            {images.map((image, index) => (
+              <option key={index} value={`/imagedecourgettes/${image}`}>
+                {image}
+              </option>
+            ))}
+          </select>
+ 
+         
+        </div>
+ 
+        <div style={{ marginBottom: "20px" }}>
+          <label
+            style={{
+              display: "block",
+              marginBottom: "8px",
+              fontWeight: "500",
+              color: "#444",
+            }}
+          >
+            Nom
+          </label>
+          <input
+            type="text"
+            style={{
+              width: "100%",
+              padding: "12px 15px",
+              borderRadius: "8px",
+              border: "1px solid #ddd",
+              backgroundColor: "#f9f9f9",
+              fontSize: "15px",
+              transition: "border-color 0.2s, box-shadow 0.2s",
+              outline: "none",
+            }}
+            name="nom"
+            value={newSobule.nom}
+            onChange={handleInputChange}
+            required
+            onFocus={(e) => {
+              e.target.style.borderColor = "#a3c9ff"
+              e.target.style.boxShadow = "0 0 0 3px rgba(66, 153, 225, 0.15)"
+            }}
+            onBlur={(e) => {
+              e.target.style.borderColor = "#ddd"
+              e.target.style.boxShadow = "none"
+            }}
+          />
+        </div>
+ 
+        <div style={{ marginBottom: "25px" }}>
+          <label
+            style={{
+              display: "block",
+              marginBottom: "8px",
+              fontWeight: "500",
+              color: "#444",
+            }}
+          >
+            Description
+          </label>
+          <textarea
+            style={{
+              width: "100%",
+              padding: "12px 15px",
+              borderRadius: "8px",
+              border: "1px solid #ddd",
+              backgroundColor: "#f9f9f9",
+              fontSize: "15px",
+              minHeight: "100px",
+              resize: "vertical",
+              transition: "border-color 0.2s, box-shadow 0.2s",
+              outline: "none",
+            }}
+            name="description"
+            value={newSobule.description}
+            onChange={handleInputChange}
+            required
+            onFocus={(e) => {
+              e.target.style.borderColor = "#a3c9ff"
+              e.target.style.boxShadow = "0 0 0 3px rgba(66, 153, 225, 0.15)"
+            }}
+            onBlur={(e) => {
+              e.target.style.borderColor = "#ddd"
+              e.target.style.boxShadow = "none"
+            }}
+          />
+        </div>
+ 
+        <div
+          className="modal-actions"
+          style={{
+            display: "flex",
+            gap: "15px",
+            marginTop: "10px",
+          }}
+        >
+          <button
+            type="button"
+            onClick={closeAddModal}
+            style={{
+              flex: "1",
+              padding: "12px",
+              borderRadius: "8px",
+              border: "1px solid #ddd",
+              backgroundColor: "#f5f5f5",
+              color: "#555",
+              fontSize: "15px",
+              fontWeight: "500",
+              cursor: "pointer",
+              transition: "all 0.2s",
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.backgroundColor = "#eaeaea"
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.backgroundColor = "#f5f5f5"
+            }}
+          >
+            Annuler
+          </button>
+          <button
+            type="submit"
+            style={{
+              flex: "1",
+              padding: "12px",
+              borderRadius: "8px",
+              border: "none",
+              backgroundColor: "rgb(85, 112, 85)", // Pink to match the add button
+              color: "#fff",
+              fontSize: "15px",
+              fontWeight: "500",
+              cursor: "pointer",
+              transition: "all 0.2s",
+            }}
+            
+          >
+            Ajouter
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+ </div>
+ )}
+ </> 
   )
 }

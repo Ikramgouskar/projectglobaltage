@@ -1,3 +1,126 @@
+/* Profile Select Dropdown Styling */
+
+.profile-select {
+  /* Base styling */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 36px 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: auto;
+  min-width: 140px;
+
+  /* Custom dropdown arrow */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238c6785' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-position: calc(100% - 12px) center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+
+  /* Text styling */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Hover state */
+.profile-select:hover {
+  border-color: #8c6785;
+  box-shadow: 0 2px 5px rgba(140, 103, 133, 0.1);
+}
+
+/* Focus state */
+.profile-select:focus {
+  outline: none;
+  border-color: #8c6785;
+  box-shadow: 0 0 0 3px rgba(140, 103, 133, 0.2);
+}
+
+/* Styling for options */
+.profile-select option {
+  padding: 10px;
+  font-size: 14px;
+  background-color: white;
+  color: #333;
+}
+
+/* Disabled option styling */
+.profile-select option:disabled {
+  color: #9ca3af;
+}
+
+/* Animation for the dropdown */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-select {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Firefox specific styling */ 
+@-moz-document url-prefix() {
+  .profile-select {
+    text-indent: 0;
+    text-overflow: '';
+    padding-right: 36px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .profile-select {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .profile-select {
+    background-color: #1f2937;
+    border-color: #374151;
+    color: #e5e7eb;
+  }
+
+  .profile-select option {
+    background-color: #1f2937;
+    color: #e5e7eb;
+  }
+
+  .profile-select option:disabled {
+    color: #6b7280;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .navbar {
     position: fixed;
     top: 0;
@@ -14,12 +137,15 @@
     padding: 0.5rem 0;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
   }
-  
+ 
+ 
   .navbar.scrolled {
     background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(20,20,20,0.8));
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     padding: 0.3rem 0;
   }
+
+  
   
   .nav-container {
     max-width: 1200px;

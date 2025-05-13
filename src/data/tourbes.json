@@ -1,146 +1,199 @@
 {
-    "products": [
-      {
-        "category": "TOURBES SEMIS",
-        "product_count": 6,
-        "link": "/tourbsemis",
-        "products": [
-          {
-                "id": 1,
-                "image": "/imagedefilet/img anti/filet antiinecte.png",
-                "nom": "FILET ANTIINSECTES CRYSTAL 22X10",
-                "description": "Emballage : "
-              },
-              {
-                "id": 2,
-                "image": "/imagedefilet/img anti/filet antiinsecte.png",
-                "nom": "FILET ANTIINSECTES GRIS 22X10",
-                "description": "Emballage : "
-              }
-   
-        ]
-        
-      },
-      {
-        "category": "TOURBES REMPOTAGE",
-        "product_count":    5,
-        "link": "/tourberempotage",
-        "products": [
-          {
-            "id": 1,
-            "nom": "FILET ANTI GRELE",
-            "image": "/imagedefilet/filet tie anti/anti grele.png",
-            "description": "2.5X3 GRIS"
-          }
-          ,
-          {
-            "id": 2,
-            "nom": "FILET ANTI GRELE",
-            "image": "/imagedefilet/filet tie anti/anti grele.png",
-            "description": "2.5X3 CRYSTAL"
-          },
-          {
-            "id": 3,
-            "nom": "FILET ANTI GRELE",
-            "image": "/imagedefilet/filet tie anti/anti grele.png",
-            "description": "2.5X3 NOIR"
-          }
-        ]
-        
-      },
-      {
-        "category": "SUBSTRATS FRUITS ROUGES",
-        "product_count": 6,
-        "link": "/tourbefruitsrouge",
-        "products": [
-          {
-            "id": 1,
-            "nom": "FILET OMBRAGE 50% ARGENTE",
-            "image": "/imagedefilet/img tie ombrage/image.png",
-            "description": "ARGENTE"
-          },
-          {
-            "id": 2,
-            "nom": "FILET OMBRAGE 50% NOIR",
-            "image": "/imagedefilet/img tie ombrage/image.png",
-            "description": "NOIR 90%"
-          },
-          {
-            "id": 3,
-            "nom": "FILET OMBRAGE 90%",
-            "image": "/imagedefilet/img tie ombrage/image.png",
-            "description": "NOIR"
-          },{
-            "id": 4,
-            "nom": "FILET OMBRAGE 50% ARGENTE",
-            "image": "/imagedefilet/img tie ombrage/image.png",
-            "description": "ARGENTE"
-          },
-          {
-            "id": 5,
-            "nom": "FILET OMBRAGE 50% NOIR",
-            "image": "/imagedefilet/img tie ombrage/image.png",
-            "description": "NOIR 90%"
-          },
-          {
-            "id": 6,
-            "nom": "FILET OMBRAGE 90%",
-            "image": "/imagedefilet/img tie ombrage/image.png",
-            "description": "NOIR"
-          }
-
-        ]
-      },
-      {
-        "category": "SUBSTRATS MELANGE",
-        "product_count": 2,
-        "link": "/tourbemelange",
-        "products": [
-          {
-            "id": 1,
-            "nom": "FILET OMBRAGE 50% ARGENTE",
-            "image": "/imagedefilet/img tie ombrage/image.png",
-            "description": "ARGENTE"
-          },
-          {
-            "id": 2,
-            "nom": "FILET OMBRAGE 50% NOIR",
-            "image": "/imagedefilet/img tie ombrage/image.png",
-            "description": "NOIR 90%"
-          }
-        ]
-      },
-      {
-        "category": "SUBSTRATS COCO",
-        "product_count": 4,
-        "link": "/tourbecoco",
-        "products": [
-          {
-            "id": 1,
-            "nom": "FILET OMBRAGE 50% ARGENTE",
-            "image": "/imagedefilet/img tie ombrage/image.png",
-            "description": "ARGENTE"
-          },
-          {
-            "id": 2,
-            "nom": "FILET OMBRAGE 50% NOIR",
-            "image": "/imagedefilet/img tie ombrage/image.png",
-            "description": "NOIR 90%"
-          },
-          {
-            "id": 3,
-            "nom": "FILET OMBRAGE 90%",
-            "image": "/imagedefilet/img tie ombrage/image.png",
-            "description": "NOIR"
-          },
-          {
-            "id": 4,
-            "nom": "FILET OMBRAGE 90%",
-            "image": "/imagedefilet/img tie ombrage/image.png",
-            "description": "NOIR"
-          }
-
-        ]
-      }
-    ]       
-  }
+  "products": [
+    {
+      "id": "1",
+      "category": "TOURBES SEMIS",
+      "image": "/imadedetourbe/potgron.png",
+      "nom": "TOURBE POTGROND P 067 70L",
+      "description": "Emballage : 70L, Idéal pour semis"
+    },
+    {
+      "id": "2",
+      "category": "TOURBES SEMIS",
+      "image": "/imadedetourbe/greenfibre.png",
+      "nom": "TOURBE TS1 GREENFIBRE 2MN 70L",
+      "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre"
+    },
+    {
+      "id": "3",
+      "category": "TOURBES SEMIS",
+      "image": "/imadedetourbe/t3 3b5.png",
+      "nom": "TOURBE TS3 3B5 70L",
+      "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre"
+    },
+    {
+      "id": "4",
+      "category": "TOURBES SEMIS",
+      "image": "/imadedetourbe/trayV087.png",
+      "nom": "TOURBE TRAY SUBSTRAT REC V087 70L",
+      "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre"
+    },
+    {
+      "id": "5",
+      "category": "TOURBES SEMIS",
+      "image": "/imadedetourbe/tray1LDGREENfibre.png",
+      "nom": "TOURBE TRAY SUBSTRAT 1LD GREENFIBRE 70L",
+      "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre"
+    },
+    {
+      "id": "6",
+      "category": "TOURBES SEMIS",
+      "image":  "/imadedetourbe/proline bio trayubtrat.png",
+      "nom": "TOURBE PROLINE BIO TRAY-SUBSTRAT 70L",
+      "description": "Emballage : 1000 Graines Courgette blanche"
+    },
+    {
+      "id": "7",
+      "category": "TOURBES REMPOTAGE",
+      "image": "/imadedetourbe/image rempotage/1nj moyen.png",
+      "nom": "TOURBE TS3 1NJ MOYEN 30%GREENFIBRE 210L",
+      "description": "Emballage : 1000 Graines Courgette blanche"
+    },
+    {
+      "id": "8",
+      "category": "TOURBES REMPOTAGE",
+      "image": "/imadedetourbe/image rempotage/425 moyan.png",
+      "nom": "TOURBE TS3 425 MOYEN 210L",
+      "description": "Emballage : 1000 Graines Courgette blanche"
+    },
+    {
+      "id": "9",
+      "category": "TOURBES REMPOTAGE",
+      "image": "/imagedecourgettes/corgete4.png",
+      "nom": "TOURBE TS1 135 MOYEN 210L",
+      "description": "Emballage : 1000 Graines Courgette blanche"
+    },
+    {
+      "id": "10",
+      "category": "TOURBES REMPOTAGE",
+      "image": "/imadedetourbe/image rempotage/3W4 fibreux.png",
+      "nom": "TOURBE 3W4 FIBREUX 30%GREENFIBRE",
+      "description": "Emballage : 1000 Graines Courgette blanche"
+    },
+    {
+      "id": "11",
+      "category": "TOURBES REMPOTAGE",
+      "image":"/imadedetourbe/image rempotage/ts4 604 grossier.png",
+      "nom": "TOURBE TS4 604 GROSSIER 210L",
+      "description": "Emballage : 1000 Graines Courgette blanche"
+    },
+    {
+      "id": "12",
+      "category": "SUBSTRATS MELANGE",
+      "image": "/imadedetourbe/imagemelange/steckmedium-686.png",
+      "nom": "TOURBE STECKMEDIUM 686 210L",
+      "description": "Emballage :  210L"
+    },
+    {
+      "id": "13",
+      "category": "SUBSTRATS MELANGE",
+      "image": "/imadedetourbe/imagemelange/ts1-623.png",
+      "nom": "TOURBE TS1 623 PERLITE 210L",
+      "description": "Emballage :  210L / 6M3"
+    },
+    {
+      "id": "14",
+      "category": "SUBSTRATS FRUITS ROUGES",
+      "image": "/imadedetourbe/image fruit rouge/977myrtille .png",
+      "nom": "TOURBE 977 MYRTILLE 30% PERLITE 210L",
+      "description": "Emballage : 210L / 6M3       Mélange spécial Myrtilles 30% perlite"
+    },
+    {
+      "id": "15",
+      "category": "SUBSTRATS FRUITS ROUGES",
+      "image": "/imadedetourbe/image fruit rouge/977myrtille .png",
+      "nom": "TOURBE 979 MYRTILLE 20% PERLITE 210L",
+      "description": "Emballage :  210L / 6M3     Mélange spécial Myrtilles 20% perlite"
+    },
+    {
+      "id": "19",
+      "category": "SUBSTRATS FRUITS ROUGES",
+      "image": "/imadedetourbe/image fruit rouge/977myrtille .png",
+      "nom": "TOURBE TS4 U55 MYRTILLES GF/PERLITE 210L",
+      "description": "Emballage : 210L / 6.5M3    Mélange spécial Myrtilles base GRENNFIBRE"
+    },
+    {
+      "id": "20",
+      "category": "SUBSTRATS FRUITS ROUGES",
+      "image": "/imadedetourbe/image fruit rouge/blonde932.png",
+      "nom": "TOURBE BLONDE 932 210L",
+      "description": "Emballage : 210L / 6M3"
+    },
+    {
+      "id": "21",
+      "category": "SUBSTRATS FRUITS ROUGES",
+      "image": "/imadedetourbe/image fruit rouge/blondeAcide2ub.png",
+      "nom": "TOURBE BLONDE ACIDE 2UB (30%GREENFIBRE)",
+      "description": "Emballage : 210L / 6M3"
+    },
+    {
+      "id": "22",
+      "category": "SUBSTRATS FRUITS ROUGES",
+      "image": "/imadedetourbe/image fruit rouge/blondeAcide2ub.png",
+      "nom": "TOURBE TS1 S99 784+30%COCO 210L",
+      "description": "Emballage : 210L"
+    },
+    {
+      "id": "23",
+      "category": "SUBSTRATS FRUITS ROUGES",
+      "image": "/imadedetourbe/image fruit rouge/blondeAcide2ub.png",
+      "nom": "TOURBE TS1 1B8 PROP MYRTILLES 210L",
+      "description": "Emballage : 210L / 6M3"
+    },
+    {
+      "id": "24",
+      "category": "SUBSTRATS COCO",
+      "image": "/imadedetourbe/image rempotage/1nj moyen.png",
+      "nom": "GROW BAG HORS SOL 100X18X16",
+      "description": "Emballage : SAC"
+    },
+    {
+      "id": "bdd1",
+      "image": "/imadedetourbe/image rempotage/425 moyan.png",
+      "nom": "TOURBE TS3 425 MOYEN TERREAU BLOC COCO 100% FIN",
+      "description": "Emballage : BLOC 5KG",
+      "category": "SUBSTRATS COCO"
+    },
+    {
+      "id": "25ad",
+      "image": "/imadedetourbe/image rempotage/135 moyen.png",
+      "nom": "TERREAU BLOC COCO 70/30",
+      "description": "Emballage : BLOC 5KG",
+      "category": "SUBSTRATS COCO"
+    },
+    {
+      "id": "40ef",
+      "image": "/imagedecourgettes/corgete1.png",
+      "nom": "khanssae",
+      "description": "uuuuuuuuu",
+      "category": "SUBSTRATS COCO"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "TOURBES SEMIS",
+      "link": "/tourbsemis"
+    },
+    {
+      "id": "2",
+      "name": "TOURBES REMPOTAGE",
+      "link": "/tourberempotage"
+    },
+    {
+      "id": "3",
+      "name": "SUBSTRATS FRUITS ROUGES",
+      "link": "/tourbefruitsrouge"
+    },
+    {
+      "id": "4",
+      "name": "SUBSTRATS MELANGE",
+      "link": "/tourbemelange"
+    },
+    {
+      "id": "5",
+      "name": "SUBSTRATS COCO",
+      "link": "/tourbecoco"
+    }
+  ]
+}

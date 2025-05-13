@@ -23,7 +23,7 @@ export default function Biostimulants() {
 
 
     useEffect(() => {
-        fetch("http://localhost:8002/products")
+        fetch("http://localhost:8002/categories")
           .then((response) => {
             
             return response.json();
@@ -46,7 +46,7 @@ export default function Biostimulants() {
       const deleteENGRAI = (id) => {
         if (window.confirm("Voulez-vous vraiment supprimer cette VEGETABLE ?")) {
           axios
-            .delete(`http://localhost:8002/products/${id}`)
+            .delete(`http://localhost:8002/categories/${id}`)
             .then(() => {
               setCategories((prev) => prev.filter((category) => category.id !== id))
             })
@@ -101,7 +101,7 @@ export default function Biostimulants() {
                 <FertilizerBagIcon />
               </div>
               <div className="engrais-category-info">
-                <h2 className="engrais-category-name">{category.category}</h2>
+                <h2 className="engrais-category-name">{category.name}</h2>
                 <p className="engrais-product-count">{category.product_count} Products</p>
               </div>
               <div className="engrais-hover-overlay">

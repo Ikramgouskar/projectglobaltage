@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { CartProvider } from "./components/CartSystem"
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Vegetale from "./components/semences/Vegetale";
@@ -10,7 +11,7 @@ import Poiverent from "./components/semences/Poiverent";
 import Melon from "./components/semences/Melon";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Tourbe from "./components/Tourbe";
+import Tourbe from "./components/Tourbe/Tourbe";
 import Tourbesemis from "./components/Tourbe/Tourbesemis";
 import Tourberempotage from "./components/Tourbe/Tourberempotage";
 import Tourbefruitsrouge from "./components/Tourbe/Tourbefruitsrouge";
@@ -28,13 +29,16 @@ import Biostimulants from "./components/boitstimulant/boitstimulant";
 import Boitsti from "./components/boitstimulant/boitsti";
 import OligoElementns from "./components/boitstimulant/oligoelements";
 import Acidesamine from "./components/boitstimulant/acidesamine";
-
+import Profil from "./components/Profil";
+import Settigs from "./components/Settigs";
+import Panier from "./components/Panier";
 
 
 
 import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import Login from "./components/login";
+import Orders from "./components/orders";
 
 function App() {
 
@@ -68,15 +72,23 @@ function App() {
       
       
  />
+ <CartProvider>
       
       <Routes >
         <Route path="/"element={ <Home /> }/>
+
         <Route path="/produit" element={   <ProtectedRoute><Vegetale /></ProtectedRoute>} />
         <Route path="/tomate" element={ <ProtectedRoute><Tomato /></ProtectedRoute>} />
         <Route path="/corgette" element={<ProtectedRoute><Courgette /></ProtectedRoute>} />
         <Route path="/poiverent" element={<ProtectedRoute><Poiverent /></ProtectedRoute>} />
         <Route path="/pasteque" element={<ProtectedRoute><Pasteque /></ProtectedRoute>} />
         <Route path="/melon" element={<ProtectedRoute><Melon /></ProtectedRoute>} /> 
+        <Route path="/profile" element={<ProtectedRoute><Profil /></ProtectedRoute>} /> 
+        <Route path="/sitting" element={<ProtectedRoute><Settigs /></ProtectedRoute>} /> 
+        <Route path="/orders" element={<ProtectedRoute><Orders /></ProtectedRoute>} /> 
+         
+        <Route path="/panier" element={<Panier />} /> 
+
         <Route path="/about" element={<About />} /> 
         <Route path="/contact" element={<Contact />} /> 
         <Route path="/tourb" element={<ProtectedRoute><Tourbe/></ProtectedRoute>} />
@@ -85,11 +97,7 @@ function App() {
         <Route path="/tourbefruitsrouge" element={<ProtectedRoute><Tourbefruitsrouge/></ProtectedRoute>} />
         <Route path="/tourbemelange" element={<ProtectedRoute><Tourbemelange/></ProtectedRoute>} />
         <Route path="/tourbecoco" element={<ProtectedRoute><Tourbecoco/></ProtectedRoute>} />
-        <Route
-            path="/login"
-            element={<Login setIsAuthenticated={setIsAuthenticated} />}
-          />
-
+       
         
         <Route path="/engrai" element={ <ProtectedRoute><Engrais/></ProtectedRoute>} />
         <Route path="/engraisoluble" element={<ProtectedRoute><Engraisoluble/></ProtectedRoute>} />
@@ -108,7 +116,16 @@ function App() {
         <Route path="/oligoelemts" element={<ProtectedRoute><OligoElementns/></ProtectedRoute>} />
         <Route path="/acidesamines" element={<ProtectedRoute><Acidesamine/></ProtectedRoute>} />
 
+
+
+        <Route
+            path="/login"
+            element={<Login setIsAuthenticated={setIsAuthenticated} />}
+          />
+
+
       </Routes>
+      </CartProvider>
       <Footer />
    
     </BrowserRouter>

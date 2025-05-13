@@ -1,204 +1,197 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "category": "TOMATES",
       "image": "/imagedetomate/tomate1.png",
       "nom": "SEMENCES TOMATE ARENA F1",
       "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre"
     },
     {
-      "id": 2,
+      "id": "2",
       "category": "TOMATES",
       "image": "/imagedetomate/tomate2.png",
       "nom": "SEMENCES TOMATE BOULE F1",
       "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre"
     },
     {
-      "id": 3,
+      "id": "3",
       "category": "TOMATES",
       "image": "/imagedetomate/tomate3.png",
       "nom": "SEMENCES TOMATE CERISE F1",
       "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre"
     },
     {
-      "id": 4,
+      "id": "4",
       "category": "TOMATES",
       "image": "/imagedetomate/tomate4.png",
       "nom": "SEMENCES TOMATE COEUR DE BOEUF F1",
       "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre"
     },
     {
-      "id": 5,
+      "id": "5",
       "category": "TOMATES",
       "image": "/imagedetomate/tomate5.png",
       "nom": "SEMENCES TOMATE COEUR DE BOEUF F1",
       "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre"
     },
     {
-      "id": 6,
+      "id": "6",
       "category": "COURGETTES",
       "image": "/imagedecourgettes/corgete1.png",
       "nom": "SEMENCES COURGETTES DIKRA F1",
       "description": "Emballage : 1000 Graines Courgette blanche"
     },
     {
-      "id": 7,
+      "id": "7",
       "category": "COURGETTES",
       "image": "/imagedecourgettes/corgete2.png",
       "nom": "SEMENCES COURGETTES DIKRA F1",
       "description": "Emballage : 1000 Graines Courgette blanche"
     },
     {
-      "id": 8,
+      "id": "8",
       "category": "COURGETTES",
       "image": "/imagedecourgettes/corgete3.png",
       "nom": "SEMENCES COURGETTES DIKRA F1",
       "description": "Emballage : 1000 Graines Courgette blanche"
     },
     {
-      "id": 9,
+      "id": "9",
       "category": "COURGETTES",
       "image": "/imagedecourgettes/corgete4.png",
       "nom": "SEMENCES COURGETTES DIKRA F1",
       "description": "Emballage : 1000 Graines Courgette blanche"
     },
     {
-      "id": 10,
+      "id": "10",
       "category": "COURGETTES",
       "image": "/imagedecourgettes/corgete5.png",
       "nom": "SEMENCES COURGETTES DIKRA F1",
       "description": "Emballage : 1000 Graines Courgette blanche"
     },
     {
-      "id": 11,
+      "id": "11",
       "category": "COURGETTES",
       "image": "/imagedecourgettes/corgete6.png",
       "nom": "SEMENCES COURGETTES DIKRA F1",
       "description": "Emballage : 1000 Graines Courgette blanche"
     },
     {
-      "id": 12,
+      "id": "12",
       "category": "MELONS",
       "image": "/imgedemelon/melon1.png",
       "nom": "SEMENCES MELON GARONA",
       "description": "Emballage : 1000 Gaines Melon charantais"
     },
     {
-      "id": 13,
+      "id": "13",
       "category": "MELONS",
       "image": "/imgedemelon/melon2.png",
       "nom": "SEMENCES MELON GARONA",
       "description": "Emballage : 1000 Gaines Melon charantais"
     },
     {
-      "id": 14,
+      "id": "14",
       "category": "MELONS",
       "image": "/imgedemelon/melon3.png",
       "nom": "SEMENCES MELON GARONA",
       "description": "Emballage : 1000 Gaines Melon charantais"
     },
     {
-      "id": 15,
+      "id": "15",
       "category": "MELONS",
       "image": "/imgedemelon/melon4.png",
       "nom": "SEMENCES MELON GARONA",
       "description": "Emballage : 1000 Gaines Melon charantais"
     },
     {
-      "id": 16,
-      "category": "MELONS",
-      "image": "/imgedemelon/melon5.png",
-      "nom": "SEMENCES MELON GARONA",
-      "description": "Emballage : 1000 Gaines Melon charantais"
-    },
-    {
-      "id": 17,
-      "category": "MELONS",
-      "image": "/imgedemelon/melon6.png",
-      "nom": "SEMENCES MELON GARONA",
-      "description": "Emballage : 1000 Gaines Melon charantais"
-    },
-    {
-      "id": 18,
-      "category": "MELONS",
-      "image": "/imgedemelon/melon7.png",
-      "nom": "SEMENCES MELON GARONA",
-      "description": "Emballage : 1000 Gaines Melon charantais"
-    },
-    {
-      "id": 19,
+      "id": "19",
       "category": "PASTEQUES",
       "image": "/imgedepasteque/pasteque1.png",
       "nom": "SEMENCES PASTEQUE DALLAS 1000 GRAINES",
       "description": "Emballage : 1000 GR Pastèque Crimson"
     },
     {
-      "id": 20,
+      "id": "20",
       "category": "PASTEQUES",
       "image": "/imgedepasteque/pasteque2.png",
       "nom": "Emballage : 1000 GR Pastèque Crimson",
       "description": "Emballage : 1000 graines Pastèque Crimson"
     },
     {
-      "id": 21,
+      "id": "21",
       "category": "POIVERENT",
       "image": "/imagedepoiverents/poiverent1.png",
       "nom": "SEMENCES POIVRON COLINA 1000 GR",
       "description": "Emballage : 1000 GR Poivron doux Italien"
     },
     {
-      "id": 22,
+      "id": "22",
       "category": "POIVERENT",
       "image": "/imagedepoiverents/poiverent2.png",
       "nom": "SEMENCES POIVRON COLINA 1000 GR",
       "description": "Emballage : 1000 GR Poivron doux Italien"
     },
     {
-      "id": 23,
+      "id": "23",
       "category": "POIVERENT",
       "image": "/imagedepoiverents/poiverent3.png",
       "nom": "SEMENCES POIVRON COLINA 1000 GR",
       "description": "Emballage : 1000 GR Poivron doux Italien"
     },
     {
-      "id": 24,
+      "id": "24",
       "category": "POIVERENT",
       "image": "/imagedepoiverents/poiverent4.png",
       "nom": "SEMENCES POIVRON COLINA 1000 GR",
       "description": "Emballage : 1000 GR Poivron doux Italien"
     },
     {
-      "id": "d1ed",
-      "image": "/imagedecourgettes/corgete1.png",
-      "nom": "bensaid",
-      "description": "magma",
+      "id": "bdd1",
+      "image": "/imagedecourgettes/corgete2.png",
+      "nom": "semencce",
+      "description": "yugu",
       "category": "COURGETTES"
+    },
+    {
+      "id": "25ad",
+      "image": "/imagedecourgettes/corgete3.png",
+      "nom": "khanssae",
+      "description": "obule frouge",
+      "category": "SOLUBLES"
+    },
+    {
+      "id": "40ef",
+      "image": "/imagedecourgettes/corgete1.png",
+      "nom": "khanssae",
+      "description": "uuuuuuuuu",
+      "category": "SOLUBLES"
     }
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "TOMATES",
       "link": "/tomate"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "COURGETTES",
       "link": "/corgette"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "MELONS",
       "link": "/melon"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "PASTEQUES",
       "link": "/pasteque"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "POIVERENTS",
       "link": "/poiverent"
     }

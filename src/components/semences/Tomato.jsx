@@ -3,12 +3,27 @@ import { useEffect, useState } from "react"
 import productsData from "../../data/semences.json"
 import "../../style/tomate.css"
 import axios from "axios"
+import { useCart } from "../CartSystem"
+import { ShoppingCart, Check } from "lucide-react"
 
-export default function Tomato() {
+
+export default function Tomato({product}) {
+   const { addToCart } = useCart()
+  
+    const [addedToCart, setAddedToCart] = useState({})
+  
   const [tomates, setTomates] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [stateuser,setStateuser] = useState(null)
+  const [showAddModal, setShowAddModal] = useState(false)
+  const [newCorgette, setnewTomate] = useState({
+    image: "",
+    nom: "",
+ 
+    description: "",
+  })
+
 
 
   useEffect(() => {
@@ -55,11 +70,150 @@ export default function Tomato() {
       setStateuser(userlogin);
     }
   }, [stateuser]);
+
+
+
+
+
+
+
+  
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const response = await axios.post("http://localhost:8080/products", {
+        ...newCorgette,
+        category: "TOMATES",
+      })
+      setTomates((prev) => [...prev, response.data])
+      setnewTomate({
+        image: "",
+        nom: "",
+        description: "",
+      })
+      closeAddModal()
+    } catch (error) {
+      console.error("Error adding corgette:", error)
+    }
+  }
+
+
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setnewTomate({ ...newCorgette, [name]: value })
+  }
+
+  const openAddModal = () => {
+    setShowAddModal(true)
+  }
+
+  const closeAddModal = () => {
+    setShowAddModal(false)
+  }
+
+
+
+  const [images, setImages] = useState([])
+  useEffect(() => {
+    // Hardcoded image names
+    const hardcodedImages = [
+      "tomate1.png",
+      "tomate2.png",
+      "tomate3.png",
+      "tomate4.png",
+      "tomate5.png"
+    ]
+    setImages(hardcodedImages)
+  }, [])
+
+
+
+
+ 
+
+
+
+  const handleAddToCart = (product) => {
+    addToCart(product)
+
+    // Show added confirmation
+    setAddedToCart((prev) => ({
+      ...prev,
+      [product.id]: true,
+    }))
+
+    // Reset after 2 seconds
+    setTimeout(() => {
+      setAddedToCart((prev) => ({
+        ...prev,
+        [product.id]: false,
+      }))
+    }, 2000)
+  }
+
+  // Add these styles for the "Ajouter" button
+  const buttonStyles = {
+    normal: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: "8px",
+      padding: "8px 16px",
+      backgroundColor: "#4caf50",
+      color: "white",
+      border: "none",
+      borderRadius: "4px",
+      fontSize: "14px",
+      fontWeight: "500",
+      cursor: "pointer",
+      transition: "all 0.2s ease",
+    },
+    hover: {
+      backgroundColor: "#3d9140",
+    },
+    added: {
+      backgroundColor: "#2e7d32",
+      cursor: "default",
+    },
+  }
+
+
+
+
+
+
  
   return (
+    <>
     <div className="tomato-container">
       <div className="tomato-header">
         <h2 className="tomato-title">Tomate</h2>
+
+        {stateuser ? (
+      <button
+        style={{
+          width: "250px",
+          height: "45px",
+          backgroundColor: "pink",
+          color: "black",
+          border: "none",
+          padding: "5px",
+          cursor: "pointer",
+         marginTop: "80px",
+          marginLeft: "900px",
+          
+          borderRadius: "5px",
+        }}
+        onClick={openAddModal}
+      >
+        Ajouter Tomates 
+      </button>
+      ):""}
+
+
         <div className="tomato-icon">
          
         </div>
@@ -77,10 +231,12 @@ export default function Tomato() {
                 <th>PRODUIT</th>
                 <th>NOM</th>
                 <th>DESCRIPTION</th>
-                <th>panier</th>
                 {stateuser ? (
-                <th>Action</th>
-              ):""}
+                  <th>Action</th>
+
+                ):<th>panier</th>}
+                  
+              
               </tr>
             </thead>
             <tbody>
@@ -102,9 +258,7 @@ export default function Tomato() {
                     </td>
                     <td className="tomato-name">{tomate.nom}</td>
                     <td className="tomato-description">{tomate.description}</td>
-                    <td>
-                      <button className="tomato-button">Ajouter</button>
-                    </td>
+                    
 
                     {stateuser ? (
                     <td><button
@@ -128,7 +282,36 @@ export default function Tomato() {
                 >
                   Delete
                 </button></td>
-                ):""}
+                ):(<td>
+                  <button
+                        style={
+                          addedToCart[tomate.id]
+                            ? { ...buttonStyles.normal, ...buttonStyles.added }
+                            : buttonStyles.normal
+                        }
+                        onClick={() => handleAddToCart(tomate)}
+                        disabled={addedToCart[tomate.id]}
+                        onMouseOver={(e) => {
+                          if (!addedToCart[tomate.id]) {
+                            e.currentTarget.style.backgroundColor = buttonStyles.hover.backgroundColor
+                          }
+                        }}
+                        onMouseOut={(e) => {
+                          if (!addedToCart[tomate.id]) {
+                            e.currentTarget.style.backgroundColor = buttonStyles.normal.backgroundColor
+                          }
+                        }}
+                      >
+                        {addedToCart[tomate.id] ? (
+                          <>
+                            <Check size={16} /> Ajouté
+                          </>
+                        ) : (
+                          <>
+                            <ShoppingCart size={16} /> Ajouter
+                          </>
+                        )}
+                      </button>                       </td>)}
                   </tr>
                 ))
               ) : (
@@ -143,5 +326,106 @@ export default function Tomato() {
         </div>
       )}
     </div>
+
+
+
+
+
+
+
+{showAddModal && (
+  <div className="modal" style={{ display: "block" }}>
+    <div className="modal-dialog">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title">Ajouter Bague</h5>
+          <button
+            type="button"
+            className="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            onClick={closeAddModal}
+          ></button>
+        </div>
+        <div className="modal-body">
+          <form onSubmit={handleSubmit}>
+            
+
+            <div style={{ marginBottom: "1rem" }}>
+              <label style={{ display: "block", marginBottom: "0.5rem", fontWeight: "500" }}>Photo URL</label>
+            
+              <select
+                      style={{ width: "100%", padding: "0.5rem", borderRadius: "0.25rem", border: "1px solid #d1d5db" }}
+                      name="image"
+                      value={newCorgette.image}
+                      onChange={handleInputChange}
+                    >
+                      <option value="">Select an image</option>
+                      {images.map((image, index) => (
+                        <option key={index} value={`/imagedecourgettes/${image}`}>
+                          {image}
+                        </option>
+                      ))}
+                    </select>
+
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="nom" className="form-label">
+                Nom
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="nom"
+                name="nom"
+                value={newCorgette.nom}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+
+
+
+            <div className="mb-3">
+              <label htmlFor="nom" className="form-label">
+                decription
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="description"
+                name="description"
+                value={newCorgette.description}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+
+
+
+
+
+           
+            <button type="submit" className="btn btn-primary">
+              Ajouter
+            </button>
+          </form>
+        </div>
+        <div className="modal-footer">
+          <button type="button" className="btn btn-secondary" onClick={closeAddModal}>
+            Fermer
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
+
+</>
+
+
+
   );
 }

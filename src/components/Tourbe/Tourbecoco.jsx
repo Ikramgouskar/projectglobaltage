@@ -2,7 +2,7 @@
 import { Search, Filter } from "lucide-react"
 import "../../style/tourbecoco.css"
 
-export default function TourbeRempotage() {
+export default function Tourbecoco() {
 
   const products = [
     {

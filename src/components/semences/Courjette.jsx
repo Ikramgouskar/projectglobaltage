@@ -3,7 +3,15 @@ import { useState, useEffect} from "react"
 
 import "../../style/corgette.css"
 import axios from "axios"
-export default function Courjette() {
+
+import { useCart } from "../CartSystem"
+import { ShoppingCart, Check } from "lucide-react"
+
+export default function Courjette({product}) {
+  const { addToCart } = useCart()
+
+  const [addedToCart, setAddedToCart] = useState({})
+
   const [corgettes, setCorgettes] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -122,8 +130,49 @@ export default function Courjette() {
 
 
 
+  const handleAddToCart = (product) => {
+    addToCart(product)
 
- 
+    // Show added confirmation
+    setAddedToCart((prev) => ({
+      ...prev,
+      [product.id]: true,
+    }))
+
+    // Reset after 2 seconds
+    setTimeout(() => {
+      setAddedToCart((prev) => ({
+        ...prev,
+        [product.id]: false,
+      }))
+    }, 2000)
+  }
+
+  // Add these styles for the "Ajouter" button
+  const buttonStyles = {
+    normal: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: "8px",
+      padding: "8px 16px",
+      backgroundColor: "#4caf50",
+      color: "white",
+      border: "none",
+      borderRadius: "4px",
+      fontSize: "14px",
+      fontWeight: "500",
+      cursor: "pointer",
+      transition: "all 0.2s ease",
+    },
+    hover: {
+      backgroundColor: "#3d9140",
+    },
+    added: {
+      backgroundColor: "#2e7d32",
+      cursor: "default",
+    },
+  }
 
 
   return (
@@ -141,7 +190,7 @@ export default function Courjette() {
           border: "none",
           padding: "5px",
           cursor: "pointer",
-         marginTop: "40px",
+         marginTop: "80px",
           marginLeft: "900px",
           
           borderRadius: "5px",
@@ -171,11 +220,12 @@ export default function Courjette() {
                   <th>PRODUIT</th>
                   <th>NOM</th>
                   <th>DESCRIPTION</th>
-                  <th>panier</th>
                   {stateuser ? (
                   <th>Action</th>
 
-                ):""}
+                ):<th>panier</th>}
+                  
+              
                 </tr>
               </thead>
               <tbody>
@@ -197,9 +247,7 @@ export default function Courjette() {
                       </td>
                       <td className="corgette-name">{corgette.nom}</td>
                       <td className="corgette-description">{corgette.description}</td>
-                      <td>
-                        <button className="corgette-button">Ajouter</button>
-                      </td>
+                    
 
                       {stateuser ? (
                       <td><button
@@ -224,7 +272,36 @@ export default function Courjette() {
                   Delete
                 </button></td>
 
-):""}  
+):(  <td>
+  <button
+      style={
+        addedToCart[corgette.id]
+          ? { ...buttonStyles.normal, ...buttonStyles.added }
+          : buttonStyles.normal
+      }
+      onClick={() => handleAddToCart(corgette)}
+      disabled={addedToCart[corgette.id]}
+      onMouseOver={(e) => {
+        if (!addedToCart[corgette.id]) {
+          e.currentTarget.style.backgroundColor = buttonStyles.hover.backgroundColor
+        }
+      }}
+      onMouseOut={(e) => {
+        if (!addedToCart[corgette.id]) {
+          e.currentTarget.style.backgroundColor = buttonStyles.normal.backgroundColor
+        }
+      }}
+    >
+      {addedToCart[corgette.id] ? (
+        <>
+          <Check size={16} /> Ajouté
+        </>
+      ) : (
+        <>
+          <ShoppingCart size={16} /> Ajouter
+        </>
+      )}
+    </button>                      </td>)}  
 
 
                     </tr>
@@ -249,94 +326,253 @@ export default function Courjette() {
 
 
 
-{showAddModal && (
-  <div className="modal" style={{ display: "block" }}>
-    <div className="modal-dialog">
-      <div className="modal-content">
-        <div className="modal-header">
-          <h5 className="modal-title">Ajouter Bague</h5>
-          <button
-            type="button"
-            className="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-            onClick={closeAddModal}
-          ></button>
-        </div>
-        <div className="modal-body">
-          <form onSubmit={handleSubmit}>
-            
+      {showAddModal && (
+ <div
+ className="modal-backdrop"
+ style={{
+   position: "fixed",
+   top: 0,
+   left: 0,
+   right: 0,
+   bottom: 0,
+   backgroundColor: "rgba(0,0,0,0.6)",
+   display: "flex",
+   justifyContent: "center",
+   alignItems: "center",
+   zIndex: 1050,
+ }}
+>
+ <div
+   className="modal-container"
+   style={{
+     backgroundColor: "white",
+     borderRadius: "12px",
+     width: "500px",
+     maxWidth: "95%",
+     boxShadow: "0 10px 25px rgba(0,0,0,0.2)",
+     animation: "fadeIn 0.3s ease-out",
+     overflow: "hidden",
+   }}
+ >
+   <div
+     className="modal-header"
+     style={{
+       padding: "20px 25px",
+       borderBottom: "1px solid #f0f0f0",
+       display: "flex",
+       justifyContent: "space-between",
+       alignItems: "center",
+     }}
+   >
+     <h5
+       style={{
+         margin: 0,
+         fontSize: "20px",
+         fontWeight: "600",
+         color: "#333",
+       }}
+     >
+       Ajouter Courgette
+     </h5>
+     <button
+       onClick={closeAddModal}
+       style={{
+         background: "transparent",
+         border: "none",
+         fontSize: "22px",
+         cursor: "pointer",
+         color: "#999",
+         transition: "color 0.2s",
+       }}
+       onMouseOver={(e) => (e.currentTarget.style.color = "#333")}
+       onMouseOut={(e) => (e.currentTarget.style.color = "#999")}
+     >
+       ×
+     </button>
+   </div>
 
-            <div style={{ marginBottom: "1rem" }}>
-              <label style={{ display: "block", marginBottom: "0.5rem", fontWeight: "500" }}>Photo URL</label>
-            
-              <select
-                      style={{ width: "100%", padding: "0.5rem", borderRadius: "0.25rem", border: "1px solid #d1d5db" }}
-                      name="image"
-                      value={newCorgette.image}
-                      onChange={handleInputChange}
-                    >
-                      <option value="">Select an image</option>
-                      {images.map((image, index) => (
-                        <option key={index} value={`/imagedecourgettes/${image}`}>
-                          {image}
-                        </option>
-                      ))}
-                    </select>
+   <div className="modal-body" style={{ padding: "25px" }}>
+     <form onSubmit={handleSubmit}>
+       <div style={{ marginBottom: "20px" }}>
+         <label
+           style={{
+             display: "block",
+             marginBottom: "8px",
+             fontWeight: "500",
+             color: "#444",
+           }}
+         >
+           Image
+         </label>
+         <select
+           style={{
+             width: "100%",
+             padding: "12px 15px",
+             borderRadius: "8px",
+             border: "1px solid #ddd",
+             backgroundColor: "#f9f9f9",
+             fontSize: "15px",
+             transition: "border-color 0.2s, box-shadow 0.2s",
+             outline: "none",
+           }}
+           name="image"
+           value={newCorgette.image}
+           onChange={handleInputChange}
+           required
+           onFocus={(e) => {
+             e.target.style.borderColor = "#a3c9ff"
+             e.target.style.boxShadow = "0 0 0 3px rgba(66, 153, 225, 0.15)"
+           }}
+           onBlur={(e) => {
+             e.target.style.borderColor = "#ddd"
+             e.target.style.boxShadow = "none"
+           }}
+         >
+           <option value="">Sélectionner une image</option>
+           {images.map((image, index) => (
+             <option key={index} value={`/imagedecourgettes/${image}`}>
+               {image}
+             </option>
+           ))}
+         </select>
 
-            </div>
+        
+       </div>
 
-            <div className="mb-3">
-              <label htmlFor="nom" className="form-label">
-                Nom
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="nom"
-                name="nom"
-                value={newCorgette.nom}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
+       <div style={{ marginBottom: "20px" }}>
+         <label
+           style={{
+             display: "block",
+             marginBottom: "8px",
+             fontWeight: "500",
+             color: "#444",
+           }}
+         >
+           Nom
+         </label>
+         <input
+           type="text"
+           style={{
+             width: "100%",
+             padding: "12px 15px",
+             borderRadius: "8px",
+             border: "1px solid #ddd",
+             backgroundColor: "#f9f9f9",
+             fontSize: "15px",
+             transition: "border-color 0.2s, box-shadow 0.2s",
+             outline: "none",
+           }}
+           name="nom"
+           value={newCorgette.nom}
+           onChange={handleInputChange}
+           required
+           onFocus={(e) => {
+             e.target.style.borderColor = "#a3c9ff"
+             e.target.style.boxShadow = "0 0 0 3px rgba(66, 153, 225, 0.15)"
+           }}
+           onBlur={(e) => {
+             e.target.style.borderColor = "#ddd"
+             e.target.style.boxShadow = "none"
+           }}
+         />
+       </div>
 
+       <div style={{ marginBottom: "25px" }}>
+         <label
+           style={{
+             display: "block",
+             marginBottom: "8px",
+             fontWeight: "500",
+             color: "#444",
+           }}
+         >
+           Description
+         </label>
+         <textarea
+           style={{
+             width: "100%",
+             padding: "12px 15px",
+             borderRadius: "8px",
+             border: "1px solid #ddd",
+             backgroundColor: "#f9f9f9",
+             fontSize: "15px",
+             minHeight: "100px",
+             resize: "vertical",
+             transition: "border-color 0.2s, box-shadow 0.2s",
+             outline: "none",
+           }}
+           name="description"
+           value={newCorgette.description}
+           onChange={handleInputChange}
+           required
+           onFocus={(e) => {
+             e.target.style.borderColor = "#a3c9ff"
+             e.target.style.boxShadow = "0 0 0 3px rgba(66, 153, 225, 0.15)"
+           }}
+           onBlur={(e) => {
+             e.target.style.borderColor = "#ddd"
+             e.target.style.boxShadow = "none"
+           }}
+         />
+       </div>
 
-
-            <div className="mb-3">
-              <label htmlFor="nom" className="form-label">
-                decription
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="description"
-                name="description"
-                value={newCorgette.description}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-
-
-
-
-
+       <div
+         className="modal-actions"
+         style={{
+           display: "flex",
+           gap: "15px",
+           marginTop: "10px",
+         }}
+       >
+         <button
+           type="button"
+           onClick={closeAddModal}
+           style={{
+             flex: "1",
+             padding: "12px",
+             borderRadius: "8px",
+             border: "1px solid #ddd",
+             backgroundColor: "#f5f5f5",
+             color: "#555",
+             fontSize: "15px",
+             fontWeight: "500",
+             cursor: "pointer",
+             transition: "all 0.2s",
+           }}
+           onMouseOver={(e) => {
+             e.currentTarget.style.backgroundColor = "#eaeaea"
+           }}
+           onMouseOut={(e) => {
+             e.currentTarget.style.backgroundColor = "#f5f5f5"
+           }}
+         >
+           Annuler
+         </button>
+         <button
+           type="submit"
+           style={{
+             flex: "1",
+             padding: "12px",
+             borderRadius: "8px",
+             border: "none",
+             backgroundColor: "rgb(85, 112, 85)", // Pink to match the add button
+             color: "#fff",
+             fontSize: "15px",
+             fontWeight: "500",
+             cursor: "pointer",
+             transition: "all 0.2s",
+           }}
            
-            <button type="submit" className="btn btn-primary">
-              Ajouter
-            </button>
-          </form>
-        </div>
-        <div className="modal-footer">
-          <button type="button" className="btn btn-secondary" onClick={closeAddModal}>
-            Fermer
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+         >
+           Ajouter
+         </button>
+       </div>
+     </form>
+   </div>
+ </div>
+</div>
 )}
+
 
 
 </>

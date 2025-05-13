@@ -1,151 +1,170 @@
 {
   "products": [
     {
+      "id": 1,
       "category": "SOLUBLES",
-      "product_count": 10,
-      "link": "/engraisoluble",
-      "products": [
-        {
-          
-              "id": 1,
-              "image": "/imagedengrain/imgsoluble/nitratedepota.png",
-              "nom": "NITRATE DE POTASSE 13-0-46",
-              "description": "Emballage : 25KG"
-            },
-            {
-              "id": 2,
-              "image": "/imagedengrain/imgsoluble/sulfatepota.png",
-              "nom": "SULFATE DE POTASSE SOLUBLE",
-              "description": "Emballage : 25KG"
-            },
-            {
-              "id": 3,
-              "image": "/imagedengrain/imgsoluble/calciamnitrate.png",
-              "nom": "NITRATE DE CALCIUM HORTIGRADE",
-              "description": "Emballage : 25KG"
-            },
-            {
-              "id": 4,
-              "image": "/imagedengrain/imgsoluble/nitratedecalcumfertigrade.png",
-              "nom": "NITRATE DE CALCIUM FERTIGRADE",
-              "description": "Emballage : 25KG"
-            },
-            {
-              "id": 5,
-              "image": "/imagedengrain/imgsoluble/map oluble.png",
-              "nom": "MAP SOLUBLE 12-61",
-              "description": "Emballage : 25KG"
-            },
-            {
-              "id": 6,
-              "image": "/imagedengrain/imgsoluble/chloruredepotasse.png",
-              "nom": "CHLORURE DE POTASSE SOLUBLE",
-              "description": "Emballage : 50KG"
-            },
-            {
-              "id": 7,
-              "image": "/imagedengrain/imgsoluble/sulfatemagneie.png",
-              "nom": "SULFATE MAGNESIE 16% EPSO TOP",
-              "description": "Emballage : 25KG",
-              "bio": true
-            },
-            {
-              "id": 8,
-              "image": "/imagedengrain/imgsoluble/mkp.png",
-              "nom": "MKP 00-52-34",
-              "description": "Emballage : 25KG"
-            },
-            {
-              "id": 9,
-              "image": "/imagedengrain/imgsoluble/kaliop.png",
-              "nom": "KALISOP FINE 50 – 50 KG",
-              "description": "Emballage : 25KG",
-              "bio": true
-            },
-            {
-              "id": 10,
-              "image": "/imagedengrain/imgsoluble/soluamspremium.png",
-              "nom": "SOLUAMS 21%",
-              "description": "Emballage : 25KG"
-            }
- 
-      ]
-      
+      "image": "/imagedengrain/imgsoluble/nitratedepota.png",
+      "nom": "NITRATE DE POTASSE 13-0-46",
+      "description": "Emballage : 25KG"
     },
     {
+      "id": 2,
+      "category": "SOLUBLES",
+      "image": "/imagedengrain/imgsoluble/sulfatepota.png",
+      "nom": "SULFATE DE POTASSE SOLUBLE",
+      "description": "Emballage : 25KG"
+    },
+    {
+      "id": 3,
+      "category": "SOLUBLES",
+      "image": "/imagedengrain/imgsoluble/calciamnitrate.png",
+      "nom": "NITRATE DE CALCIUM HORTIGRADE",
+      "description": "Emballage : 25KG"
+    },
+    {
+      "id": 4,
+      "category": "SOLUBLES",
+      "image": "/imagedengrain/imgsoluble/nitratedecalcumfertigrade.png",
+      "nom": "NITRATE DE CALCIUM FERTIGRADE",
+      "description": "Emballage : 25KG"
+    },
+    {
+      "id": 5,
+      "category": "SOLUBLES",
+      "image": "/imagedengrain/imgsoluble/map oluble.png",
+      "nom": "MAP SOLUBLE 12-61",
+      "description": "Emballage : 25KG"
+    },
+    {
+      "id": 6,
+      "category": "SOLUBLES",
+      "image": "/imagedengrain/imgsoluble/chloruredepotasse.png",
+      "nom": "CHLORURE DE POTASSE SOLUBLE",
+      "description": "Emballage : 50KG"
+    },
+    {
+      "id": 7,
+      "category": "SOLUBLES",
+      "image": "/imagedengrain/imgsoluble/sulfatemagneie.png",
+      "nom": "SULFATE MAGNESIE 16% EPSO TOP",
+      "description": "Emballage : 25KG",
+      "bio": true
+    },
+    {
+      "id": 8,
+      "category": "SOLUBLES",
+      "image": "/imagedengrain/imgsoluble/mkp.png",
+      "nom": "MKP 00-52-34",
+      "description": "Emballage : 25KG"
+    },
+    {
+      "id": 9,
+      "category": "SOLUBLES",
+      "image": "/imagedengrain/imgsoluble/kaliop.png",
+      "nom": "KALISOP FINE 50 – 50 KG",
+      "description": "Emballage : 25KG",
+      "bio": true
+    },
+    {
+      "id": 10,
+      "category": "SOLUBLES",
+      "image": "/imagedengrain/imgsoluble/soluamspremium.png",
+      "nom": "SOLUAMS 21%",
+      "description": "Emballage : 25KG"
+    },
+    {
+      "id": 11,
       "category": "NPK SOLUBLES",
-      "product_count": 6,
-      "link": "/npksoluble",
-      "products": [
-        {
-          "id": 1,
-          "nom": "NITRATE DE MAGNESIE",
-          "image": "/imagedengrain/npkoluble/nitratedemagnet.png",
-          "description": "25KG"
-        },
-        {
-          "id": 2,
-          "nom": "NPK 11-09-35",
-          "image": "/imagedengrain/npkoluble/npk 11 09 35.png",
-          "description": "25KG"
-        },
-        {
-          "id": 3,
-          "nom": "NPK 13-40-13",
-          "image": "/imagedengrain/npkoluble/NPK 13 40 13.png",
-          "description": "25KG"
-        },
-        {
-          "id": 4,
-          "nom": "NPK 14-11-25",
-          "image": "/imagedengrain/npkoluble/NPK 14 11 5.png",
-          "description": "25KG"
-        },
-        {
-          "id": 5,
-          "nom": "NPK 20-20-20",
-          "image": "/imagedengrain/npkoluble/NPK 20 20 20.png",
-          "description": "1KG - 25KG"
-        },
-        {
-          "id": 6,
-          "nom": "UREE PHOSPHATE 17-44",
-          "image": "/imagedengrain/npkoluble/UREE PHOPHATE 17 44.png",
-          "description": " 25KG"
-        }
-      ]
-      
+      "nom": "NITRATE DE MAGNESIE",
+      "image": "/imagedengrain/npkoluble/nitratedemagnet.png",
+      "description": "25KG"
     },
     {
+      "id": 12,
+      "category": "NPK SOLUBLES",
+      "nom": "NPK 11-09-35",
+      "image": "/imagedengrain/npkoluble/npk 11 09 35.png",
+      "description": "25KG"
+    },
+    {
+      "id": 13,
+      "nom": "NPK 13-40-13",
+      "category": "NPK SOLUBLES",
+      "image": "/imagedengrain/npkoluble/NPK 13 40 13.png",
+      "description": "25KG"
+    },
+    {
+      "id": 14,
+      "category": "NPK SOLUBLES",
+      "nom": "NPK 14-11-25",
+      "image": "/imagedengrain/npkoluble/NPK 14 11 5.png",
+      "description": "25KG"
+    },
+    {
+      "id": 15,
+      "category": "NPK SOLUBLES",
+      "nom": "NPK 20-20-20",
+      "image": "/imagedengrain/npkoluble/NPK 20 20 20.png",
+      "description": "1KG - 25KG"
+    },
+    {
+      "id": 16,
+      "category": "NPK SOLUBLES",
+      "nom": "UREE PHOSPHATE 17-44",
+      "image": "/imagedengrain/npkoluble/UREE PHOPHATE 17 44.png",
+      "description": " 25KG"
+    },
+    {
+      "id": 17,
       "category": "NPK GRANULES",
-      "product_count": 4,
-      "link": "/granules",
-      "products": [
-        {
-          "id": 1,
-          "nom": "NPK 15-15-15",
-          "image": "/imagedengrain/npkGranule/nergetic npk 10 10 22.png",
-          "description": "25KG"
-        },
-        {
-          "id": 2,
-          "nom": "NPK 15-15-15",
-          "image": "/imagedengrain/npkGranule/OLIVO NPK 17 08 10.png",
-          "description": "25KG"
-        },
-        {
-          "id": 3,
-          "nom": "NPK 15-15-15",
-          "image": "/imagedengrain/npkGranule/PATENTKALI.png",
-          "description": "50KG"
-        },
-        {
-          "id": 4,
-          "nom": "NPK 15-15-15",
-          "image": "/imagedengrain/npkGranule/ULFACTIV 7 14 14.png",
-          "description": "25KG"
-        }
-      ]
+      "nom": "NPK 15-15-15",
+      "image": "/imagedengrain/npkGranule/nergetic npk 10 10 22.png",
+      "description": "25KG"
+    },
+    {
+      "id": 18,
+      "category": "NPK GRANULES",
+      "nom": "NPK 15-15-15",
+      "image": "/imagedengrain/npkGranule/OLIVO NPK 17 08 10.png",
+      "description": "25KG"
+    },
+    {
+      "id": 19,
+      "category": "NPK GRANULES",
+      "nom": "NPK 15-15-15",
+      "image": "/imagedengrain/npkGranule/PATENTKALI.png",
+      "description": "50KG"
+    },
+    {
+      "id": 20,
+      "category": "NPK GRANULES",
+      "nom": "NPK 15-15-15",
+      "image": "/imagedengrain/npkGranule/ULFACTIV 7 14 14.png",
+      "description": "25KG"
+    },
+    {
+      "id": "668d",
+      "image": "/imagedecourgettes/corgete2.png",
+      "nom": "aciiideeee",
+      "description": "uuuuuuuuuu",
+      "category": "ACIDES AMINES"
     }
-  ]       
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "SOLUBLES",
+      "link": "/engraisoluble"
+    },
+    {
+      "id": "2",
+      "name": "NPK SOLUBLES",
+      "link": "/npksoluble"
+    },
+    {
+      "id": "3",
+      "name": "NPK GRANULES",
+      "link": "/granules"
+    }
+  ]
 }

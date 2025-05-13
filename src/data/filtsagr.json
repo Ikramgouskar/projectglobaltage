@@ -1,78 +1,77 @@
 {
-    "products": [
-      {
-        "category": "FILETANTITHRIPS",
-        "product_count": 2,
-        "link": "/filetanatith",
-        "products": [
-          {
-                "id": 1,
-                "image": "/imagedefilet/img anti/filet antiinecte.png",
-                "nom": "FILET ANTIINSECTES CRYSTAL 22X10",
-                "description": "Emballage : "
-              },
-              {
-                "id": 2,
-                "image": "/imagedefilet/img anti/filet antiinsecte.png",
-                "nom": "FILET ANTIINSECTES GRIS 22X10",
-                "description": "Emballage : "
-              }
-   
-        ]
-        
-      },
-      {
-        "category": "FILET TISSE ANTI GRÊLE",
-        "product_count": 6,
-        "link": "/flitetisse",
-        "products": [
-          {
-            "id": 1,
-            "nom": "FILET ANTI GRELE",
-            "image": "/imagedefilet/filet tie anti/anti grele.png",
-            "description": "2.5X3 GRIS"
-          }
-          ,
-          {
-            "id": 2,
-            "nom": "FILET ANTI GRELE",
-            "image": "/imagedefilet/filet tie anti/anti grele.png",
-            "description": "2.5X3 CRYSTAL"
-          },
-          {
-            "id": 3,
-            "nom": "FILET ANTI GRELE",
-            "image": "/imagedefilet/filet tie anti/anti grele.png",
-            "description": "2.5X3 NOIR"
-          }
-        ]
-        
-      },
-      {
-        "category": "FILET TISSE OMBRAGE",
-        "product_count": 3,
-        "link": "/filettisseombrage",
-        "products": [
-          {
-            "id": 1,
-            "nom": "FILET OMBRAGE 50% ARGENTE",
-            "image": "/imagedefilet/img tie ombrage/image.png",
-            "description": "ARGENTE"
-          },
-          {
-            "id": 2,
-            "nom": "FILET OMBRAGE 50% NOIR",
-            "image": "/imagedefilet/img tie ombrage/image.png",
-            "description": "NOIR 90%"
-          },
-          {
-            "id": 3,
-            "nom": "FILET OMBRAGE 90%",
-            "image": "/imagedefilet/img tie ombrage/image.png",
-            "description": "NOIR"
-          }
-
-        ]
-      }
-    ]       
-  }
+  "products": [
+    {
+      "id": 1,
+      "category": "FILETANTITHRIPS",
+      "image": "/imagedefilet/img anti/filet antiinecte.png",
+      "nom": "FILET ANTIINSECTES CRYSTAL 22X10",
+      "description": "Emballage : "
+    },
+    {
+      "id": 2,
+      "category": "FILETANTITHRIPS",
+      "image": "/imagedefilet/img anti/filet antiinsecte.png",
+      "nom": "FILET ANTIINSECTES GRIS 22X10",
+      "description": "Emballage : "
+    },
+    {
+      "id": 3,
+      "category": "FILET TISSE ANTI GRÊLE",
+      "nom": "FILET ANTI GRELE",
+      "image": "/imagedefilet/filet tie anti/anti grele.png",
+      "description": "2.5X3 GRIS"
+    },
+    {
+      "id": 4,
+      "category": "FILET TISSE ANTI GRÊLE",
+      "nom": "FILET ANTI GRELE",
+      "image": "/imagedefilet/filet tie anti/anti grele.png",
+      "description": "2.5X3 CRYSTAL"
+    },
+    {
+      "id": 5,
+      "nom": "FILET ANTI GRELE",
+      "category": "FILET TISSE ANTI GRÊLE",
+      "image": "/imagedefilet/filet tie anti/anti grele.png",
+      "description": "2.5X3 NOIR"
+    },
+    {
+      "id": 6,
+      "nom": "FILET OMBRAGE 50% ARGENTE",
+      "category": "FILET TISSE OMBRAGE",
+      "image": "/imagedefilet/img tie ombrage/image.png",
+      "description": "ARGENTE"
+    },
+    {
+      "id": 7,
+      "nom": "FILET OMBRAGE 50% NOIR",
+      "category": "FILET TISSE OMBRAGE",
+      "image": "/imagedefilet/img tie ombrage/image.png",
+      "description": "NOIR 90%"
+    },
+    {
+      "id": 8,
+      "nom": "FILET OMBRAGE 90%",
+      "category": "FILET TISSE OMBRAGE",
+      "image": "/imagedefilet/img tie ombrage/image.png",
+      "description": "NOIR"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "FILET ANTI-THRIPS",
+      "link": "/filetanatith"
+    },
+    {
+      "id": 2,
+      "name": "FILET TISSE ANTI GRÊLE",
+      "link": "/flitetisse"
+    },
+    {
+      "id": 3,
+      "name": "FILET TISSE OMBRAGE",
+      "link": "/filettisseombrage"
+    }
+  ]
+}

@@ -60,7 +60,7 @@ export default function Footer() {
 <br />
           <div class="footer-newsletter">
             <h3>Newsletter</h3>
-            <br />
+            
             <p>Inscrivez-vous pour recevoir nos actualités et offres spéciales</p>
             <form class="newsletter-form">
               <div class="form-group ">

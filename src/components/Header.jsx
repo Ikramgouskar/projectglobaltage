@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom";
 
+import { CartIcon } from "./CartSystem"
+
 import "../style/header.css"
 
 export default function Header({ isAuthenticated, setIsAuthenticated }) {
@@ -39,6 +41,20 @@ export default function Header({ isAuthenticated, setIsAuthenticated }) {
     navigate("/");
     
   };
+
+
+  
+  const handleSelectChange = (e) => {
+    const value = e.target.value
+
+    if (value === "profile") {
+      navigate("/profile")
+    } else if (value === "settings") {
+      navigate("/sitting")
+    } else if (value === "logout") {
+      handlerlogaut()
+    }
+  }
 
 
 
@@ -87,13 +103,27 @@ export default function Header({ isAuthenticated, setIsAuthenticated }) {
                 <span class="link-hover-effect"></span>
               </Link>
             </li>
+            <li>
+              <Link to="/orders">
+                <span class="link-text">Orders</span>
+                <span class="link-hover-effect"></span>
+              </Link>
+            </li>
+       
 
-          <button
-                  onClick={handlerlogaut}
-                  className="logout-button"
+
+
+            <select 
+                  onChange={handleSelectChange}
+                  defaultValue=""
+                  className="profile-select"
                 >
-                  Déconnexion
-                </button>
+                  <option value="" disabled>action</option>
+                 
+                  <option value="profile">Profile</option>
+                  <option value="settings">Setting</option>
+                  <option value="logout">Déconnexion</option>
+                </select>
               </>
 
         ) : (
@@ -120,6 +150,14 @@ export default function Header({ isAuthenticated, setIsAuthenticated }) {
               <Link to="/login">
                 <span class="link-text">Connexion</span>
                 <span class="link-hover-effect"></span>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/panier">
+                <span className="link-text">Panier</span>
+                <span className="link-hover-effect"></span>
+                <CartIcon />
               </Link>
             </li>
             </>

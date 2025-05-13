@@ -20,7 +20,7 @@ export default function Filets() {
   }, [stateuser]);
 
     useEffect(() => {
-        fetch("http://localhost:8001/products")
+        fetch("http://localhost:8001/categories")
           .then((response) => {
             
             return response.json();
@@ -44,7 +44,7 @@ export default function Filets() {
       const deleteENGRAI = (id) => {
         if (window.confirm("Voulez-vous vraiment supprimer cette VEGETABLE ?")) {
           axios
-            .delete(`http://localhost:8001/products/${id}`)
+            .delete(`http://localhost:8001/categories/${id}`)
             .then(() => {
               setCategories((prev) => prev.filter((category) => category.id !== id))
             })
@@ -99,8 +99,7 @@ export default function Filets() {
                 <FertilizerBagIcon />
               </div>
               <div className="engrais-category-info">
-                <h2 className="engrais-category-name">{category.category}</h2>
-                <p className="engrais-product-count">{category.product_count} Products</p>
+                <h2 className="engrais-category-name">{category.name}</h2>
               </div>
               <div className="engrais-hover-overlay">
               <Link to={`${category.link}`}>

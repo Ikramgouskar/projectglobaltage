@@ -1,0 +1,94 @@
+{
+  "orders": [
+    {
+      "id": "0eee",
+      "customer": {
+        "name": "gouskar ikram gouskar",
+        "email": "ikram2005.gouskar@gmail.com",
+        "phone": "0622537433",
+        "address": "inzegane"
+      },
+      "products": [
+        {
+          "id": "1",
+          "category": "TOMATES",
+          "image": "/imagedetomate/tomate1.png",
+          "nom": "SEMENCES TOMATE ARENA F1",
+          "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre",
+          "quantity": 1
+        },
+        {
+          "id": "8",
+          "category": "COURGETTES",
+          "image": "/imagedecourgettes/corgete3.png",
+          "nom": "SEMENCES COURGETTES DIKRA F1",
+          "description": "Emballage : 1000 Graines Courgette blanche",
+          "quantity": 1
+        }
+      ],
+      "date": "2025-05-13T11:09:16.414Z",
+      "status": "completed",
+      "totalItems": 2
+    },
+    {
+      "id": "252a",
+      "customer": {
+        "name": "ikramgouskar",
+        "email": "ikram2005.gouskar@gmail.com",
+        "phone": "0622537433",
+        "address": "hay hassani"
+      },
+      "products": [
+        {
+          "id": "3",
+          "category": "TOMATES",
+          "image": "/imagedetomate/tomate3.png",
+          "nom": "SEMENCES TOMATE CERISE F1",
+          "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre",
+          "quantity": 1
+        }
+      ],
+      "date": "2025-05-13T11:10:16.376Z",
+      "status": "completed",
+      "totalItems": 1
+    },
+    {
+      "id": "9df2",
+      "customer": {
+        "name": "ikramgouskar",
+        "email": "ikram2005.gouskar@gmail.com",
+        "phone": "0622537433",
+        "address": "hay hassani"
+      },
+      "products": [
+        {
+          "id": "5",
+          "category": "TOMATES",
+          "image": "/imagedetomate/tomate5.png",
+          "nom": "SEMENCES TOMATE COEUR DE BOEUF F1",
+          "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre",
+          "quantity": 1
+        },
+        {
+          "id": "4",
+          "category": "TOMATES",
+          "image": "/imagedetomate/tomate4.png",
+          "nom": "SEMENCES TOMATE COEUR DE BOEUF F1",
+          "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre",
+          "quantity": 3
+        },
+        {
+          "id": "3",
+          "category": "TOMATES",
+          "image": "/imagedetomate/tomate3.png",
+          "nom": "SEMENCES TOMATE CERISE F1",
+          "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre",
+          "quantity": 4
+        }
+      ],
+      "date": "2025-05-13T11:28:13.966Z",
+      "status": "completed",
+      "totalItems": 8
+    }
+  ]
+}
