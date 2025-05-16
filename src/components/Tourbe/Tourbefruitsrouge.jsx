@@ -124,12 +124,11 @@ export default function Tourbefruitsrouge({product}) {
   useEffect(() => {
     // Hardcoded image names
     const hardcodedImages = [
-      "corgete1.png",
-      "corgete2.png",
-      "corgete3.png",
-      "corgete4.png",
-      "corgete5.png",
-      "corgete6.png",
+      "977myrtille .png",
+      "blonde932.png",
+      "blondeAcide2ub.png",
+      "propmyrtilles.png",
+     
     ]
     setImages(hardcodedImages)
   }, [])
@@ -398,7 +397,7 @@ export default function Tourbefruitsrouge({product}) {
           color: "#333",
         }}
       >
-        Ajouter filet Anti-thrips
+        Ajouter SUBSTRATS FRUITS ROUGES
       </h5>
       <button
         onClick={closeAddModal}
@@ -456,7 +455,7 @@ export default function Tourbefruitsrouge({product}) {
           >
             <option value="">Sélectionner une image</option>
             {images.map((image, index) => (
-              <option key={index} value={`/imagedecourgettes/${image}`}>
+              <option key={index} value={`/imadedetourbe/image fruit rouge/${image}`}>
                 {image}
               </option>
             ))}

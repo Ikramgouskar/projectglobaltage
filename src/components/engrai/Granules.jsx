@@ -76,7 +76,7 @@ export default function Granules({product}) {
 
 
   const deletegranules = (id) => {
-    if (window.confirm("Voulez-vous vraiment supprimer cette VEGETABLE ?")) {
+    if (window.confirm("Voulez-vous vraiment supprimer cet Engrais ?")) {
       axios
         .delete(`http://localhost:8000/products/${id}`)
         .then(() => {
@@ -130,12 +130,11 @@ export default function Granules({product}) {
   useEffect(() => {
     // Hardcoded image names
     const hardcodedImages = [
-      "corgete1.png",
-      "corgete2.png",
-      "corgete3.png",
-      "corgete4.png",
-      "corgete5.png",
-      "corgete6.png",
+      "nergetic npk 10 10 22.png",
+      "OLIVO NPK 17 08 10.png",
+      "PATENTKALI.png.png",
+      "ULFACTIV 7 14 14.png",
+      
     ]
     setImages(hardcodedImages)
   }, [])
@@ -365,7 +364,7 @@ export default function Granules({product}) {
           color: "#333",
         }}
       >
-        Ajouter Courgette
+        Ajouter NPK Granules
       </h5>
       <button
         onClick={closeAddModal}
@@ -423,7 +422,7 @@ export default function Granules({product}) {
           >
             <option value="">Sélectionner une image</option>
             {images.map((image, index) => (
-              <option key={index} value={`/imagedecourgettes/${image}`}>
+              <option key={index} value={`/imagedengrain/npkGranule/${image}`}>
                 {image}
               </option>
             ))}

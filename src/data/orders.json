@@ -89,6 +89,164 @@
       "date": "2025-05-13T11:28:13.966Z",
       "status": "completed",
       "totalItems": 8
+    },
+    {
+      "id": "d01e",
+      "customer": {
+        "name": "inasse",
+        "email": "inasse.llawi@gmail.com",
+        "phone": "067668686",
+        "address": "rue34"
+      },
+      "products": [
+        {
+          "id": "12",
+          "category": "MELONS",
+          "image": "/imgedemelon/melon1.png",
+          "nom": "SEMENCES MELON GARONA",
+          "description": "Emballage : 1000 Gaines Melon charantais",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "category": "TOMATES",
+          "image": "/imagedetomate/tomate2.png",
+          "nom": "SEMENCES TOMATE BOULE F1",
+          "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre",
+          "quantity": 1
+        },
+        {
+          "id": "3",
+          "category": "TOMATES",
+          "image": "/imagedetomate/tomate3.png",
+          "nom": "SEMENCES TOMATE CERISE F1",
+          "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre",
+          "quantity": 1
+        }
+      ],
+      "date": "2025-05-14T00:12:46.909Z",
+      "status": "cancelled",
+      "totalItems": 3
+    },
+    {
+      "id": "64cc",
+      "customer": {
+        "name": "yassir",
+        "email": "yassir@gmail.com",
+        "phone": "062253578",
+        "address": "hay hassani"
+      },
+      "products": [
+        {
+          "id": "15",
+          "category": "MELONS",
+          "image": "/imgedemelon/melon4.png",
+          "nom": "SEMENCES MELON GARONA",
+          "description": "Emballage : 1000 Gaines Melon charantais",
+          "quantity": 1
+        },
+        {
+          "id": "14",
+          "category": "MELONS",
+          "image": "/imgedemelon/melon3.png",
+          "nom": "SEMENCES MELON GARONA",
+          "description": "Emballage : 1000 Gaines Melon charantais",
+          "quantity": 2
+        }
+      ],
+      "date": "2025-05-14T23:32:01.695Z",
+      "status": "cancelled",
+      "totalItems": 3
+    },
+    {
+      "id": "160c",
+      "customer": {
+        "name": "yassir",
+        "email": "yassir@gmail.com",
+        "phone": "0622537433",
+        "address": "hay hassani"
+      },
+      "products": [
+        {
+          "id": "7",
+          "category": "TOURBES REMPOTAGE",
+          "image": "/imadedetourbe/image rempotage/1nj moyen.png",
+          "nom": "TOURBE TS3 1NJ MOYEN 30%GREENFIBRE 210L",
+          "description": "Emballage : 1000 Graines Courgette blanche",
+          "quantity": 1
+        },
+        {
+          "id": "13",
+          "category": "MELONS",
+          "image": "/imgedemelon/melon2.png",
+          "nom": "SEMENCES MELON GARONA",
+          "description": "Emballage : 1000 Gaines Melon charantais",
+          "quantity": 1
+        },
+        {
+          "id": "14",
+          "category": "MELONS",
+          "image": "/imgedemelon/melon3.png",
+          "nom": "SEMENCES MELON GARONA",
+          "description": "Emballage : 1000 Gaines Melon charantais",
+          "quantity": 1
+        }
+      ],
+      "date": "2025-05-15T14:32:18.519Z",
+      "status": "completed",
+      "totalItems": 3
+    },
+    {
+      "id": "e2b9",
+      "customer": {
+        "name": "yassir",
+        "email": "yassir@gmail.com",
+        "phone": "0622537433",
+        "address": "inw"
+      },
+      "products": [
+        {
+          "id": "5",
+          "category": "TOMATES",
+          "image": "/imagedetomate/tomate5.png",
+          "nom": "SEMENCES TOMATE COEUR DE BOEUF F1",
+          "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre",
+          "quantity": 1
+        },
+        {
+          "id": "7",
+          "category": "TOURBES REMPOTAGE",
+          "image": "/imadedetourbe/image rempotage/1nj moyen.png",
+          "nom": "TOURBE TS3 1NJ MOYEN 30%GREENFIBRE 210L",
+          "description": "Emballage : 1000 Graines Courgette blanche",
+          "quantity": 1
+        }
+      ],
+      "date": "2025-05-15T23:56:23.361Z",
+      "status": "completed",
+      "totalItems": 2
+    },
+    {
+      "id": "8481",
+      "customer": {
+        "name": "ali",
+        "email": "gouskar@gmail.com",
+        "phone": "062252456",
+        "address": "hay"
+      },
+      "products": [
+        {
+          "id": "1",
+          "category": "TOMATES",
+          "image": "/imagedetomate/tomate1.png",
+          "nom": "SEMENCES TOMATE ARENA F1",
+          "description": "Emballage : 1000 Graines, Tomate Calibre 2 - Sous Serre",
+          "quantity": 1
+        }
+      ],
+      "date": "2025-05-15T23:58:05.362Z",
+      "status": "pending",
+      "totalItems": 1
     }
   ]
 }

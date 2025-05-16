@@ -13,7 +13,7 @@
 }
 
 
-.tomate-container::after {
+.tomato-container::after {
   content: "🍅";
   position: absolute;
   top: 2px;

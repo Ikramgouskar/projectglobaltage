@@ -116,12 +116,10 @@ export default function Courgette({product}) {
   useEffect(() => {
     // Hardcoded image names
     const hardcodedImages = [
-      "corgete1.png",
-      "corgete2.png",
-      "corgete3.png",
-      "corgete4.png",
-      "corgete5.png",
-      "corgete6.png",
+      "poiverent1.png",
+      "poiverent2.png",
+      "poiverent3.png",
+      "poiverent4.png",
     ]
     setImages(hardcodedImages)
   }, [])
@@ -163,6 +161,7 @@ export default function Courgette({product}) {
       padding: "8px 16px",
       backgroundColor: "#4caf50",
       color: "white",
+
       border: "none",
       borderRadius: "4px",
       fontSize: "14px",
@@ -190,19 +189,20 @@ export default function Courgette({product}) {
         style={{
           width: "250px",
           height: "45px",
-          backgroundColor: "pink",
+          backgroundColor: "green",
           color: "black",
+          fontSize: "16px",
           border: "none",
           padding: "5px",
           cursor: "pointer",
          marginTop: "80px",
-          marginLeft: "900px",
+          marginLeft: "800px",
           
           borderRadius: "5px",
         }}
         onClick={openAddModal}
       >
-        Ajouter Corgette 
+        Ajouter Poiverent
       </button>
       ):""}
 
@@ -377,7 +377,7 @@ export default function Courgette({product}) {
          color: "#333",
        }}
      >
-       Ajouter Courgette
+       Ajouter Poiverent
      </h5>
      <button
        onClick={closeAddModal}
@@ -435,7 +435,7 @@ export default function Courgette({product}) {
          >
            <option value="">Sélectionner une image</option>
            {images.map((image, index) => (
-             <option key={index} value={`/imagedecourgettes/${image}`}>
+             <option key={index} value={`/imagedepoiverents/${image}`}>
                {image}
              </option>
            ))}

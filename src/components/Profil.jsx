@@ -59,7 +59,7 @@ export default function Profil() {
               avatar: adminInfo.avatar || "/default-avatar.png",
               joinDate: formatDate(adminInfo.joinDate) || new Date().toLocaleDateString(),
               lastLogin: formatDate(adminInfo.lastLogin) || new Date().toLocaleDateString(),
-              phone: adminInfo.phone || "Not provided",
+              phone: adminInfo.phone ,
               address: adminInfo.address || "Not provided",
             })
           } else {
@@ -67,13 +67,13 @@ export default function Profil() {
             if (username === "ikramgouskar") {
               setUserData({
                 name: "Ikram Gouskar",
-                email: "admin@uniquejewelry.com",
+                email: "admin@unique.com",
                 role: "Admin",
                 username: username,
                 avatar: "/default-avatar.png",
                 joinDate: new Date().toLocaleDateString(),
                 lastLogin: new Date().toLocaleDateString(),
-                phone: "Not provided",
+                phone: "0659873643",
                 address: "Not provided",
               })
             } else {

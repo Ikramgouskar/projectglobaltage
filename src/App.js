@@ -32,6 +32,7 @@ import Acidesamine from "./components/boitstimulant/acidesamine";
 import Profil from "./components/Profil";
 import Settigs from "./components/Settigs";
 import Panier from "./components/Panier";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 
@@ -66,6 +67,7 @@ function App() {
   return (
    
 <BrowserRouter>
+<ScrollToTop />
       <Header
       isAuthenticated={isAuthenticated}
       setIsAuthenticated={setIsAuthenticated}

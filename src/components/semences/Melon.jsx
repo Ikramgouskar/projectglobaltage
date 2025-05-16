@@ -184,13 +184,14 @@ export default function Melon({product}) {
         style={{
           width: "250px",
           height: "45px",
-          backgroundColor: "pink",
+          backgroundColor: "#bcbc4f",
           color: "black",
+          fontSize: "16px",
           border: "none",
           padding: "5px",
           cursor: "pointer",
          marginTop: "80px",
-          marginLeft: "900px",
+          marginLeft: "800px",
           
           borderRadius: "5px",
         }}
@@ -365,7 +366,7 @@ export default function Melon({product}) {
          color: "#333",
        }}
      >
-       Ajouter Courgette
+       Ajouter Mellon
      </h5>
      <button
        onClick={closeAddModal}
@@ -423,7 +424,7 @@ export default function Melon({product}) {
          >
            <option value="">Sélectionner une image</option>
            {images.map((image, index) => (
-             <option key={index} value={`/imagedecourgettes/${image}`}>
+             <option key={index} value={`/imgedemelon/${image}`}>
                {image}
              </option>
            ))}

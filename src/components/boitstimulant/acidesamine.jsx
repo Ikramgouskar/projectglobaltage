@@ -113,12 +113,10 @@ export default function Acidesamine({product}) {
   useEffect(() => {
     // Hardcoded image names
     const hardcodedImages = [
-      "corgete1.png",
-      "corgete2.png",
-      "corgete3.png",
-      "corgete4.png",
-      "corgete5.png",
-      "corgete6.png",
+      "VITACROP MANZIN.png",
+      "ISABION.png",
+      "VITAPOHOS.png",
+    
     ]
     setImages(hardcodedImages)
   }, [])
@@ -435,7 +433,7 @@ export default function Acidesamine({product}) {
          >
            <option value="">Sélectionner une image</option>
            {images.map((image, index) => (
-             <option key={index} value={`/imagedecourgettes/${image}`}>
+             <option key={index} value={`/biostimulants/ACIDE AMINE/${image}`}>
                {image}
              </option>
            ))}

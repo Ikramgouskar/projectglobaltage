@@ -124,11 +124,11 @@ export default function Filettisseombrage({product}) {
   useEffect(() => {
     // Hardcoded image names
     const hardcodedImages = [
-      "corgete1.png",
-      "corgete2.png",
-      "corgete3.png",
-      "corgete4.png",
-      "corgete5.png",
+      "1nj moyen.png",
+      "3W4 fibreux.png",
+      "135 moyen.png",
+      "425 moyen.png",
+      "ts4 604.png",
       "corgete6.png",
     ]
     setImages(hardcodedImages)
@@ -398,7 +398,7 @@ export default function Filettisseombrage({product}) {
           color: "#333",
         }}
       >
-        Ajouter filet Anti-thrips
+        Ajouter tourbe rempotage
       </h5>
       <button
         onClick={closeAddModal}
@@ -456,7 +456,7 @@ export default function Filettisseombrage({product}) {
           >
             <option value="">Sélectionner une image</option>
             {images.map((image, index) => (
-              <option key={index} value={`/imagedecourgettes/${image}`}>
+              <option key={index} value={`/imadedetourbe/image rempotage/${image}`}>
                 {image}
               </option>
             ))}

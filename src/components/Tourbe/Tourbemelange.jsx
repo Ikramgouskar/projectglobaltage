@@ -124,12 +124,9 @@ export default function Tourbemelange({product}) {
   useEffect(() => {
     // Hardcoded image names
     const hardcodedImages = [
-      "corgete1.png",
-      "corgete2.png",
-      "corgete3.png",
-      "corgete4.png",
-      "corgete5.png",
-      "corgete6.png",
+      "steckmedium-686.png",
+      "ts1-623.png",
+     
     ]
     setImages(hardcodedImages)
   }, [])
@@ -398,7 +395,7 @@ export default function Tourbemelange({product}) {
           color: "#333",
         }}
       >
-        Ajouter filet Anti-thrips
+        Ajouter Tourbe MELANGE
       </h5>
       <button
         onClick={closeAddModal}
@@ -456,7 +453,7 @@ export default function Tourbemelange({product}) {
           >
             <option value="">Sélectionner une image</option>
             {images.map((image, index) => (
-              <option key={index} value={`/imagedecourgettes/${image}`}>
+              <option key={index} value={`/imadedetourbe/imagemelange/${image}`}>
                 {image}
               </option>
             ))}

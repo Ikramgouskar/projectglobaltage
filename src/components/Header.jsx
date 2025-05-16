@@ -49,8 +49,7 @@ export default function Header({ isAuthenticated, setIsAuthenticated }) {
 
     if (value === "profile") {
       navigate("/profile")
-    } else if (value === "settings") {
-      navigate("/sitting")
+  
     } else if (value === "logout") {
       handlerlogaut()
     }
@@ -121,7 +120,6 @@ export default function Header({ isAuthenticated, setIsAuthenticated }) {
                   <option value="" disabled>action</option>
                  
                   <option value="profile">Profile</option>
-                  <option value="settings">Setting</option>
                   <option value="logout">Déconnexion</option>
                 </select>
               </>

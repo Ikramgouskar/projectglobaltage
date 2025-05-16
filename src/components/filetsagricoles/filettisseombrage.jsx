@@ -57,7 +57,7 @@ export default function Filettisseombrage({product}) {
 
   
   const deletegranules = (id) => {
-    if (window.confirm("Voulez-vous vraiment supprimer cette VEGETABLE ?")) {
+    if (window.confirm("Voulez-vous vraiment supprimer ce filet ?")) {
       axios
         .delete(`http://localhost:8001/products/${id}`)
         .then(() => {
@@ -124,12 +124,8 @@ export default function Filettisseombrage({product}) {
   useEffect(() => {
     // Hardcoded image names
     const hardcodedImages = [
-      "corgete1.png",
-      "corgete2.png",
-      "corgete3.png",
-      "corgete4.png",
-      "corgete5.png",
-      "corgete6.png",
+      "image.png",
+    
     ]
     setImages(hardcodedImages)
   }, [])
@@ -398,7 +394,7 @@ export default function Filettisseombrage({product}) {
           color: "#333",
         }}
       >
-        Ajouter filet Anti-thrips
+        Ajouter Filet Tisse Ombage
       </h5>
       <button
         onClick={closeAddModal}
@@ -456,7 +452,7 @@ export default function Filettisseombrage({product}) {
           >
             <option value="">Sélectionner une image</option>
             {images.map((image, index) => (
-              <option key={index} value={`/imagedecourgettes/${image}`}>
+              <option key={index} value={`/imagedefilet/img tie ombrage/${image}`}>
                 {image}
               </option>
             ))}

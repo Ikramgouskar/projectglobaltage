@@ -1,4 +1,4 @@
-"use client"
+
 
 import { createContext, useContext, useState, useEffect } from "react"
 import { ShoppingCart } from "lucide-react"
@@ -103,17 +103,15 @@ export const CartIcon = () => {
   const [showPreview, setShowPreview] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
 
-  // Check if cart context is available
   const isCartAvailable = cart !== undefined
   const cartItems = isCartAvailable ? cart.cartItems : []
   const count = isCartAvailable ? cart.getCartCount() : 0
 
-  // Set isMounted to true after component mounts
   useEffect(() => {
     setIsMounted(true)
   }, [])
 
-  // Add CSS styles directly in the component
+  
   const styles = {
     container: {
       position: "relative",

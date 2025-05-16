@@ -179,19 +179,20 @@ export default function Courjette({product}) {
     <>
       <div className="corgette-container">
         <div className="corgette-header">
-          <h2 className="corgette-title">corgette</h2>
+          <h2 className="corgette-title">Corgette</h2>
           {stateuser ? (
       <button
         style={{
           width: "250px",
           height: "45px",
-          backgroundColor: "pink",
+          backgroundColor: "#3d9140",
           color: "black",
+          fontSize: "16px",
           border: "none",
           padding: "5px",
           cursor: "pointer",
          marginTop: "80px",
-          marginLeft: "900px",
+          marginLeft: "800px",
           
           borderRadius: "5px",
         }}

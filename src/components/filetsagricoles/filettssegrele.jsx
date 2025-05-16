@@ -63,7 +63,7 @@ export default function Filettessgrele({product}) {
 
 
   const deletegranules = (id) => {
-    if (window.confirm("Voulez-vous vraiment supprimer cette VEGETABLE ?")) {
+    if (window.confirm("Voulez-vous vraiment supprimer cet Filet ?")) {
       axios
         .delete(`http://localhost:8001/products/${id}`)
         .then(() => {
@@ -117,12 +117,8 @@ export default function Filettessgrele({product}) {
   useEffect(() => {
     // Hardcoded image names
     const hardcodedImages = [
-      "corgete1.png",
-      "corgete2.png",
-      "corgete3.png",
-      "corgete4.png",
-      "corgete5.png",
-      "corgete6.png",
+      "anti grele.png",
+     
     ]
     setImages(hardcodedImages)
   }, [])
@@ -386,7 +382,7 @@ export default function Filettessgrele({product}) {
           color: "#333",
         }}
       >
-        Ajouter filet Anti-thrips
+        Ajouter filet tisse anti grêle
       </h5>
       <button
         onClick={closeAddModal}
@@ -444,7 +440,7 @@ export default function Filettessgrele({product}) {
           >
             <option value="">Sélectionner une image</option>
             {images.map((image, index) => (
-              <option key={index} value={`/imagedecourgettes/${image}`}>
+              <option key={index} value={`/imagedefilet/filet tie anti/${image}`}>
                 {image}
               </option>
             ))}

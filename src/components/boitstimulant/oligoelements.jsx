@@ -53,7 +53,7 @@ export default function OligoElementns() {
   }, [])
 
   const deleteENGRAI = (id) => {
-    if (window.confirm("Voulez-vous vraiment supprimer cette VEGETABLE ?")) {
+    if (window.confirm("Voulez-vous vraiment supprimer cet élément ?")) {
       axios
         .delete(`http://localhost:8000/products/${id}`)
         .then(() => {
@@ -111,12 +111,12 @@ export default function OligoElementns() {
   useEffect(() => {
     // Hardcoded image names
     const hardcodedImages = [
-      "corgete1.png",
-      "corgete2.png",
-      "corgete3.png",
-      "corgete4.png",
-      "corgete5.png",
-      "corgete6.png",
+      "nov@.png",
+      "folicist.png",
+      "globalga.png",
+      "sunred.png",
+      "foliastim pure algue.png",
+      "foliastim calcium.png",
     ]
     setImages(hardcodedImages)
   }, [])
@@ -422,7 +422,7 @@ export default function OligoElementns() {
          >
            <option value="">Sélectionner une image</option>
            {images.map((image, index) => (
-             <option key={index} value={`/imagedecourgettes/${image}`}>
+             <option key={index} value={`/biostimulants/Biostimulant/${image}`}>
                {image}
              </option>
            ))}

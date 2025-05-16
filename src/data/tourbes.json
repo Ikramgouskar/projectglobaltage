@@ -38,7 +38,7 @@
     {
       "id": "6",
       "category": "TOURBES SEMIS",
-      "image":  "/imadedetourbe/proline bio trayubtrat.png",
+      "image": "/imadedetourbe/proline bio trayubtrat.png",
       "nom": "TOURBE PROLINE BIO TRAY-SUBSTRAT 70L",
       "description": "Emballage : 1000 Graines Courgette blanche"
     },
@@ -57,13 +57,6 @@
       "description": "Emballage : 1000 Graines Courgette blanche"
     },
     {
-      "id": "9",
-      "category": "TOURBES REMPOTAGE",
-      "image": "/imagedecourgettes/corgete4.png",
-      "nom": "TOURBE TS1 135 MOYEN 210L",
-      "description": "Emballage : 1000 Graines Courgette blanche"
-    },
-    {
       "id": "10",
       "category": "TOURBES REMPOTAGE",
       "image": "/imadedetourbe/image rempotage/3W4 fibreux.png",
@@ -73,7 +66,7 @@
     {
       "id": "11",
       "category": "TOURBES REMPOTAGE",
-      "image":"/imadedetourbe/image rempotage/ts4 604 grossier.png",
+      "image": "/imadedetourbe/image rempotage/ts4 604 grossier.png",
       "nom": "TOURBE TS4 604 GROSSIER 210L",
       "description": "Emballage : 1000 Graines Courgette blanche"
     },
@@ -163,9 +156,23 @@
     },
     {
       "id": "40ef",
-      "image": "/imagedecourgettes/corgete1.png",
-      "nom": "khanssae",
-      "description": "uuuuuuuuu",
+      "image": "/imadedetourbe/image rempotage/3W4 fibreux.png",
+      "nom": "TERREAU FIBRE COCO SAC 70L",
+      "description": "SAC 70L",
+      "category": "SUBSTRATS COCO"
+    },
+    {
+      "id": "a130",
+      "image": "/imadedetourbe/image fruit rouge/977myrtille .png",
+      "nom": "ppppp",
+      "description": "j",
+      "category": "SUBSTRATS COCO"
+    },
+    {
+      "id": "3281",
+      "image": "/imadedetourbe/image rempotage/3W4 fibreux.png",
+      "nom": "ppp",
+      "description": "lk",
       "category": "SUBSTRATS COCO"
     }
   ],

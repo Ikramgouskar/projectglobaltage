@@ -148,13 +148,6 @@
       "description": "Emballage : 1000 GR Poivron doux Italien"
     },
     {
-      "id": "bdd1",
-      "image": "/imagedecourgettes/corgete2.png",
-      "nom": "semencce",
-      "description": "yugu",
-      "category": "COURGETTES"
-    },
-    {
       "id": "25ad",
       "image": "/imagedecourgettes/corgete3.png",
       "nom": "khanssae",
@@ -167,6 +160,13 @@
       "nom": "khanssae",
       "description": "uuuuuuuuu",
       "category": "SOLUBLES"
+    },
+    {
+      "id": "626f",
+      "image": "/imagedetomate/tomate1.png",
+      "nom": "iiiiiiiii",
+      "description": "uuuuuuuu",
+      "category": "TOMATES"
     }
   ],
   "categories": [

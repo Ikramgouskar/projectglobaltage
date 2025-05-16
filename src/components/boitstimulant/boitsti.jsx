@@ -54,7 +54,7 @@ export default function Boitsti({product}) {
 
 
   const deleteENGRAI = (id) => {
-    if (window.confirm("Voulez-vous vraiment supprimer cette VEGETABLE ?")) {
+    if (window.confirm("Voulez-vous vraiment supprimer cet élément ?")) {
       axios
         .delete(`http://localhost:8002/products/${id}`)
         .then(() => {
@@ -116,12 +116,13 @@ export default function Boitsti({product}) {
   useEffect(() => {
     // Hardcoded image names
     const hardcodedImages = [
-      "corgete1.png",
-      "corgete2.png",
-      "corgete3.png",
-      "corgete4.png",
-      "corgete5.png",
-      "corgete6.png",
+      "MIXOKEN.png",
+      "AGRUMAX.png",
+      "3.png",
+      "4.png",
+      "OLIGO BORE 150 .png",
+      "6.png",
+      "7.png",
     ]
     setImages(hardcodedImages)
   }, [])
@@ -206,7 +207,7 @@ export default function Boitsti({product}) {
         }}
         onClick={openAddModal}
       >
-        Ajouter Acide Acide amine 
+        Ajouter BIOTIMULANT
       </button>
       ):""}
 
@@ -390,7 +391,7 @@ export default function Boitsti({product}) {
           color: "#333",
         }}
       >
-        Ajouter Courgette
+        Ajouter biostimulant
       </h5>
       <button
         onClick={closeAddModal}
@@ -448,7 +449,7 @@ export default function Boitsti({product}) {
           >
             <option value="">Sélectionner une image</option>
             {images.map((image, index) => (
-              <option key={index} value={`/imagedecourgettes/${image}`}>
+              <option key={index} value={`/biostimulants/oligo-element/${image}`}>
                 {image}
               </option>
             ))}

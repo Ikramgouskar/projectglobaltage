@@ -184,17 +184,18 @@ export default function Pasteques({product}) {
           height: "45px",
           backgroundColor: "pink",
           color: "black",
+          fontSize: "16px",
           border: "none",
           padding: "5px",
           cursor: "pointer",
          marginTop: "80px",
-          marginLeft: "900px",
+          marginLeft: "800px",
           
           borderRadius: "5px",
         }}
         onClick={openAddModal}
       >
-        Ajouter Corgette 
+        Ajouter Pasteque
       </button>
       ):""}
 
@@ -368,7 +369,7 @@ export default function Pasteques({product}) {
          color: "#333",
        }}
      >
-       Ajouter Courgette
+       Ajouter Pastèque
      </h5>
      <button
        onClick={closeAddModal}
@@ -426,7 +427,7 @@ export default function Pasteques({product}) {
          >
            <option value="">Sélectionner une image</option>
            {images.map((image, index) => (
-             <option key={index} value={`/imagedecourgettes/${image}`}>
+             <option key={index} value={`/imgedepasteque/${image}`}>
                {image}
              </option>
            ))}

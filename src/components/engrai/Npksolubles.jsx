@@ -62,7 +62,7 @@ export default function NPKSOLUBLES({product}) {
 
 
   const deleteTOMATE = (id) => {
-    if (window.confirm("Voulez-vous vraiment supprimer cette VEGETABLE ?")) {
+    if (window.confirm("Voulez-vous vraiment supprimer cet Engrais ?")) {
       axios
         .delete(`http://localhost:8000/products/${id}`)
         .then(() => {
@@ -125,12 +125,12 @@ export default function NPKSOLUBLES({product}) {
   useEffect(() => {
     // Hardcoded image names
     const hardcodedImages = [
-      "corgete1.png",
-      "corgete2.png",
-      "corgete3.png",
-      "corgete4.png",
-      "corgete5.png",
-      "corgete6.png",
+      "nitratedemagnet.png",
+      "npk 11 09 35.png",
+      "NPK 13 40 13.png",
+      "NPK 14 11 5.png",
+      "NPK 20 20 20.png",
+      "UREE PHOPHATE 17 44.png",
     ]
     setImages(hardcodedImages)
   }, [])
@@ -375,7 +375,7 @@ export default function NPKSOLUBLES({product}) {
           color: "#333",
         }}
       >
-        Ajouter Courgette
+        Ajouter NPK Soluble
       </h5>
       <button
         onClick={closeAddModal}
@@ -433,7 +433,7 @@ export default function NPKSOLUBLES({product}) {
           >
             <option value="">Sélectionner une image</option>
             {images.map((image, index) => (
-              <option key={index} value={`/imagedecourgettes/${image}`}>
+              <option key={index} value={`/imagedengrain/npkoluble/${image}`}>
                 {image}
               </option>
             ))}

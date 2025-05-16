@@ -1,16 +1,14 @@
-"use client"
+
 
 import { useEffect, useState } from "react"
 import axios from "axios"
-import { CheckCircle2, Clock, XCircle, Package, Calendar, Tag } from "lucide-react"
+import { CheckCircle2, Clock, XCircle, Calendar, Package } from "lucide-react"
 import "../style/order.css"
 
 export default function Orders() {
   const [orders, setOrders] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [animatingOrderId, setAnimatingOrderId] = useState(null)
-  const [animationType, setAnimationType] = useState(null)
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -30,22 +28,12 @@ export default function Orders() {
 
   const updateOrderStatus = async (orderId, newStatus) => {
     try {
-      // Set animating state for visual feedback
-      setAnimatingOrderId(orderId)
-      setAnimationType(newStatus === "completed" ? "complete" : "cancel")
-
       await axios.patch(`http://localhost:3001/orders/${orderId}`, {
         status: newStatus,
       })
 
       // Update local state
       setOrders(orders.map((order) => (order.id === orderId ? { ...order, status: newStatus } : order)))
-
-      // Clear animation state after animation completes
-      setTimeout(() => {
-        setAnimatingOrderId(null)
-        setAnimationType(null)
-      }, 600)
     } catch (err) {
       console.error("Error updating order status:", err)
     }
@@ -57,8 +45,6 @@ export default function Orders() {
 
   return (
     <div className="orders-container">
-      <h1 className="orders-title">Orders Management</h1>
-
       <div className="orders-table-container">
         <table className="orders-table">
           <thead>
@@ -74,7 +60,9 @@ export default function Orders() {
           <tbody>
             {orders.map((order) => (
               <tr key={order.id}>
-                <td className="orders-table-cell">{order.id}</td>
+                <td className="orders-table-cell">
+                  <div className="order-id">{order.id}</div>
+                </td>
                 <td className="orders-table-cell">
                   <div className="customer-info">
                     <div className="customer-name">{order.customer.name}</div>
@@ -84,33 +72,34 @@ export default function Orders() {
                   </div>
                 </td>
                 <td className="orders-table-cell">
-                  <ul className="product-list">
-                    {order.products.map((product) => (
-                      <li key={product.id} className="product-item">
-                        <img
-                          src={product.image || "/placeholder.svg?height=70&width=70"}
-                          className="product-image"
-                          alt={product.nom}
-                        />
-                        <div className="product-details">
-                          <div className="product-name">{product.nom}</div>
-                          <div className="product-meta">
-                            <span>
-                              <Package size={14} /> Qty: {product.quantity}
-                            </span>
-                            <span>
-                              <Tag size={14} /> Category: {product.category}
-                            </span>
+                  {order.products.map((product) => (
+                    <div key={product.id} className="product-container">
+                      <img
+                        src={product.image || "/placeholder.svg?height=60&width=60"}
+                        className="product-image"
+                        alt={product.nom}
+                      />
+                      <div className="product-details">
+                        <div className="product-name">{product.nom}</div>
+                        <div className="product-meta">
+                          <div className="meta-item">
+                            <Package size={14} className="meta-icon" />
+                            <span className="meta-label">Qty:</span>
+                            <span className="meta-value">{product.quantity}</span>
+                          </div>
+                          <div className="meta-item">
+                            <span className="meta-label">Category:</span>
+                            <span className="meta-value">{product.category}</span>
                           </div>
                         </div>
-                      </li>
-                    ))}
-                  </ul>
+                      </div>
+                    </div>
+                  ))}
                   <div className="total-items">Total Items: {order.totalItems}</div>
                 </td>
                 <td className="orders-table-cell">
                   <div className="order-date">
-                    <Calendar size={14} className="date-icon" />
+                    <Calendar size={16} className="date-icon" />
                     {new Date(order.date).toLocaleString()}
                   </div>
                 </td>
@@ -121,16 +110,12 @@ export default function Orders() {
                     </div>
                   )}
                   {order.status === "completed" && (
-                    <div
-                      className={`status status-completed ${animatingOrderId === order.id && animationType === "complete" ? "status-change-complete" : ""}`}
-                    >
+                    <div className="status status-completed">
                       <CheckCircle2 size={16} /> Completed
                     </div>
                   )}
                   {order.status === "cancelled" && (
-                    <div
-                      className={`status status-cancelled ${animatingOrderId === order.id && animationType === "cancel" ? "status-change-cancel" : ""}`}
-                    >
+                    <div className="status status-cancelled">
                       <XCircle size={16} /> Cancelled
                     </div>
                   )}
